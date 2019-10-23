@@ -40,7 +40,8 @@ public class TerminalActionHandler implements ActionHandler {
         // create new parallel task that listens for user interaction with the terminal
         new Thread(() -> {
             while (scanner.hasNext()) {
-                String[] args = scanner.nextLine().split(StringTools.MATCH_WHITESPACE);
+                String[] args = scanner.next().split(StringTools.MATCH_WHITESPACE);
+
                 boolean wasInvoked = false;
                 // check if any systemAction should be invoked - they have priority
                 for (Action action : systemActions) {
@@ -54,7 +55,7 @@ public class TerminalActionHandler implements ActionHandler {
                 // used to synchronize the parallel tasks
                 synchronized (notifier) {
                     if (wasInvoked || awaitedAction == null) {
-                        return;
+                        continue;
                     }
 
                     if (awaitedAction.isInvoked(args)) {
