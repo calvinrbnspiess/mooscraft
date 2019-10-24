@@ -1,5 +1,6 @@
 package de.on19.mooscraft.game.interaction;
 
+import de.on19.mooscraft.game.interaction.actions.ExitAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.utils.StringTools;
@@ -36,6 +37,7 @@ public class TerminalActionHandler implements ActionHandler {
                 return args[0].equals("help");
             }
         });
+        this.systemActions.add(new ExitAction());
 
         // create new parallel task that listens for user interaction with the terminal
         new Thread(() -> {
