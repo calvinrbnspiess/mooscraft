@@ -11,3 +11,26 @@ https://docs.google.com/document/d/1lFSnBUEKzq0onimjHwcxg2O8msLgrVsvE1CTEcN2SmM/
 
 #### Link zu den Java-Projekten:
 https://docs.google.com/document/d/1--6y3bYb3GTwR0ndTWS87F57AsPkYFDW8XnqojA792I/edit#
+
+Auf Eingaben warten:
+
+```java
+        handler.waitForAction(new GameAction() {
+            @Override
+            public boolean isInvoked(String[] args) {
+                return args[0].equals("weiter");
+            }
+        });
+```
+
+Eine neue Bildschirmseite anzeigen:
+
+```java
+        Screen screen = new Screen();
+        screen.append(new String[]{
+                "Zeile 1",
+                "Zweite Zeile",
+                "..."
+        });
+        renderer.printScreen(screen);
+```
