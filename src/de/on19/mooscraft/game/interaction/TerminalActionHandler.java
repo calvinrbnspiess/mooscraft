@@ -3,6 +3,7 @@ package de.on19.mooscraft.game.interaction;
 import de.on19.mooscraft.game.interaction.actions.ExitAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.renderer.Renderer;
+import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
 import java.util.ArrayList;
@@ -65,6 +66,13 @@ public class TerminalActionHandler implements ActionHandler {
                         // reactivate other task
                         awaitedAction = null;
                         notifier.notify();
+                    } else {
+                        // no action was recognized
+
+                        Screen screen = new Screen();
+                        screen.appendLine("Es konnte keine Aktion erkannt werden. Du weißt nicht weiter? Rufe mit <help> die Hilfestellung auf.");
+                        // maybe it is not a good idea to erase the screen when our user doesn't know what he is doing. - so no erase here
+                        renderer.printScreen(screen, false);
                     }
                 }
             }
@@ -84,6 +92,7 @@ public class TerminalActionHandler implements ActionHandler {
         }
     }
 
+    @Override
     public Renderer getRenderer() {
         return renderer;
     }

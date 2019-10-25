@@ -21,6 +21,8 @@ public class TerminalRenderer implements Renderer {
         for (String line : s.getContent()) {
             System.out.println(line);
         }
+        // print a small indicator signalizing that input is expected
+        System.out.print("> ");
     }
 
     @Override
