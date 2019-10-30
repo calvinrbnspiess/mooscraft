@@ -34,12 +34,18 @@ Eine neue Bildschirmseite anzeigen:
         });
         renderer.printScreen(screen);
 ```
-
-```
+### Klassentypen
+## Standard: class
+## implementierende Funktion
+```java
 public class Spielbrett implements SpielbrettAnleitung {
 
 }
+```
 
+
+## Standard: class
+## implementierende Funktion
 public abstract class Spielbrett {
 
 }
