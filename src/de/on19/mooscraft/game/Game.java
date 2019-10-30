@@ -11,9 +11,10 @@ import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.game.screens.SplashScreen;
 import de.on19.mooscraft.renderer.Renderer;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.StringTools;   // allall
 
 public class Game {
+    //contains game logik
 
     private Renderer renderer;
     private ActionHandler handler;
@@ -24,9 +25,10 @@ public class Game {
         this.handler = handler;
         this.character = null;
     }
-
+    //sequential processing of the following lines
     public void run() throws InterruptedException {
         renderer.printScreen(new SplashScreen());
+            //shows start screen
 
         handler.waitForAction(new GameAction() {
             @Override
@@ -34,6 +36,9 @@ public class Game {
                 return args[0].equals("weiter");
             }
         });
+            /**waits for any interaction by typing "weiter" into keyboard
+            if no action or other actions follows --> see method onCommand
+             */
 
         ChooseScreen chooseCharacter = new ChooseScreen();
 
@@ -68,6 +73,13 @@ public class Game {
                     character = new MermaidMan();
                 }
             }
+            /** getformattedoption: provides list with all options to choose
+             * tolowerCase: changes strings provides with string to be compared in lowercase to make them
+             * comparable independently of upper/lowercase
+             * character gets chosen by typing in A-E, the full name or any part of the name
+            *if wrong combinations is typed in --> no reaction; action handler waits. This gets tested via next lines
+             * isInvoked
+             */
 
             @Override
             public boolean isInvoked(String[] args) {
