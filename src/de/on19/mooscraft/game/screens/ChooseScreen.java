@@ -40,13 +40,13 @@ public class ChooseScreen extends Screen {
         this.instruction = instruction;
     }
 
-    @Override
-    public String[] getContent() {
+    // A. ffff
+    // B. ggf
+    // C. fgg
+    public String[] getFormattedOptions() {
         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        // Arrays.asList() only returns a list with fixed size, so we need to pass it into a new list
-        List<String> content = new ArrayList<String>(Arrays.asList(super.getContent()));
 
-        StringTools.append(content, StringTools.emptyLines(1));
+        String[] formattedContent = new String[options.size()];
 
         for (int i = 0; i < options.size(); i++) {
             // display number instead of letter when there are too many options
@@ -54,8 +54,20 @@ public class ChooseScreen extends Screen {
 
             String delimeter = (options.size() >= alphabet.length ? i : Character.toString(alphabet[i]).toUpperCase()) + ". ";
 
-            content.add(delimeter + options.get(i));
+            formattedContent[i] = delimeter + options.get(i);
         }
+        return formattedContent;
+    }
+
+    @Override
+    public String[] getContent() {
+        // Arrays.asList() only returns a list with fixed size, so we need to pass it into a new list
+        List<String> content = new ArrayList<String>(Arrays.asList(super.getContent()));
+
+        StringTools.append(content, StringTools.emptyLines(1));
+
+        // get nicely formatted options from above
+        StringTools.append(content, getFormattedOptions());
 
         StringTools.append(content, StringTools.emptyLines(1));
 
