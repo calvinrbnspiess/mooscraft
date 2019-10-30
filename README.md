@@ -34,3 +34,19 @@ Eine neue Bildschirmseite anzeigen:
         });
         renderer.printScreen(screen);
 ```
+
+```
+public class Spielbrett implements SpielbrettAnleitung {
+
+}
+
+public abstract class Spielbrett {
+
+}
+
+public interface SpielbrettAnleitung {
+
+    public spielen();
+
+}
+```
