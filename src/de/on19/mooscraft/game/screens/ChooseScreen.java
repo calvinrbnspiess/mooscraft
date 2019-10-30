@@ -1,5 +1,5 @@
 package de.on19.mooscraft.game.screens;
-// Auswahlbildschirm
+
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
