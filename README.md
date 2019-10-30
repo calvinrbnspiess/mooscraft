@@ -34,22 +34,22 @@ Eine neue Bildschirmseite anzeigen:
         });
         renderer.printScreen(screen);
 ```
-### Klassentypen
-## Standard: class
-## implementierende Funktion
+## Klassentypen
+Standard: class
+implementierende Funktion
 ```java
 public class Spielbrett implements SpielbrettAnleitung {
 
 }
 ```
-
-
-## Standard: class
-## implementierende Funktion
+abstract: Klasse ist unfertig + kann nicht aufgerufen werden
+```java
 public abstract class Spielbrett {
 
 }
-
+```
+interface: Hülle für andere Klassen; Aufbauanleitung; kann keine Objekte erstellen
+```java
 public interface SpielbrettAnleitung {
 
     public spielen();
