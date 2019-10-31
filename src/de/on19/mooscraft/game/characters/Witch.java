@@ -7,7 +7,7 @@ public class Witch extends Character {
 
 
     public Witch() {
-        super(100, 10, 10, 10, 10);
+        super(25, 20, 40, 50, 30);
     }
     /**super calls constructor of Character class
      * know which constructor by comparison of used parameters
