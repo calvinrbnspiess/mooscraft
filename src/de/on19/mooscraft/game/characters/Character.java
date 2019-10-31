@@ -3,7 +3,7 @@ package de.on19.mooscraft.game.characters;
 public class Character {
 
     //overall declaration of variables and Methods --> initialization in single character classes
-    public int health;
+    private int health;
     private int strength;
     private int witchcraft;
     private int willpower;
@@ -21,8 +21,6 @@ public class Character {
     public Character(int health, int strength, int witchcraft, int willpower, int wisdom) {
         /**constructor
          * gives basoc values (in brackets) to the variables (called by this.)
-         */
-        */
          */
         this.health = health;
         /**this: refers to class declared before above (e.g. public int health)
