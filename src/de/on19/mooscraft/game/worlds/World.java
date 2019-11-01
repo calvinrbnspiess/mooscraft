@@ -38,6 +38,9 @@ public abstract class World {
 
 
     public void onEnter(Renderer renderer, ActionHandler handler) {
+        /**provides renderer and action handler as
+         * parameters, so actions can be received and output produced
+         */
 
     }
 

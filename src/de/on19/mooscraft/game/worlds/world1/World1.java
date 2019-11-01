@@ -11,12 +11,12 @@ public class World1 extends World {
 
 
     public World1() {
-        super();
+        super(); //contructor of super class world is called
 
         //this.getSpots().add(new Spot1());
         // ... 6
 
-        Collections.shuffle(this.getSpots());
+        Collections.shuffle(this.getSpots()); //shuffles elements of array list
 
         // TODO
 
@@ -27,7 +27,7 @@ public class World1 extends World {
 //            half = ;
 //        }
 
-        List<Spot> path1 = this.getSpots().subList(0, 2);
+        List<Spot> path1 = this.getSpots().subList(0, 2); //created two paths of before shuffled spots
         List<Spot> path2 = this.getSpots().subList(3, 5);
 
         ChooseScreen screen = new ChooseScreen();

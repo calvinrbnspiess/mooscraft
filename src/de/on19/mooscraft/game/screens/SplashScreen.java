@@ -4,6 +4,11 @@ import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
 public class SplashScreen extends Screen {
+    /**three different screen classes since every one got different structure
+     * ChooseScreen: with choice options
+     * ScoreboardScreen: only displays
+     * Splashscreen: displays in the beginning
+     */
 
     public SplashScreen() {
         super();
