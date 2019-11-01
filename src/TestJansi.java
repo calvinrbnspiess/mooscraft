@@ -17,6 +17,10 @@ public class TestJansi{
 }
 /**Source for above Code
  * https://stackoverflow.com/questions/56140910/setting-up-a-classpath-for-jansi
+ *
+ * Color table for ANSI Escape Codes
+ * https://en.wikipedia.org/wiki/ANSI_escape_code
  */
+
 
 
