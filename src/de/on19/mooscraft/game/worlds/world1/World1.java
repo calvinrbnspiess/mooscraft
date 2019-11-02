@@ -1,44 +1,27 @@
 package de.on19.mooscraft.game.worlds.world1;
 
-import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 
-import java.util.Collections;
 import java.util.List;
 
 public class World1 extends World {
 
+    public World1() throws UnsupportedOperationException {
+        super(new String[]{ "Welt1" } , "Wähle einen Weg.");
 
-    public World1() {
-        super(); //contructor of super class world is called
+        super.getSpotsPool().add(new Spot1(this));
+        super.getSpotsPool().add(new Spot1(this));
+        super.getSpotsPool().add(new Spot1(this));
 
-        //this.getSpots().add(new Spot1());
-        // ... 6
+        super.getSpotsPool().add(new Spot1(this));
+        super.getSpotsPool().add(new Spot1(this));
+        super.getSpotsPool().add(new Spot1(this));
 
-        Collections.shuffle(this.getSpots()); //shuffles elements of array list
-
-        // TODO
-
-//        int half = this.getSpots().size();
-//        if (this.getSpots().size() % 2 == 0) {
-//            half = half / 2;
-//        } else {
-//            half = ;
-//        }
-
-        List<Spot> path1 = this.getSpots().subList(0, 2); //created two paths of before shuffled spots
-        List<Spot> path2 = this.getSpots().subList(3, 5);
-
-        ChooseScreen screen = new ChooseScreen();
-        screen.appendLine("Weltbeschreibung");
-        screen.addOptions(new String[] {
-                "Erster Weg",
-                "Zweiter Weg"
-        });
-
-        screen.addInstruction("Triff eine weise Entscheidung und wähle einen Weg zu deinem Gunsten.");
-
+        // add all 6 spots
+        super.generatePath("Den linken Wege musste gehen");
+        super.generatePath(
+                "Nur wer sein Ziel kennt, findet diesen Weg.");
     }
 
 }
