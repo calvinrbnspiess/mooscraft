@@ -1,6 +1,10 @@
 package de.on19.mooscraft.game.characters;
 
+import de.on19.mooscraft.game.worlds.Spot;
+
 public class Character {
+
+    private String name;
 
     //overall declaration of variables and Methods --> initialization in single character classes
     private int health;
@@ -8,6 +12,8 @@ public class Character {
     private int witchcraft;
     private int willpower;
     private int wisdom;
+
+    private int visitedSpots;
 
     public Character() {
         this(0,0,0,0,0);
@@ -17,10 +23,15 @@ public class Character {
          */
     }
 
+    public Character(String name) {
+        this(0,0,0,0,0);
+        this.setName(name);
+    }
 
     public Character(int health, int strength, int witchcraft, int willpower, int wisdom) {
+        this.name = "Unnamed Player";
         /**constructor
-         * gives basoc values (in brackets) to the variables (called by this.)
+         * gives basic values (in brackets) to the variables (called by this.)
          */
         this.health = health;
         /**this: refers to class declared before above (e.g. public int health)
@@ -30,6 +41,7 @@ public class Character {
         this.witchcraft = witchcraft;
         this.willpower = willpower;
         this.wisdom = wisdom;
+        this.visitedSpots = 0;
     }
 
     /** getter and setter methods are necessary to call them later in other classes and change values
@@ -77,7 +89,7 @@ public class Character {
     public void setWillpower(int willpower) {
         this.willpower = willpower;
     }
-    public void addwillpower(int willpower) {
+    public void addWillpower(int willpower) {
         this.setWillpower(this.getWillpower() + willpower);
     }
 
@@ -88,7 +100,23 @@ public class Character {
     public void setWisdom(int wisdom) {
         this.wisdom = wisdom;
     }
-    public void addwisdom(int wisdom) {
+    public void addWisdom(int wisdom) {
         this.setWisdom(this.getWisdom() + wisdom);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void increaseVisitedSpots() {
+       this.visitedSpots += 1;
+    }
+
+    public int getVisitedSpots() {
+        return visitedSpots;
     }
 }
