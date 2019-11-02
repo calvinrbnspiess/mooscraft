@@ -1,20 +1,18 @@
 package de.on19.mooscraft.game.interaction;
 
 import de.on19.mooscraft.game.interaction.actions.ExitAction;
-import de.on19.mooscraft.game.interaction.actions.GameAction;
+import de.on19.mooscraft.game.interaction.actions.HelpAction;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class TerminalActionHandler implements ActionHandler {
 
     private Scanner scanner;
-    private List<Action> systemActions;
+    private static List<SystemAction> systemActions = List.of(new HelpAction(), new ExitAction());
     // used to synchronize parallel tasks
     private Object notifier;
     private Action awaitedAction;
@@ -22,23 +20,8 @@ public class TerminalActionHandler implements ActionHandler {
 
     public TerminalActionHandler(Renderer renderer) {
         this.renderer = renderer;
-        this.systemActions = new ArrayList<Action>();
         this.scanner = new Scanner(System.in);
         this.notifier = new Object();
-
-        this.systemActions.add(new GameAction() {
-            @Override
-            public void onCommand(String[] args, ActionHandler handler) {
-                System.out.println("hope this motivational message helps!");
-                System.out.println(Arrays.toString(args));
-            }
-
-            @Override
-            public boolean isInvoked(String[] args) {
-                return args[0].equals("help");
-            }
-        });
-        this.systemActions.add(new ExitAction());
 
         // create new parallel task that listens for user interaction with the terminal
         new Thread(() -> {
@@ -97,7 +80,13 @@ public class TerminalActionHandler implements ActionHandler {
         return renderer;
     }
 
+    @Override
+    public List<SystemAction> getSystemActions() {
+        return systemActions;
+    }
+
     public void setRenderer(Renderer renderer) {
         this.renderer = renderer;
     }
+
 }

@@ -1,10 +1,10 @@
 package de.on19.mooscraft.game.interaction.actions;
 
-import de.on19.mooscraft.game.interaction.Action;
 import de.on19.mooscraft.game.interaction.ActionHandler;
+import de.on19.mooscraft.game.interaction.SystemAction;
 import de.on19.mooscraft.renderer.Screen;
 
-public class ExitAction implements Action {
+public class ExitAction implements SystemAction {
 
     @Override
     public void onCommand(String[] args, ActionHandler handler) {
@@ -17,12 +17,17 @@ public class ExitAction implements Action {
 
     @Override
     public boolean isInvoked(String[] args) {
-        return args[0].equals("exit");
+        return args[0].equals(this.getAction());
     }
 
     @Override
-    public void onHelp() {
-        //here should be a help
-        //how to implement?
+    public String getAction() {
+        return "exit";
     }
+
+    @Override
+    public String getDescription() {
+        return "Beendet Mooscraft.";
+    }
+
 }

@@ -11,12 +11,8 @@ public abstract class GameAction implements Action {
     }
 
     @Override
-    public void onCommand(String[] args, ActionHandler renderer) {
-        // no implementation here
+    public void onCommand(String[] args, ActionHandler handler) {
+        // do nothing when not overwritten
     }
 
-    @Override
-    public void onHelp() {
-        // no help neccessary
-    }
 }
