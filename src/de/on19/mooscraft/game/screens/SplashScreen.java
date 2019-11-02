@@ -1,5 +1,7 @@
 package de.on19.mooscraft.game.screens;
 
+import de.on19.mooscraft.game.interaction.ActionHandler;
+import de.on19.mooscraft.game.interaction.actions.HelpAction;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
@@ -10,7 +12,7 @@ public class SplashScreen extends Screen {
      * Splashscreen: displays in the beginning
      */
 
-    public SplashScreen() {
+    public SplashScreen(ActionHandler handler) {
         super();
 
         String[] content = {
@@ -32,7 +34,8 @@ public class SplashScreen extends Screen {
         super.append(StringTools.emptyLines(2));
         super.append(new String[]{StringTools.centerInRow("≈≈≈ So lasset die Reise beginnen ≈≈≈", 112)});
         super.append(StringTools.emptyLines(2));
-        super.append(new String[]{"Verfügbare Befehle:", "<help> - Zeigt eine kleine Spieleinführung und alle verfügbaren Befehle an.", "<karte> - Zeigt eine Karte des aktuellen Spielfortschritts an."});
+        super.appendLine("Verfügbare Befehle:");
+        super.append(HelpAction.getSystemActionDescriptions(handler).toArray(new String[0]));
         super.append(StringTools.emptyLines(2));
         super.appendLine("Du hast alles verstanden? Dann gib zum Fortfahren bitte <weiter> ein.");
     }

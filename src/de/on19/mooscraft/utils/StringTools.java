@@ -101,4 +101,14 @@ public class StringTools {
         }
         return content;
     }
+
+    /**
+     * Tests case-insensitive whether a string contains another one
+     * @param inWhich string on which it should be determined whether it contains the wanted string
+     * @param wanted string which should be contained
+     * @return true or false
+     */
+    public static boolean contains(String inWhich, String wanted) {
+        return inWhich.toLowerCase().contains(wanted.toLowerCase());
+    }
 }

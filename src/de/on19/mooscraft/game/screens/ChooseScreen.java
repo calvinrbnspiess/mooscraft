@@ -1,5 +1,6 @@
 package de.on19.mooscraft.game.screens;
 
+import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
@@ -36,7 +37,7 @@ public class ChooseScreen extends Screen {
         return this.options;
     }
 
-    public void addInstruction(String instruction) {
+    public void setInstruction(String instruction) {
         this.instruction = instruction;
     }
 
@@ -71,7 +72,7 @@ public class ChooseScreen extends Screen {
 
         StringTools.append(content, StringTools.emptyLines(1));
 
-        content.add(instruction);
+        content.add(this.instruction);
 
         return content.toArray(new String[0]);
     }
