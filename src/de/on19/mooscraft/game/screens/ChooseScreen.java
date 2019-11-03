@@ -1,6 +1,5 @@
 package de.on19.mooscraft.game.screens;
 
-import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
@@ -41,9 +40,6 @@ public class ChooseScreen extends Screen {
         this.instruction = instruction;
     }
 
-    // A. ffff
-    // B. ggf
-    // C. fgg
     public String[] getFormattedOptions() {
         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
@@ -76,5 +72,4 @@ public class ChooseScreen extends Screen {
 
         return content.toArray(new String[0]);
     }
-
 }
