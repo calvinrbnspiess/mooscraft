@@ -1,19 +1,37 @@
+/**
+ *  colors for worlds
+ *
+ *  public static final String WORLDONE = "\u001b[1;95m";
+ public static final String WORLDTWO = "\u001b[1;92m";
+ public static final String WORLDTHREE = "\u001b[1;91m";
+ public static final String WORLDFOUR = "\u001b[1;96m";
+ color table:
+ https://en.wikipedia.org/wiki/ANSI_escape_code
+ Table about 3/4bit; use FG Code
+ *
+ */
+public class TestJansi {
 
-import org.fusesource.jansi.AnsiConsole;
-public class TestJansi{
-    public static final String WORLDONE = "\u001b[95";
-    public static final String WORLDTWO = "\u001b[92";
-    public static final String WORLDTHREE = "\u001b[91";
-    public static final String WORLDFOUR = "\u001b[96";
+    public static void main(String[] args) {
+        //color all following text
+        System.out.println("\u001b[1;92m Willkommen im Odenwald.");
+        System.out.println("Hello Magalia");
+        System.out.println("Hello Rogue");
+        System.out.println("Hello White Mage");
 
+        //just color a text snippet
+        System.out.println("\u001b[1;92m Willkommen im Odenwald.\u001b[0m\n");
+        System.out.println("Hello Magalia");
+        System.out.println("Hello Rogue");
+        System.out.println("Hello White Mage");
 
-    public static void main(String[] args){
-        AnsiConsole.systemInstall();
-        System.out.println(WORLDONE + " Willkommen im Odenwald");
-        System.out.println(WORLDTWO + " Willkommen in Mittelklinge");
-        System.out.println(WORLDTHREE + " Willkommen am Hexenturm Turismaga");
-        System.out.println(WORLDFOUR + " Willkommen am Hexenturm Arcis Borbetomagus");
+        //wold welcoming phrase
+        System.out.println("\u001b[1;95m Willkommen im Odenwald.");
+        System.out.println("\u001b[1;92m Willkommen in Mittelklinge.");
+        System.out.println("\u001b[1;91m Willkommen am Hexenturm Turismaga.");
+        System.out.println("\u001b[1;96m Willkommen in Arcis Barbetomagus.");
     }
+
 }
 /**Source for above Code
  * https://stackoverflow.com/questions/56140910/setting-up-a-classpath-for-jansi
