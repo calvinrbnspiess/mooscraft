@@ -11,8 +11,6 @@ import java.util.List;
 
 public class HelpAction implements DescriptedAction {
 
-    // TODO Should include GameAction that is waited for?
-
     public static String getActionDescription(DescriptedAction a) {
         return "<" + a.getAction() + "> - " + StringTools.wrapToLength(a.getDescription(), 112);
     }
