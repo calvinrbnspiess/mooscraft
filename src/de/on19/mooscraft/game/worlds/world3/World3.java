@@ -7,21 +7,22 @@ import de.on19.mooscraft.utils.StringTools;
 public class World3 extends World {
 
     public World3() throws UnsupportedOperationException {
-        super(new String[]{       StringTools.wrapToLength("Ein dichter Wald erwartet dich Ein bisschen mulmig ist dir zumute doch du weißt, du musst da durch um zur Burg Worms zu gelangen. Dieses Ziel treibt dich voran in die Dunkelheit. Auf dich warten überirdische Kämpfe, giftige Wesen, die im Odenwald lauern und dichter Nebel, der dir deine klare Sicht nimmt. Auch den berühmten Mester wirst du antreffen, also nimm dich in Acht, denn du weißt was über ihn erzählt wird.", 112), "                                                     .;;:,.                                                     ",
-                        "                                                    ,0MMMXl.                                                    ",
-                        "                                                   :KMMMMMWd.                                                   ",
-                        "                                                  cXMMMMMMMMk.                                                  ",
-                        "                                                .lNMMMMMMMMMWO'                                                 ",
-                        "                                               .oNMMMMMMMMMMMWO,                                                ",
-                        "                                              .xNMMMMMMMMMMMMMWK;                                               ",
-                        "                                              .,:OMMMMMMMMMMMKl;.                                               ",
-                        "                                                :XMMMMMMMMMMMNd.                                                ",
-                        "                                              .cKMMMMMMMMMMMMMNk'                                               ",
-                        "                                             .oXMMMMMMMMMMMMMMMWO,                                              ",
-                        "                                            .xWMMMMMMMMMMMMMMMMMMK;                                             ",
-                        "                                            ,kOOOOkONMMMMMWKOOOOOOl.                                            ",
-                        "                                                   'OMMMMMNc                                                    ",
-                        "                                                   .d0000KO,                                                    " },
+        super(new String[]{       StringTools.wrapToLength("Du befindest dich nun am Eingang der dritten Welt von Turrismaga, um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen, sie werden versuchen alles daran zu setzten dir deine magischen Kräfte sowie deine letzte Lebensenergie zu rauben also halt dich in acht.", 112),
+                        "                                             .:;. .::.    .:;. ,:.                                              ",
+                        "                                             .oo:,:oo:,,,,:oo:;lo'                                              ",
+                        "                                             .ldddddddddddddodddo.                                              ",
+                        "                                              .coooddoodddddoodc.                                               ",
+                        "                                               ,odddddddddddddd;                                                ",
+                        "                                               ,dddddoooodddddd,                                                ",
+                        "                                               .:ddddollodddddc.                                                ",
+                        "                                                ;ddddddddddddd:                                                 ",
+                        "                                               .cdddddddddddodc.                                                ",
+                        "                                               ,ddddddddddddood,                                                ",
+                        "                                               ;ddodddddddddddd:                                                ",
+                        "                                              .ldooddddooddddddo'                                               ",
+                        "                                              .loodddoooooodddoo,                                               ",
+                        "                                              ,ooodddooooooooooo;                                               ",
+                        "                                             .,;;;;;;;;;;;;;;;;;,.                                              "},
                 "Wähle einen Weg.");
 
         super.getSpotsPool().add(new Spot1(this));
