@@ -8,9 +8,9 @@ import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
-public class Spot1 extends Spot {
+public class Spot6 extends Spot {
 
-    public Spot1(World world) {
+    public Spot6(World world) {
         super(world);
     }
 
@@ -21,13 +21,15 @@ public class Spot1 extends Spot {
         s.append(StringTools.emptyLines(1));
         s.appendLine(game.getProgressIndicator(character));
         s.append(StringTools.emptyLines(2));
-        String text = "Mester lebt tief im Odenwald, alleine und mit einem kleinen Drachen “Exernius”. Begegnest du seiner vermoosten Hütte, gib acht! Denn die Nähe eines Eindringlings zu seinem Heim weckt Exernius und löst einen Stromkreis aus, aus welchem du nicht entfliehen kannst bis du Exernius besiegt hast, oder er dich.";
+        String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst kleine Fee. Sie möchte dir gerne einen Wunsch erfüllen, da sie gehört hat wie tapfer du bis hier warst. Mehr Lebensenergie, Stärke, Zauberkraft oder Willenskraft gewinnen?";
         s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Du wirst den Kampf aufnehmen. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Entscheide dich. Gib <weiter> ein, um fortzufahren.");
 
         game.getRenderer().printScreen(s, true);
-        character.addHealth(-5);
-        /*z.B. health zufügen
+
+        /* HIER FEHLT NOCH DIE AUSWAHL MÖGLICHKEIT GIBT ES DIE ÜBERHAUPT?
+         * oder kein Parameter wird bearbeitet
+         * z.B. health zufügen
          * character.addhealth(parameter eingeben)
          */
         try {
