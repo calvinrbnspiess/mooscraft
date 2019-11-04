@@ -2,12 +2,9 @@ package de.on19.mooscraft.game.worlds.world1;
 
 import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
-import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
-import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
@@ -29,7 +26,9 @@ public class Spot1 extends Spot {
         s.appendLine("Du wirst den Kampf aufnehmen. Gib <weiter> ein, um fortzufahren.");
 
         game.getRenderer().printScreen(s, true);
-
+        /**z.B. health zufügen
+         * character.addhealth(parameter eingeben)
+         */
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

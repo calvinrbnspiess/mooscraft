@@ -56,6 +56,11 @@ public class StringTools {
         //then remove consecutive whitespace
         text = text.trim().replaceAll("\\s{2,}", " ");
 
+        // fix bug when entering a too short string
+        if(text.length() < maxChars) {
+            return new String[] { text };
+        }
+
         List<String> lines = new ArrayList<String>();
         do {
             int position = maxChars;
