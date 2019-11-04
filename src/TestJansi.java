@@ -20,7 +20,7 @@ public class TestJansi {
         System.out.println("Hello White Mage");
 
         //just color a text snippet
-        System.out.println("\u001b[1;92m Willkommen im Odenwald.\u001b[0m\n");
+        System.out.println("\u001b[1;92m Willkommen im Odenwald.\u001b[0m");
         System.out.println("Hello Magalia");
         System.out.println("Hello Rogue");
         System.out.println("Hello White Mage");
