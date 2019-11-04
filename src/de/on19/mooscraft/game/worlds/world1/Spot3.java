@@ -23,7 +23,7 @@ public class Spot3 extends Spot {
         s.append(StringTools.emptyLines(2));
         String text = "Die Seherin sagt dir deine Zukunft voraus, dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet: “Ich sehe Dunkles kommen. Um deinem Untergang zu entkommen, brauchst du jenes, welches dir Kraft schenkt.” ";
         s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Du gibst 5 Einheiten deiner Stärke ab und gehst verwirrt weiter. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Verwirrt gehst du weiter. Gib <weiter> ein, um fortzufahren.");
 
         game.getRenderer().printScreen(s, true);
         character.addStrength(-5);
