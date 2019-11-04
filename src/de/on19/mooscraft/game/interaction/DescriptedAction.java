@@ -2,7 +2,7 @@ package de.on19.mooscraft.game.interaction;
 
 import de.on19.mooscraft.game.interaction.Action;
 
-public interface SystemAction extends Action {
+public interface DescriptedAction extends Action {
 
     // should return a description for this command which is used in case of showing helpful information
     String getDescription();

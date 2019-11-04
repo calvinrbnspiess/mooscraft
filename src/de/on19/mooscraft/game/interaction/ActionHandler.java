@@ -10,5 +10,7 @@ public interface ActionHandler {
 
     Renderer getRenderer();
 
-    List<SystemAction> getSystemActions();
+    List<DescriptedAction> getSystemActions();
+
+    Action getAwaitedAction();
 }

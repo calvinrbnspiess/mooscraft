@@ -1,22 +1,27 @@
 package de.on19.mooscraft.game.interaction.actions;
 
+import de.on19.mooscraft.game.interaction.Action;
 import de.on19.mooscraft.game.interaction.ActionHandler;
-import de.on19.mooscraft.game.interaction.SystemAction;
+import de.on19.mooscraft.game.interaction.DescriptedAction;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HelpAction implements SystemAction {
+public class HelpAction implements DescriptedAction {
 
     // TODO Should include GameAction that is waited for?
+
+    public static String getActionDescription(DescriptedAction a) {
+        return "<" + a.getAction() + "> - " + StringTools.wrapToLength(a.getDescription(), 112);
+    }
 
     public static List<String> getSystemActionDescriptions(ActionHandler handler) {
         List<String> lines = new ArrayList<String>();
 
-        for(SystemAction a : handler.getSystemActions()) {
-            lines.add("<" + a.getAction() + "> - " + StringTools.wrapToLength(a.getDescription(), 112));
+        for(DescriptedAction a : handler.getSystemActions()) {
+            lines.add(getActionDescription(a));
         }
 
         return lines;
@@ -24,8 +29,6 @@ public class HelpAction implements SystemAction {
 
     @Override
     public void onCommand(String[] args, ActionHandler handler) {
-        System.out.println("hope this motivational message helps!");
-
         Screen screen = new Screen();
         screen.append(new String[]{
               StringTools.centerInRow("≈≈≈ Befehlsübersicht ≈≈≈", 112),
@@ -35,6 +38,22 @@ public class HelpAction implements SystemAction {
         screen.append(StringTools.emptyLines(2));
 
         screen.append(getSystemActionDescriptions(handler).toArray(new String[0]));
+
+        screen.append(StringTools.emptyLines(2));
+
+
+        // Print description for awaitedAction
+
+        Action awaitedAction = handler.getAwaitedAction();
+
+        if(awaitedAction instanceof DescriptedAction) {
+            screen.append(new String[] {
+                    "Im Moment wird folgende Aktion erwartet:",
+                    getActionDescription((DescriptedAction) awaitedAction)
+            });
+        } else {
+            screen.appendLine("Im Moment wird keine Aktion erwartet.");
+        }
 
         handler.getRenderer().printScreen(screen, false);
     }

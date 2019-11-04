@@ -1,10 +1,10 @@
 package de.on19.mooscraft.game.interaction.actions;
 
 import de.on19.mooscraft.game.interaction.ActionHandler;
-import de.on19.mooscraft.game.interaction.SystemAction;
+import de.on19.mooscraft.game.interaction.DescriptedAction;
 import de.on19.mooscraft.renderer.Screen;
 
-public class ExitAction implements SystemAction {
+public class ExitAction implements DescriptedAction {
 
     @Override
     public void onCommand(String[] args, ActionHandler handler) {

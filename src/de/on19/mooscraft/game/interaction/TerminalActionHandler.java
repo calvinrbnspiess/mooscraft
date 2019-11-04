@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class TerminalActionHandler implements ActionHandler {
 
     private Scanner scanner;
-    private static List<SystemAction> systemActions = List.of(new HelpAction(), new ExitAction());
+    private static List<DescriptedAction> systemActions = List.of(new HelpAction(), new ExitAction());
     // used to synchronize parallel tasks
     private Object notifier;
     private Action awaitedAction;
@@ -81,8 +81,13 @@ public class TerminalActionHandler implements ActionHandler {
     }
 
     @Override
-    public List<SystemAction> getSystemActions() {
+    public List<DescriptedAction> getSystemActions() {
         return systemActions;
+    }
+
+    @Override
+    public Action getAwaitedAction() {
+        return this.awaitedAction;
     }
 
     public void setRenderer(Renderer renderer) {

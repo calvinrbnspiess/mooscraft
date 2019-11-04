@@ -3,6 +3,7 @@ package de.on19.mooscraft.game.worlds.world1;
 import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.ActionHandler;
+import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
@@ -30,12 +31,7 @@ public class Spot1 extends Spot {
         game.getRenderer().printScreen(s, true);
 
         try {
-            game.getHandler().waitForAction(new GameAction() {
-                @Override
-                public boolean isInvoked(String[] args) {
-                    return args[0].equals("weiter");
-                }
-            });
+            game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
             System.out.println("exception");
 
