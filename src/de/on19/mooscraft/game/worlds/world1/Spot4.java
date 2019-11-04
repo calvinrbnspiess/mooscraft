@@ -23,11 +23,12 @@ public class Spot4 extends Spot {
         s.append(StringTools.emptyLines(2));
         String text = "Auf einmal hörst du ein Zischen, ganz aus der Nähe. Eine schwarz glänzende Schlange bewegt sich auf dich zu. Bist du schnell genug, entkommst du, ansonsten verlierst du Lebensenergie aufgrund des giftigen Bisses.";
         s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Erschöpft gehst du weiter. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Du verlierst 5 Einheiten deiner Lebensenergie und gehst erschöpft weiter. Gib <weiter> ein, um fortzufahren.");
 
         game.getRenderer().printScreen(s, true);
         character.addHealth(-5);
-        /*z.B. health zufügen
+        /* Stärke >40
+            z.B. health zufügen
          * character.addhealth(parameter eingeben)
          */
         try {
