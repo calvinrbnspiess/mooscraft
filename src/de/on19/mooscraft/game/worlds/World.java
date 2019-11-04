@@ -93,6 +93,8 @@ public abstract class World {
             }
         });
 
+        // TODO this.chosenPath should never be null
+
         for(Spot spot : this.chosenPath) {
             character.increaseVisitedSpots();
             spot.onEnter(game, character);
