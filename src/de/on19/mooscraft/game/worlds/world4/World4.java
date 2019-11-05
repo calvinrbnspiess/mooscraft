@@ -25,7 +25,7 @@ public class World4 extends World {
                         "                                    lWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                     ",
                         "                                    oWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                     ",
                         "                                    ;dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo.                                   "},
-                "Wähle einen Weg.");
+                "Du hast die letzte Gabelung erreicht. Entscheide dich bitte welcher Weg dich zu deinem Ziel bringt..");
 
         super.getSpotsPool().add(new Spot1(this));
         super.getSpotsPool().add(new Spot2(this));
@@ -36,9 +36,9 @@ public class World4 extends World {
         super.getSpotsPool().add(new Spot6(this));
 
         // add all 6 spots
-        super.generatePath("Den linken Wege musste gehen");
+        super.generatePath("Gehst du links, lauern dunkle Gestalten in den Tiefen des Moors. ");
         super.generatePath(
-                "Nur wer sein Ziel kennt, findet diesen Weg.");
+                "Auf der anderen Seite sieht es ganz danach aus, als wenn dich das Moor tief in den Sumpf hinunterziehen will.");
     }
 
 }
