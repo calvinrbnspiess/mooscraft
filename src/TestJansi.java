@@ -30,6 +30,8 @@ public class TestJansi {
         System.out.println("\u001b[1;92m Willkommen in Mittelklinge.");
         System.out.println("\u001b[1;91m Willkommen am Hexenturm Turismaga.");
         System.out.println("\u001b[1;96m Willkommen in Arcis Barbetomagus.");
+
+
     }
 
 }
