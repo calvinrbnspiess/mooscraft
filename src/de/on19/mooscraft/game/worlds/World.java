@@ -3,6 +3,7 @@ package de.on19.mooscraft.game.worlds;
 import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.ActionHandler;
+import de.on19.mooscraft.game.interaction.actions.ChooseAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.renderer.Renderer;
@@ -23,7 +24,6 @@ public abstract class World {
     private Random randomizer;
 
     private final static int PATH_LENGTH = 3;
-    private Spot[] chosenPath;
 
     /**
      * Every subclass should push all allowed spots to spotsPool and initializes paths
@@ -70,33 +70,27 @@ public abstract class World {
         return PATH_LENGTH;
     }
 
-    public void setChosenPath(Spot[] chosenPath) {
-        this.chosenPath = chosenPath;
-    }
-    
     public void onEnter(Game game, Character character) throws InterruptedException {
         game.printGameScreen(this.screen);
 
-        game.getHandler().waitForAction(new GameAction() {
-            @Override
-            public void onCommand(String[] args, ActionHandler handler) {
-                // TODO user enters "." or only a part of option that is contained in every option
-                // TODO should merge args to single string?
+        ChooseAction chooseAction = new ChooseAction(this.screen);
 
+        // character needs to be uniquely chosen
+        while(chooseAction.getChosenOption() == null) {
+            game.getHandler().waitForAction(chooseAction);
 
-                // we need to leave this onCommand-Method in order to be able to wait for new actions, so we set an class variable with chosenPath
-                for(Spot[] path : paths) {
-                    if (!StringTools.contains(screen.getFormattedOptions()[paths.indexOf(path)], args[0])) {
-                        continue;
-                    }
-                    setChosenPath(path);
-                }
+            if(chooseAction.getChosenOption() == null) {
+                Screen s = new Screen();
+                s.appendLine("Du hast keine eindeutige Option gewählt. Probier's nochmal.");
+                game.getRenderer().printScreen(s, false);
             }
-        });
+        }
 
-        // TODO this.chosenPath should never be null
+        // find chosenPath by comparing index of formatted option with chosenOption
 
-        for(Spot spot : this.chosenPath) {
+        Spot[] chosenPath = paths.get(Arrays.asList(screen.getFormattedOptions()).indexOf(chooseAction.getChosenOption()));
+
+        for(Spot spot : chosenPath) {
             character.increaseVisitedSpots();
             spot.onEnter(game, character);
         }
