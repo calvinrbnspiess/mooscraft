@@ -118,7 +118,7 @@ public class Game {
         String hexe3 = "Wählst du mich als Spielcharakter, so erhälst du die größte \u001b[1;91mWillenskraft " +
                 "[50]\u001b[0m um ans " +
                 "Ziel zu kommen. Gefahren des Weges Bescheid. Jedoch bin ich dementsprechend alt und habe " +
-                "nicht mehr so viel Lebensenergie \u001b[1;91m[25]\u001b[0m und \u001b[1;91mStärke [20]\u001b[0m. Dafür " +
+                "nicht mehr so viel \u001b[1;91mLebensenergie [25]\u001b[0m und \u001b[1;91mStärke [20]\u001b[0m. Dafür " +
                 "sind meine \u001b[1;91mZauberkraft [40]\u001b[0m und \u001b[1;91mWeisheit [30]\u001b[0m umso stärker.";
         chooseCharacter.append(StringTools.addPadding(hexe3, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
