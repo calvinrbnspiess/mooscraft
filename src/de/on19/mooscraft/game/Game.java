@@ -302,8 +302,6 @@ public class Game {
 
 
         //new Screen for last action: win the castle
-        //TODO: health als Wert in if-Bedingung korrekt einfügen
-
         String woncastel = "Du hast die Monster von Mooscraft besiegt und es geschafft die Burg mit deiner verbliebenen Energie zu erobern. Du darfst dich nun herrschaftlich als neuen oder neue HerrscherIn über Mooscraft betiteln";
         String lostcastle = "Oh nein! Die Kämpfe gegen Monster Mester und Preisler haben dir die Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg die Wände hinunter in die Tiefe. beginne das Spiel erneut und wähle deine Spielparameter dieses Mal weiser.";
 
