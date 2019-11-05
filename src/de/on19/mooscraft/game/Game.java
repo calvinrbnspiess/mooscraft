@@ -108,7 +108,7 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(1));
         chooseCharacter.append(StringTools.addPadding(hexe1, 112, 12));
         String hexe2 = "Ego fuo dius imperium Turrismaga!!!";
-        chooseCharacter.append(StringTools.emptyLines(1);
+        chooseCharacter.append(StringTools.emptyLines(1));
         chooseCharacter.append(StringTools.addPadding(hexe2, 112, 12));
         String hexe3 = "Wählst du mich als Spielcharakter, so erhälst du die größte \u001b[1;91mWillenskraft " +
                 "[50]\u001b[0m um ans " +
