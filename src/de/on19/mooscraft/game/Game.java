@@ -93,7 +93,6 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(2));
         //Intro Hexe Magalia
         String helloHexe = "> \u001b[1;96m Ich bin Hexe Magalia.\u001b[0m";
-        chooseCharacter.append(StringTools.emptyLines(2));
         String[] iconWitch = new String[]{
                 "        ^ ",
                 "       / \\ ",
@@ -107,8 +106,9 @@ public class Game {
                 "  \\______________/ "};
 
         chooseCharacter.append(StringTools.addPadding(helloHexe, 112, 12));
+        chooseCharacter.append(StringTools.emptyLines(2));
         chooseCharacter.append(iconWitch);
-
+        chooseCharacter.append(StringTools.emptyLines(1));
         String hexe1 = "Ich helfe dir durch das Spiel mit meinen dunklen, bösen Zaubertränken. Mein Ziel ist es die Macht mit Hilfe der Magie an mich zu reißen. Ich will alles beherrschen und durch meine Dämonenbeschwörungen allem Sterblichem ein Ende setzen.";
         chooseCharacter.append(StringTools.emptyLines(1));
         chooseCharacter.append(StringTools.addPadding(hexe1, 112, 12));
@@ -125,7 +125,6 @@ public class Game {
 
         //Intro Kriegerin Bellatrix
         String helloWarrior = "> \u001b[1;96mIch bin Kriegerin Bellatrix.\u001b[0m";
-        chooseCharacter.append(StringTools.emptyLines(2));
         String[] iconWarrior = new String[]{
                 "        ^",
                 "       / \\",
@@ -139,10 +138,10 @@ public class Game {
                 "       / \\",
                 "       / \\",
         };
-        chooseCharacter.append(StringTools.emptyLines(2));
         chooseCharacter.append(StringTools.addPadding(helloWarrior, 112, 12));
+        chooseCharacter.append(StringTools.emptyLines(2));
         chooseCharacter.append(iconWarrior);
-
+        chooseCharacter.append(StringTools.emptyLines(2));
         String warrior1 = "Meine Aufgabe ist es im Land meines Vaters, dem Herrscher von Arcis Borbetomagus, die Burg in Worms vor unerwünschten Eindringlingen zu bewahren. Ich komme in Frieden, aber besitze genügend \u001b[1;91mStärke [50]\u001b[0m und \u001b[1;91mWillenskraft [40]\u001b[0m um unser Land zu verteidigen. Als Tochter des Herrschers bin ich jung und voller \u001b[1;91mLebensenergie [80]\u001b[0m. Jedoch mangelt es mit an \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit [10]\u001b[0m.";
         chooseCharacter.append(StringTools.addPadding(warrior1, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
@@ -164,7 +163,7 @@ public class Game {
         };
         chooseCharacter.append(StringTools.addPadding(helloWhiteMage, 112, 12));
         chooseCharacter.append(iconWhiteMage);
-
+        chooseCharacter.append(StringTools.emptyLines(2));
         String whiteMage1 = "Ich bin der älteste Charakter in Mooscraft; jedoch nur äußerlich. Auf den ersten Blick mag mein sehr langer weißer Bart aussehen als wäre ich gealtert. Jedoch habe ich Mittels meiner \u001b[1;91mWeisheit [50]\u001b[0m einen Zaubertrank entwickelt, welcher mich stets auf dem Stand eines 25 Jahre jungen Burschen hält. Meine \u001b[1;91mLebensenergie [80]\u001b[0m reicht aus um den Weg mit etwas Geschick zu meistern. Als Urgestein der Magie habe ich natürlich auch stets einen Zauberspruch zur Verteidigung auf den Lippen \u001b[1;91mZauberkraft [35]\u001b[0m. Leider hat der Jungtrunk auf Dauer eine kleine Nebenwirkung. Er wirkt sich auf meine \u001b[1;91mWillenskraft [20]\u001b[0m aus worauf hin ich kurzzeitig zum Komiker mutiere \u001b[1;91m(Willenskraft [20])\u001b[0m.";
         chooseCharacter.append(StringTools.addPadding(whiteMage1, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
@@ -185,8 +184,10 @@ public class Game {
                 "          |_| ",
         };
 
-        chooseCharacter.append(StringTools.addPadding(helloWhiteMage, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(hellorogue, 112, 12));
+        chooseCharacter.append(StringTools.emptyLines(2));
         chooseCharacter.append(iconRogue);
+        chooseCharacter.append(StringTools.emptyLines(2));
         String rogue1 = "Meine Hinterhalte sind deine Fallen. Mit schlauen Tricks verzerre ich deine " +
                 "Sinneswahrnehmung und nichts ist mehr so wie es scheint \u001b[1;91m(Willenskraft [30])" +
                 "\u001b[0m. Ich bin klug und fix \u001b[1;91m(Lebensenergie [70])\u001b[0m. Ich kann mich schnell auf Land " +
@@ -222,7 +223,7 @@ public class Game {
 
         String hellomermaidman = "> \u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m";
         chooseCharacter.append(StringTools.addPadding(hellomermaidman, 112, 12));
-
+        chooseCharacter.append(StringTools.emptyLines(2));
         chooseCharacter.append(iconMermaidMan);
         chooseCharacter.append(StringTools.emptyLines(1));
 
