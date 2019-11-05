@@ -19,8 +19,6 @@ public class Spot6 extends Spot {
         Screen s = new Screen();
         s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.append(game.getStatsIndicator(character));
-        s.append(StringTools.emptyLines(2));
         String text = "Ein fieser unvorhersehbarer Angriff des Schützen aus der Ferne sorgt dafür, dass du nun den Weg mit einem Pfeil in deinem Körper weiter gehen musst.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Durch diesen Angriff verlierst du 20 Einheiten Lebensenergie. Gib <weiter> ein, um fortzufahren.");

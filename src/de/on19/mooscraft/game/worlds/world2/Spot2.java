@@ -19,8 +19,6 @@ public class Spot2 extends Spot {
         Screen s = new Screen();
         s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.append(game.getStatsIndicator(character));
-        s.append(StringTools.emptyLines(2));
         String text = "Du begegnest einem groß gebauten schlanken Wesen mit langen hellen Haaren. Ein Elf kommt auf dich zu. Aber keine Angst, Elfen sind friedliche Wesen, er erklärt dir den schnellsten Weg zur Burg, so dass du dich wieder auf den Weg machst. Immer noch voller Hoffnung.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine(" Du begibst dich wieder auf den Weg. Gib <weiter> ein, um fortzufahren.");
