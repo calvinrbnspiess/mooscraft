@@ -6,6 +6,7 @@ import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.renderer.Renderer;
+import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.StringTools;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public abstract class World {
         this.paths = new ArrayList<Spot[]>();
         this.screen = new ChooseScreen();
 
-        this.screen.setContent(description);
+        this.screen.append(description);
         this.screen.setInstruction(instruction);
     }
 
@@ -74,7 +75,7 @@ public abstract class World {
     }
     
     public void onEnter(Game game, Character character) throws InterruptedException {
-        game.getRenderer().printScreen(this.screen);
+        game.printGameScreen(this.screen);
 
         game.getHandler().waitForAction(new GameAction() {
             @Override

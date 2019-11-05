@@ -3,6 +3,7 @@ package de.on19.mooscraft.renderer;
 import de.on19.mooscraft.utils.StringTools;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Screen {
@@ -23,6 +24,10 @@ public class Screen {
     public void clear() {
         this.lines.clear();
         this.debugInformationLines.clear();
+    }
+
+    public void prepend(String[] lines) {
+        this.lines.addAll(0, Arrays.asList(lines));
     }
 
     public void append(String[] lines) {

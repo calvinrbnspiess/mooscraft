@@ -19,13 +19,13 @@ public class Spot4 extends Spot {
         Screen s = new Screen();
         s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
+        s.append(game.getStatsIndicator(character));
         s.append(StringTools.emptyLines(2));
         String text = "Am Eingang des Hexenturmes wartet ein sprechender Rabe als Komplizin der Hausherrin auf dich. Er verlangt als Wegzoll einer deiner kostbaren Zaubertränke.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Somit verlierst du 10 Einheiten an Zauberkraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.getRenderer().printScreen(s, true);
+        game.printGameScreen(s);
         character.addWitchcraft(-10);
 
         try {

@@ -19,13 +19,13 @@ public class Spot1 extends Spot {
         Screen s = new Screen();
         s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
+        s.append(game.getStatsIndicator(character));
         s.append(StringTools.emptyLines(2));
         String text = "Nahe am Wasser da lebts sich gut. Albert seine Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus, manche schenken dir beim Vernaschen, extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen, ziehen dir gegenteilig dazu einiges davon ab, so dass du am Ende deiner Kräfte bist.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du probierst eine blau leuchtende Blume und verlierst 5 Einheiten Willenskraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.getRenderer().printScreen(s, true);
+        game.printGameScreen(s);
         //character.addHealth(10);
         /*extra Stärke, Willenskraft oder Lebensenergie (jeweils +10) ?
         (Stärke, Lebensenergie oder Willenskraft -5, per Zufall?)

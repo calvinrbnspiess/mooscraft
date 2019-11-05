@@ -33,6 +33,16 @@ public class Game {
         this.worlds = List.of(new World1(), new World2(), new World3(), new World4());
     }
 
+    // print screen and status information
+    public void printGameScreen(Screen prior) {
+        Screen screen = new Screen();
+        screen.append(this.getStatsIndicator(this.character));
+        screen.append(StringTools.emptyLines(1));
+        screen.append(prior.getContent());
+
+        this.renderer.printScreen(screen, true);
+    }
+
     public int getSpotsAmount() {
         int i = 0;
         for (World w : this.worlds) {
@@ -41,25 +51,74 @@ public class Game {
         return i;
     }
 
+    public String getPlayerIndicator(Character character) {
+        String name = "Spieler: " + character.getName() + " (" + this.getCharacterClass(character) + ")";
+        String health = "Lebensenergie (" + character.getHealth() + "/100) " + StringTools.repeat("❤",  (int) Math.ceil((float) character.getHealth() / 10));
+
+        int indicatorLength = name.length() + health.length();
+        int remainingSpace = 112 - indicatorLength; // should not be (x < 0)
+
+        return health + StringTools.repeat(" ", remainingSpace) + name;
+    }
+
+    public String[] getStatsIndicator(Character character) {
+        String strength = "Stärke " + character.getStrength() + "/50";
+        String witchcraft = "Zauberkraft " + character.getWitchcraft() + "/50";
+        String willpower = "Willenskraft " + character.getWillpower() + "/50";
+        String wisdom = "Weisheit " + character.getWisdom() + "/50";
+
+        int statusLength = strength.length() + witchcraft.length() + willpower.length() + wisdom.length();
+        int remainingSpace = 112 - statusLength; // should not be (x < 0)
+
+        // 4 properties -> 3 gaps between
+        String surroundingSpace = StringTools.repeat(" ", (int) Math.ceil(remainingSpace / 3));
+
+        String statusLine = strength + surroundingSpace + witchcraft + surroundingSpace + willpower + surroundingSpace + wisdom;
+
+        return new String[] {
+                StringTools.repeat("━", 112),
+                this.getPlayerIndicator(character),
+            statusLine,
+            StringTools.repeat("━", 112),
+            this.getProgressIndicator(character),
+                StringTools.repeat("━", 112)
+        };
+    }
+
+    public String getCharacterClass(Character character) {
+        switch(character.getClass().getSimpleName()) {
+            case "MermaidMan":
+                return "Meerjungfraumann";
+            case "Rogue":
+                return "Schurke";
+            case "Warrior":
+                return "Kriegerin";
+            case "WhiteMage":
+                return "Weißer Magier";
+            case "Witch":
+                return "Hexe";
+        }
+        return "Charakter";
+    }
+
     public String getProgressIndicator(Character character) {
-        String indicator = "";
+        String indicator = "Fortschritt ";
 
         int visitedSpots = character.getVisitedSpots();
         int iterationIndex = 0;
 
         // 128chars terminal width, 4 chars percentage, and two chars for each progressbar on each side
-        int indicatorLength = (int) Math.floor((112 - 4 - (this.worlds.size() * 2)) / this.worlds.size());
+        int indicatorLength = (int) Math.floor((112 - 4 - indicator.length() - (this.worlds.size() * 2)) / this.worlds.size());
         for (World w : this.worlds) {
-            indicator = indicator + "[";
+            indicator = indicator + "|";
 
             int indicatorSpotLength = (int) indicatorLength / w.getPathLength();
-            System.out.println(indicatorSpotLength);
             for (int i = 0; i < w.getPathLength(); i++) {
                 iterationIndex++;
-                indicator += StringTools.repeat(visitedSpots >= iterationIndex ? "#" : "_", indicatorSpotLength);
+                indicator += StringTools.repeat(visitedSpots >= iterationIndex ? "█" : "░", indicatorSpotLength);
             }
 
-            indicator = indicator + "]";
+            indicator = indicator + "|";
         }
 
         int spots = this.getSpotsAmount();
@@ -68,7 +127,7 @@ public class Game {
 
         indicator = indicator + " " + Math.round(percentage) + "%";
 
-        return indicator;
+        return StringTools.centerInRow(indicator, 112);
     }
 
     //sequential processing of the following lines
@@ -293,8 +352,6 @@ public class Game {
         Screen printName = new Screen();
         printName.append(new String[]{StringTools.wrapToLength("Viel Erfolg auf deinem Weg " + character.getName(), 112)});
         renderer.printScreen(printName, true);
-
-        Thread.sleep(4000);
 
         for (World w : this.worlds) {
             w.onEnter(this, character);

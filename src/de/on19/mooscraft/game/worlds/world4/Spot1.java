@@ -19,13 +19,13 @@ public class Spot1 extends Spot {
         Screen s = new Screen();
         s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
+        s.append(game.getStatsIndicator(character));
         s.append(StringTools.emptyLines(2));
         String text = "Du triffst auf einen Waffenhändler er händigt dir zu deiner Verteidigung eine Waffe aus.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du bekommst 10 Einheiten an Stärke.");
 
-        game.getRenderer().printScreen(s, true);
+        game.printGameScreen(s);
         character.addStrength(10);
 
         try {
