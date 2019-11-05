@@ -48,12 +48,11 @@ public class Game {
         int iterationIndex = 0;
 
         // 128chars terminal width, 4 chars percentage, and two chars for each progressbar on each side
-        int indicatorLength = (int) Math.floor((128 - 4 - this.worlds.size() * 2) / this.worlds.size());
-
+        int indicatorLength = (int) Math.floor((112 - 4 - (this.worlds.size() * 2)) / this.worlds.size());
         for (World w : this.worlds) {
             indicator = indicator + "[";
 
-            int indicatorSpotLength = (int) Math.floor(indicatorLength / w.getPathLength());
+            int indicatorSpotLength = (int) indicatorLength / w.getPathLength();
             System.out.println(indicatorSpotLength);
             for (int i = 0; i < w.getPathLength(); i++) {
                 iterationIndex++;
