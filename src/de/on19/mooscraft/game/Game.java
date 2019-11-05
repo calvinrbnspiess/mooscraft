@@ -109,10 +109,10 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(1));
         chooseCharacter.append(StringTools.addPadding(hexe2, 112, 12));
         String hexe3 = "Wählst du mich als Spielcharakter, so erhälst du die größte \u001b[1;91mWillenskraft " +
-                "[50][0m um ans " +
+                "[50]\u001b[0m um ans " +
                 "Ziel zu kommen. Gefahren des Weges Bescheid. Jedoch bin ich dementsprechend alt und habe " +
-                "nicht mehr so viel Lebensenergie \u001b[1;91m[25][0m und \u001b[1;91mStärke [20][0m. Dafür " +
-                "sind meine \u001b[1;91mZauberkraft [40][0m und \u001b[1;91mWeisheit [30][0m umso stärker.";
+                "nicht mehr so viel Lebensenergie \u001b[1;91m[25]\u001b[0m und \u001b[1;91mStärke [20]\u001b[0m. Dafür " +
+                "sind meine \u001b[1;91mZauberkraft [40]\u001b[0m und \u001b[1;91mWeisheit [30]\u001b[0m umso stärker.";
         chooseCharacter.append(StringTools.addPadding(hexe3, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
@@ -137,10 +137,10 @@ public class Game {
 
         String warrior1 = "Meine Aufgabe ist es im Land meines Vaters, dem Herrscher von Arcis Borbetomagus," +
                 "die Burg in Worms vor unerwünschten Eindringlingen zu bewahren. Ich komme in Frieden, aber " +
-                "besitze genügend \u001b[1;91mStärke [50][0m und \u001b[1;91mWillenskraft [40][0m um unser " +
+                "besitze genügend \u001b[1;91mStärke [50]\u001b[0m und \u001b[1;91mWillenskraft [40]\u001b[0m um unser " +
                 "Land zu verteidigen. Als Tochter des Herrschers bin ich jung und voller \u001b[1;" +
-                "91mLebensenergie [80]0m. " +
-                "Jedoch mangelt es mit an \u001b[1;91mZauberkraft [10][0m und \u001b[1;91mWeisheit [10][0m.";
+                "91mLebensenergie [80]\u001b[0m. " +
+                "Jedoch mangelt es mit an \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit [10]\u001b[0m.";
         chooseCharacter.append(StringTools.addPadding(warrior1, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
@@ -164,13 +164,13 @@ public class Game {
 
         String whiteMage1 = "Ich bin der älteste Charakter in Mooscraft; jedoch nur äußerlich. Auf den ersten" +
                 " Blick mag mein sehr langer weißer Bart aussehen als wäre ich gealtert. Jedoch habe ich " +
-                "Mittels meiner \u001b[1;91mWeisheit [50][0m einen Zaubertrank entwickelt, welcher mich stets" +
-                " auf dem Stand eines 25 Jahre jungen Burschen hält. Meine \u001b[1;91mLebensenergie [80][0m " +
+                "Mittels meiner \u001b[1;91mWeisheit [50]\u001b[0m einen Zaubertrank entwickelt, welcher mich stets" +
+                " auf dem Stand eines 25 Jahre jungen Burschen hält. Meine \u001b[1;91mLebensenergie [80]\u001b[0m " +
                 "reicht aus um den Weg mit etwas Geschick zu meistern. Als Urgestein der Magie habe ich natürlich auch stets einen " +
-                "Zauberspruch zur Verteidigung auf den Lippen \u001b[1;91mZauberkraft [35][0m. Leider hat der" +
+                "Zauberspruch zur Verteidigung auf den Lippen \u001b[1;91mZauberkraft [35]\u001b[0m. Leider hat der" +
                 " Jungtrunk auf Dauer eine kleine Nebenwirkung. Er wirkt sich auf meine \u001b[1;" +
-                "91mWillenskraft [20][0m aus worauf hin ich kurzzeitig zum Komiker mutiere \u001b[1;91m" +
-                "(Willenskraft [20])[0m.";
+                "91mWillenskraft [20]\u001b[0m aus worauf hin ich kurzzeitig zum Komiker mutiere \u001b[1;91m" +
+                "(Willenskraft [20])\u001b[0m.";
         chooseCharacter.append(StringTools.addPadding(whiteMage1, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
@@ -193,14 +193,14 @@ public class Game {
         chooseCharacter.append(StringTools.addPadding(helloWhiteMage, 112, 12));
         chooseCharacter.append(iconRogue);
         String rogue1 = "Meine Hinterhalte sind deine Fallen. Mit schlauen Tricks verzerre ich deine " +
-                "Sinneswahrnehmung und nichts ist mehr so wie es scheint \u001b[1;91m(Willenskraft [30])[0. " +
-                "Ich bin klug und fix \u001b[1;91m(Lebensenergie [70])[0m. Ich kann mich schnell auf Land " +
+                "Sinneswahrnehmung und nichts ist mehr so wie es scheint \u001b[1;91m(Willenskraft [30])" +
+                "\u001b[0m. Ich bin klug und fix \u001b[1;91m(Lebensenergie [70])\u001b[0m. Ich kann mich schnell auf Land " +
                 "fortbewegen und kenne die besten Verstecke. Wählst du mich, bist du cleverer als die Anderen und durchblickst jede " +
                 "Situation mit einem kühlen Kopf. Vor Wasser bin ich allerdings scheu und durch meine " +
-                "Cleverness mussten meine Muskeln leiden. Dadurch ist meine \u001b[1;91mStärke [30][0m nicht " +
+                "Cleverness mussten meine Muskeln leiden. Dadurch ist meine \u001b[1;91mStärke [30]\u001b[0m nicht " +
                 "ausreichend für einen Kampf auf Augenhöhe. Außerdem bin ich wenig bewandert in den Feldern der Zauberkraft und des" +
-                " Wissens, wodurch ich nur wenig \u001b[1;91mZauberkraft [10][0m und \u001b[1;91mWeisheit " +
-                "[10][0m bieten kann.";
+                " Wissens, wodurch ich nur wenig \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit " +
+                "[10]\u001b[0m bieten kann.";
         chooseCharacter.append(StringTools.addPadding(rogue1, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
@@ -232,12 +232,13 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(1));
 
         String mermaidman1 = "Im Wasser bin ich unschlagbar. Dort ist meine Heimat und diese beschütze ich " +
-                "mit den mir gegebenen Fähigkeiten \u001b[1;91m(Willenskraft [40])[0m. Geboren bin ich im " +
+                "mit den mir gegebenen Fähigkeiten \u001b[1;91m(Willenskraft [40])\u001b[0m. Geboren bin ich im " +
                 "Fluss Mittelklinge, welchen ich kenne wie meine Westentasche, da ich nun schon ein Weilchen auf " +
-                "dieser Welt wandle \u001b[1;91m(Lebensenergie [50])[0m. Wählst du mich, sind deine Chancen " +
-                "auf Land geringer, dafür im Wasser umso höher. Auch an \u001b[1;91mStärke [40][0m habe ich " +
+                "dieser Welt wandle \u001b[1;91m(Lebensenergie [50])\u001b[0m. Wählst du mich, sind deine Chancen " +
+                "auf Land geringer, dafür im Wasser umso höher. Auch an \u001b[1;91mStärke [40]\u001b[0m habe ich " +
                 "über die Jahre zugelegt und bekämpfe in der Nähe von Wasser jeden Gegner. Mit \u001b[1;" +
-                "91mZauberkraft [10]0m oder tiefer  \u001b[1;91mWeisheit [30][0m kann ich dagegen nicht auftrumphen.";
+                "91mZauberkraft [10]\u001b[0m oder tiefer  \u001b[1;91mWeisheit [30]\u001b[0m kann ich dagegen nicht " +
+                "auftrumphen.";
         chooseCharacter.append(StringTools.addPadding(mermaidman1, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
