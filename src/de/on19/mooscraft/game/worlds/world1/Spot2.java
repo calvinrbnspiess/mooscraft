@@ -17,7 +17,7 @@ public class Spot2 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Mitten im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
         s.appendLine(game.getProgressIndicator(character));
         s.append(StringTools.emptyLines(2));

@@ -17,7 +17,7 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Im Nebel ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
         s.appendLine(game.getProgressIndicator(character));
         s.append(StringTools.emptyLines(2));
@@ -27,10 +27,6 @@ public class Spot5 extends Spot {
 
         game.getRenderer().printScreen(s, true);
 
-        /*oder kein Parameter wird bearbeitet
-         * z.B. health zufügen
-         * character.addhealth(parameter eingeben)
-         */
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

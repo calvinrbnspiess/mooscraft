@@ -21,9 +21,9 @@ public class Spot1 extends Spot {
         s.append(StringTools.emptyLines(1));
         s.appendLine(game.getProgressIndicator(character));
         s.append(StringTools.emptyLines(2));
-        String text = "Mester lebt tief im Odenwald, alleine und mit einem kleinen Drachen “Exernius”. Begegnest du seiner vermoosten Hütte, gib acht! Denn die Nähe eines Eindringlings zu seinem Heim weckt Exernius und löst einen Stromkreis aus, aus welchem du nicht entfliehen kannst bis du Exernius besiegt hast, oder er dich.";
+        String text = "Mester lebt tief im Odenwald, alleine und mit einem kleinen Drachen “Exernius”. Begegnest du seiner vermoosten Hütte, gib acht! Denn die Nähe eines Eindringlings zu seinem Heim weckt Exernius und löst einen Stromkreis aus, aus welchem du nicht entfliehen kannst bis Exernius dich besiegt hat.";
         s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Du wirst den Kampf aufnehmen und verlierst 5 Einheiten an Lebensenergie. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Du nimmst den Kampf auf und verlierst 5 Einheiten an Lebensenergie. Gib <weiter> ein, um fortzufahren.");
 
         game.getRenderer().printScreen(s, true);
         character.addHealth(-5);
