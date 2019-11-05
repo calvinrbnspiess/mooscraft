@@ -35,7 +35,7 @@ public class Game {
 
     public int getSpotsAmount() {
         int i = 0;
-        for(World w : this.worlds) {
+        for (World w : this.worlds) {
             i += w.getPathLength();
         }
         return i;
@@ -47,10 +47,10 @@ public class Game {
         int visitedSpots = character.getVisitedSpots();
         int iterationIndex = 0;
 
-        for(World w : this.worlds) {
+        for (World w : this.worlds) {
             indicator = indicator + "[";
 
-            for(int i = 0 ; i < w.getPathLength(); i++) {
+            for (int i = 0; i < w.getPathLength(); i++) {
                 iterationIndex++;
                 indicator += visitedSpots >= iterationIndex ? "#" : "_";
             }
@@ -87,8 +87,8 @@ public class Game {
         chooseCharacter.append(StringTools.addPadding(introWorld, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
         //Intro Hexe Magalia
-        String helloHexe = "\u001b[1;96mIch bin Hexe Magalia.[0m";
-        String[] iconWitch =                new String[]{
+        String helloHexe = "\u001b[1;96mIch bin Hexe Magalia.\u001b[0m";
+        String[] iconWitch = new String[]{
                 "        ^ ",
                 "       / \\ ",
                 "        \\  \\",
@@ -120,8 +120,8 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro Kriegerin Bellatrix
-        String helloWarrior = "\u001b[1;96mIch bin Kriegerin Bellatrix.[0m";
-        String[] iconWarrior = new String[] {
+        String helloWarrior = "\u001b[1;96mIch bin Kriegerin Bellatrix.\u001b[0m";
+        String[] iconWarrior = new String[]{
                 "        ^",
                 "       / \\",
                 "        | ",
@@ -148,8 +148,8 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro White Mage Kelii
-        String helloWhiteMage = "\u001b[1;96mIch bin der Weiße Magier Kelii.[0m";
-        String[] iconWhiteMage= new String[]{
+        String helloWhiteMage = "\u001b[1;96mIch bin der Weiße Magier Kelii.\u001b[0m";
+        String[] iconWhiteMage = new String[]{
                 "        ^ ",
                 "       ( ) ",
                 "       \\ / ",
@@ -178,9 +178,9 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro Rogue Bandito
-        String hellorogue = "\u001b[1;96mIch bin der Schurke Bandito.[0m";
-        String[] iconRogue = new String[] {
-                "           ^ " ,
+        String hellorogue = "\u001b[1;96mIch bin der Schurke Bandito.\u001b[0m";
+        String[] iconRogue = new String[]{
+                "           ^ ",
                 "          / \\ ",
                 "          | |  ",
                 "          | |  ",
@@ -228,7 +228,7 @@ public class Game {
                 "                                                 lNMMMMMMMMMWo                                                  ",
         };
 
-        String hellomermaidman = "\u001b[1;96mIch bin Meerjungfraumann Marin.[0m";
+        String hellomermaidman = "\u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m";
         chooseCharacter.append(StringTools.addPadding(hellomermaidman, 112, 12));
 
         chooseCharacter.append(iconMermaidMan);
@@ -280,7 +280,7 @@ public class Game {
              * tolowerCase: changes strings provides with string to be compared in lowercase to make them
              * comparable independently of upper/lowercase
              * character gets chosen by typing in A-E, the full name or any part of the name
-            *if wrong combinations is typed in --> no reaction; action handler waits. This gets tested via next lines
+             *if wrong combinations is typed in --> no reaction; action handler waits. This gets tested via next lines
              * isInvoked not neccessary here (isInvoked->true is already defined in GameAction)
              */
         });
@@ -304,11 +304,24 @@ public class Game {
 
         Thread.sleep(4000);
 
-        for(World w : this.worlds) {
+        for (World w : this.worlds) {
             w.onEnter(this, character);
         }
-        // einzelne welten aufrufen -> onEnter -> danach burg
 
+
+        //new Screen for last action: win the castle
+        //TODO: health als Wert in if-Bedingung korrekt einfügen
+
+        String woncastel = "Du hast die Monster von Mooscraft besiegt und es geschafft die Burg mit deiner verbliebenen Energie zu erobern. Du darfst dich nun herrschaftlich als neuen oder neue HerrscherIn über Mooscraft betiteln";
+        String lostcastle = "Oh nein! Die Kämpfe gegen Monster Mester und Preisler haben dir die Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg die Wände hinunter in die Tiefe. beginne das Spiel erneut und wähle deine Spielparameter dieses Mal weiser.";
+
+        Screen castle = new Screen();
+        if (character.getHealth() >= 25) {
+            castle.append(StringTools.addPadding(woncastel, 112, 12));
+        } else {
+            castle.append(StringTools.addPadding(lostcastle, 112, 12));
+        }
+        renderer.printScreen(castle);
     }
 
     public Renderer getRenderer() {
