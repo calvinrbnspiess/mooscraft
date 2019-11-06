@@ -6,6 +6,7 @@ import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.actions.ChooseAction;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
+import de.on19.mooscraft.game.interaction.actions.SkippableContinueAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.game.screens.GameOverScreen;
 import de.on19.mooscraft.game.screens.SplashScreen;
@@ -144,82 +145,96 @@ public class Game {
         handler.waitForAction(new ContinueAction());
 
         //intro World
+        String continueMessage = "Gib <weiter> ein, um fortzufahren.";
+        String skipMessage = continueMessage + " Du kannst mit <überspringen> direkt zur Auswahl springen.";
+
         Screen intro = new Screen();
         intro.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
         intro.append(TextTools.emptyLines(1));
         intro.appendLine("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.");
         intro.append(TextTools.emptyLines(1));
-        intro.appendLine("Gib <weiter> ein, um fortzufahren.");
+        intro.appendLine(skipMessage);
 
         renderer.printScreen(intro);
 
-        handler.waitForAction(new ContinueAction());
+        SkippableContinueAction skippableAction = new SkippableContinueAction("Bitte gib 'weiter' ein, um die Charakterbeschreibungen anzuzeigen. Du kannst mit 'überspringen' direkt zur Auswahl springen.");
 
+        handler.waitForAction(skippableAction);
 
-        //Intro Hexe Magalia
-        Screen magalia = new Screen();
-        magalia.append(TextTools.addPadding(Witch.getGreeting(), 112, 12));
-        magalia.append(TextTools.emptyLines(2));
-        magalia.append(Warrior.getIcon());
-        magalia.append(TextTools.emptyLines(2));
-        magalia.append(Witch.getDescriptionArray());
-        magalia.append(TextTools.emptyLines(2));
-        magalia.appendLine("Gib <weiter> ein, um fortzufahren.");
+        if (!skippableAction.isSkipped()) {
+            //Intro Hexe Magalia
+            Screen magalia = new Screen();
+            magalia.append(TextTools.addPadding(Witch.getGreeting(), 112, 12));
+            magalia.append(TextTools.emptyLines(2));
+            magalia.append(Warrior.getIcon());
+            magalia.append(TextTools.emptyLines(2));
+            magalia.append(Witch.getDescriptionArray());
+            magalia.append(TextTools.emptyLines(2));
+            magalia.appendLine("(1/5) " + skipMessage);
 
-        renderer.printScreen(magalia);
-        handler.waitForAction(new ContinueAction());
+            renderer.printScreen(magalia);
+            handler.waitForAction(skippableAction);
+        }
 
-        //Intro Kriegerin Bellatrix
-        Screen bellatrix = new Screen();
-        bellatrix.append(TextTools.addPadding(Warrior.getGreeting(), 112, 12));
-        bellatrix.append(TextTools.emptyLines(2));
-        bellatrix.append(Warrior.getIcon());
-        bellatrix.append(TextTools.emptyLines(2));
-        bellatrix.append(TextTools.addPadding(Warrior.getDescription(), 112, 12));
-        bellatrix.append(TextTools.emptyLines(2));
-        bellatrix.appendLine("Gib <weiter> ein, um fortzufahren.");
+        if (!skippableAction.isSkipped()) {
+            //Intro Kriegerin Bellatrix
+            Screen bellatrix = new Screen();
+            bellatrix.append(TextTools.addPadding(Warrior.getGreeting(), 112, 12));
+            bellatrix.append(TextTools.emptyLines(2));
+            bellatrix.append(Warrior.getIcon());
+            bellatrix.append(TextTools.emptyLines(2));
+            bellatrix.append(TextTools.addPadding(Warrior.getDescription(), 112, 12));
+            bellatrix.append(TextTools.emptyLines(2));
+            bellatrix.appendLine("(2/5) " + skipMessage);
 
-        renderer.printScreen(bellatrix);
-        handler.waitForAction(new ContinueAction());
+            renderer.printScreen(bellatrix);
+            handler.waitForAction(skippableAction);
+        }
 
-        //Intro White Mage Kelii
-        Screen kelii = new Screen();
-        kelii.append(TextTools.addPadding(WhiteMage.getGreeting(), 112, 12));
-        kelii.append(WhiteMage.getIcon());
-        kelii.append(TextTools.emptyLines(2));
-        kelii.append(TextTools.addPadding(WhiteMage.getDescription(), 112, 12));
-        kelii.append(TextTools.emptyLines(2));
-        kelii.appendLine("Gib <weiter> ein, um fortzufahren.");
+        if (!skippableAction.isSkipped()) {
+            //Intro White Mage Kelii
+            Screen kelii = new Screen();
+            kelii.append(TextTools.addPadding(WhiteMage.getGreeting(), 112, 12));
+            kelii.append(WhiteMage.getIcon());
+            kelii.append(TextTools.emptyLines(2));
+            kelii.append(TextTools.addPadding(WhiteMage.getDescription(), 112, 12));
+            kelii.append(TextTools.emptyLines(2));
+            kelii.appendLine("(3/5) " + skipMessage);
 
-        renderer.printScreen(kelii);
-        handler.waitForAction(new ContinueAction());
+            renderer.printScreen(kelii);
+            handler.waitForAction(skippableAction);
+        }
 
-        //Intro Rogue Bandito
-        Screen bandito = new Screen();
-        bandito.append(TextTools.addPadding(Rogue.getGreeting(), 112, 12));
-        bandito.append(TextTools.emptyLines(2));
-        bandito.append(Rogue.getIcon());
-        bandito.append(TextTools.emptyLines(2));
-        bandito.append(TextTools.addPadding(Rogue.getDescription(), 112, 12));
-        bandito.append(TextTools.emptyLines(2));
-        bandito.appendLine("Gib <weiter> ein, um fortzufahren.");
+        if (!skippableAction.isSkipped()) {
+            //Intro Rogue Bandito
+            Screen bandito = new Screen();
+            bandito.append(TextTools.addPadding(Rogue.getGreeting(), 112, 12));
+            bandito.append(TextTools.emptyLines(2));
+            bandito.append(Rogue.getIcon());
+            bandito.append(TextTools.emptyLines(2));
+            bandito.append(TextTools.addPadding(Rogue.getDescription(), 112, 12));
+            bandito.append(TextTools.emptyLines(2));
+            bandito.appendLine("(4/5) " + skipMessage);
 
-        renderer.printScreen(bandito);
-        handler.waitForAction(new ContinueAction());
+            renderer.printScreen(bandito);
+            handler.waitForAction(skippableAction);
+        }
 
-        //Intro Mermaidman Marin
-        Screen marin = new Screen();
-        marin.append(TextTools.addPadding(MermaidMan.getGreeting(), 112, 12));
-        marin.append(TextTools.emptyLines(2));
-        marin.append(MermaidMan.getIcon());
-        marin.append(TextTools.emptyLines(1));
-        marin.append(TextTools.addPadding(MermaidMan.getDescription(), 112, 12));
-        marin.append(TextTools.emptyLines(2));
-        marin.appendLine("Gib <weiter> ein, um fortzufahren.");
+        if (!skippableAction.isSkipped()) {
+            //Intro Mermaidman Marin
+            Screen marin = new Screen();
+            marin.append(TextTools.addPadding(MermaidMan.getGreeting(), 112, 12));
+            marin.append(TextTools.emptyLines(2));
+            marin.append(MermaidMan.getIcon());
+            marin.append(TextTools.emptyLines(1));
+            marin.append(TextTools.addPadding(MermaidMan.getDescription(), 112, 12));
+            marin.append(TextTools.emptyLines(2));
+            marin.appendLine("(5/5) " + continueMessage);
 
-        renderer.printScreen(marin);
-        handler.waitForAction(new ContinueAction());
-
+            renderer.printScreen(marin);
+            // by last character description a skip is not neccessary anymore
+            handler.waitForAction(new ContinueAction());
+        }
         //intro World
         ChooseScreen chooseCharacter = new ChooseScreen();
         chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
