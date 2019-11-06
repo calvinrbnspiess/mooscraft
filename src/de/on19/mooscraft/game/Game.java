@@ -257,8 +257,8 @@ public class Game {
 
 
         //new Screen for last action: win the castle
-        String woncastel = "Du hast die Monster von Mooscraft besiegt und es geschafft die Burg mit deiner verbliebenen Energie zu erobern. Du darfst dich nun herrschaftlich als neuen oder neue HerrscherIn über Mooscraft betiteln";
-        String lostcastle = "Oh nein! Die Kämpfe gegen Monster Mester und Preisler haben dir die Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg die Wände hinunter in die Tiefe. beginne das Spiel erneut und wähle deine Spielparameter dieses Mal weiser.";
+        String woncastel = "Hurraaaaaa! Du warst mächtig genug um die Monster von Mooscraft zu besiegen. Das Volk ist dir zu ewiger Treue verpflichtet, da du es von den Qualen der Monster Mester und Preisler befreit hast. Damit dein Volk dich gebührend huldigen kann, erklimme mit Hilfe deiner verbliebenen Lebensenergie die Mauern der Burg Arcis Borbetomagus. Nun kannst du ganz Mooscraft überblicken mit seinem grünen Odenwald, der rauschenden Mittelklinge, dem zauberhaften Hexenturm Turismaga. Lass dich als neue/r Herrscher/in von Mooscraft gebührend feiern.";
+        String lostcastle = "Oh nein! Die Kämpfe gegen Monster Mester und Preisler haben dir die letzte Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg Arcis Borbetomagus die Wände hinunter in die Tiefe. Doch eine verlorene Schlacht ist kein verlorener Krieg. Wähle deine Parameter weiser und trau dich erneut durch die Pforten von Mooscraft.";
 
         Screen castle = new Screen();
         if (character.getHealth() >= 25) {
@@ -267,7 +267,33 @@ public class Game {
             castle.append(StringTools.addPadding(lostcastle, 112, 12));
         }
         renderer.printScreen(castle);
-    }
+        String[] castelIcon = new String[]{
+        "                                                      :0Oc.                                         " ,
+        "                                                      cNWN0Odoc;'..                                             \n" +
+        "                                                      cWMMMMMMMWNX0kdl'                                         \n" +
+        "                                                      cWMMMMMWX0Oxoc;,.                                         \n" +
+        "                                                      cNN0oc:,..                                                \n" +
+        "                                                      cX0;                                                      \n" +
+        "                                        .odl.  :dd;  .OWNx.  :dd;  'ddl.                                        \n" +
+        "                                        ;XMX; .xMMd  :NMMK, .kMMd  cNMK,                                        \n" +
+        "                                        ;XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,                                        \n" +
+        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        \n" +
+        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        \n" +
+        "                                        'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.                                        \n" +
+        "                                         .',kMMMMMMMMMMMMMMMMMMMMMWd'..                                         \n" +
+        "                                           .OMMMMMMMMMWWWMMMMMMMMMMx.                                           \n" +
+        "                                           ;XMMMMMMW0l;,,;oKWMMMMMM0'                                           \n" +
+        "                                           oMMMMMMMO.      ,0MMMMMMWc                                           \n" +
+        "                                          .OMMMMMMMx.      .kMMMMMMMx.                                          \n" +
+        "                                          :NMMMMMMMd       .kMMMMMMMK,                                          \n" +
+        "                                          dMMMMMMMMd       .kMMMMMMMWl                                          \n" +
+        "                                         '0MMMMMMMMKdooooooxXMMMMMMMMk.                                         \n" +
+        "                                         cNMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                         \n" +
+        "                                        .xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                         \n" +
+        "                                        ,KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.                                        \n" +
+        "                                        .oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.  "
+        }
+
 
     public Renderer getRenderer() {
         return this.renderer;
