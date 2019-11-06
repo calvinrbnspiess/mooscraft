@@ -21,7 +21,7 @@ public class Spot3 extends Spot {
         s.append(StringTools.emptyLines(1));
         String text = "Sirenen-Angriff, Mischwesen mit einem Vogelkörper und einem Frauenkopf locken dich mit ihrer Stimme ins Verderben, du kannst mit deinen letzten Kräften entkommen.";
         s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Und verlierst 20 Einheiten an Kraft. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Und verlierst 20 Einheiten an Stärke. Gib <weiter> ein, um fortzufahren.");
 
         character.addStrength(-20);
         game.printGameScreen(s);
