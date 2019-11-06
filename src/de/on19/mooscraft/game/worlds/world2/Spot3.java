@@ -25,7 +25,6 @@ public class Spot3 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du kannst dich befreien aber verlierst 5 Einheiten an Lebensenergie und Stärke. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
 
       // TODO:
         /* String wonspider = "Du hattest genügend Stärke und konntest dich aus dem Spinnennetz ohne weiteres befreien.";
@@ -39,6 +38,8 @@ public class Spot3 extends Spot {
         */
         character.addHealth(-5);
         character.addStrength(-5);
+        game.printGameScreen(s);
+
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

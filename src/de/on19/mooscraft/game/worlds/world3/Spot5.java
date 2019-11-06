@@ -23,8 +23,8 @@ public class Spot5 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Deswegen schenkt sie dir deswegen 5 Einheiten Lebensenergie Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(5);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

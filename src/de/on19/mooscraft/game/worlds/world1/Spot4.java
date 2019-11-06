@@ -24,8 +24,8 @@ public class Spot4 extends Spot {
         s.append(StringTools.emptyLines(1));
         s.appendLine("Du verlierst 5 Einheiten an Lebensenergie, erschöpft gehst du weiter. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(-5);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

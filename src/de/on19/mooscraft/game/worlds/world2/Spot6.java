@@ -23,9 +23,10 @@ public class Spot6 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Diese waghaltige Aktion kostet dich 5 Einheiten an Lebensenergie und Stärke. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(-5);
         character.addStrength(-5);
+        game.printGameScreen(s);
+
 
         // TODO:
         /*

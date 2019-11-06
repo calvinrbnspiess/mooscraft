@@ -23,9 +23,8 @@ public class Spot6 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Durch diesen Angriff verlierst du 20 Einheiten Lebensenergie. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(-20);
-
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

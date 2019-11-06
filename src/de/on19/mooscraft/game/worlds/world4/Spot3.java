@@ -23,8 +23,8 @@ public class Spot3 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Seine hinterlistige Art kostet dich 20 Einheiten Willenskraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addWillpower(-20);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

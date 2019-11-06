@@ -24,8 +24,8 @@ public class Spot2 extends Spot {
         s.append(StringTools.emptyLines(1));
         s.appendLine("Das motiviert dich sehr, wodurch du 10 Einheiten an Lebensenergie gewinnst. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(10);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

@@ -23,9 +23,10 @@ public class Spot6 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.append(StringTools.emptyLines(1));
         s.appendLine("Du bekommst 10 Einheiten Stärke. Gib <weiter> ein, um fortzufahren.");
-        game.printGameScreen(s);
 
         character.addStrength(10);
+        game.printGameScreen(s);
+
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
