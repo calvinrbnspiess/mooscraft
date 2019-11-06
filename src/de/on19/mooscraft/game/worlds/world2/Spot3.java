@@ -24,8 +24,8 @@ public class Spot3 extends Spot {
         s.appendLine(StringTools.centerInRow("≈≈≈ Unerwartetes Hinterniss ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
         String text = "Plötzlich verfängst du dich in einem riesigen verworrendem Etwas und kannst dich kaum mehr bewegen. Du erkennst eine gigantische Spinne auf dich zulaufen. Jetzt weißt du es, du bist in einem sehr festem Spinnennetz gefangen und die Spinne hat Hunger. Hast du genügend Stärke (>25), dann schaffst du es dich gerade rechtzeitig loszureißen, wenn aber nicht knabbert dich die Spinne an.";
-        /*s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Du kannst dich befreien aber verlierst 5 Einheiten an Lebensenergie und Stärke. Gib <weiter> ein, um fortzufahren.");*/
+        s.append(StringTools.addPadding(text, 112, 12));
+        s.appendLine("Du kannst dich befreien aber verlierst 5 Einheiten an Lebensenergie und Stärke. Gib <weiter> ein, um fortzufahren.");
 
 
        /* Screen spider = new Screen();
