@@ -23,8 +23,8 @@ public class Spot5 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Doch das kostet dich 10 Einheiten an Zauberkraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addWitchcraft(-10);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

@@ -23,8 +23,8 @@ public class Spot2 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du hast nun wieder 10 Einheiten mehr Willenskraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addWillpower(10);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

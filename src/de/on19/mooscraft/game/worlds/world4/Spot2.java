@@ -23,8 +23,8 @@ public class Spot2 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du öffnest die Truhe und erhälst dadurch 10 Einheiten an Weisheit. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addWisdom(10);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

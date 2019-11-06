@@ -24,9 +24,9 @@ public class Spot1 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du probierst eine blau leuchtende Blume und verlierst 5 Einheiten Willenskraft. Gib <weiter> ein, um fortzufahren.");
 
+        character.addWillpower(-5);
         game.printGameScreen(s);
 
-        character.addWillpower(-5);
         //character.addHealth(10);
         /*extra Stärke, Willenskraft oder Lebensenergie (jeweils +10) ?
         (Stärke, Lebensenergie oder Willenskraft -5, per Zufall?)

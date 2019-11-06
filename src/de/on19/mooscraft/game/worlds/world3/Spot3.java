@@ -23,8 +23,8 @@ public class Spot3 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Und verlierst 20 Einheiten an Kraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addStrength(-20);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

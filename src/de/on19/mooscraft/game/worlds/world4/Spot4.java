@@ -23,8 +23,8 @@ public class Spot4 extends Spot {
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Ganz ohne Schramme bist du nicht weg gekommen weswegen du Lebensenergie 20 verlierst. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(-20);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());
