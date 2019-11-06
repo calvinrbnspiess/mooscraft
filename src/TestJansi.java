@@ -1,3 +1,7 @@
+import de.on19.mooscraft.utils.StringTools;
+
+import java.util.Arrays;
+
 /**
  *  colors for worlds
  *
@@ -13,6 +17,24 @@
 public class TestJansi {
 
     public static void main(String[] args) {
+
+        String text = "Es war einmal eine Welt vor der unseren, beherrscht von Ungeheuern, Zauberern und Zauberinnen und Wasserwesen. Sie alle kämpften mit den unterschiedlichsten Kräften um die Eroberung der Burg. Doch Vorsicht war geboten, denn viele Fallen und Feinde lauerten in den dunkelsten Ecken und den tiefsten Verstecken um sie daran zu hindern. Viel Energie, Kraft und Stärke war gefordert um die Welt zu durchlaufen und mit genügend Kräften ans Ziel zu kommen. Egal ob Hexe, Kriegerin, Magier, Schurke oder Meerjungfraumann, sie alle machten sich auf den Weg zur Burg, denn es kann nur einen Herrscher über die Welt geben.";
+        String textNoWhitespace = text.replaceAll("\\s", "");
+
+        System.out.println(text);
+        System.out.println(textNoWhitespace);
+
+        System.out.println("--");
+
+        System.out.println(StringTools.wrapToLength(text, 112));
+        System.out.println(StringTools.wrapToLength(textNoWhitespace, 112));
+
+        System.out.println("--");
+
+        for(String line : StringTools.wrapToLengthArray(textNoWhitespace, 112)) {
+            System.out.println(line);
+        }
+
         //color all following text
         System.out.println("\u001b[1;92m Willkommen im Odenwald.");
         System.out.println("Hello Magalia");

@@ -25,7 +25,15 @@ public class StringTools {
      * @return wrapped string
      */
     public static String wrapToLength(String text, int maxChars) {
-        // TODO what will happen if a text value without spaces at all is given?
+        // TODO no whitespaces?
+
+        // decrease maxChars by one to make space for line-break-indicator
+        if(!text.contains(" ")) {
+            for(int i = maxChars; i <= text.length(); i += maxChars) {
+                text = text.substring(0, i - 1) + System.lineSeparator() + text.substring(i - 1);
+            }
+            return text;
+        }
 
         //remove whitespace at beginning and end of string
         //then remove consecutive whitespace
@@ -50,7 +58,7 @@ public class StringTools {
      * @return wrapped string
      */
     public static String[] wrapToLengthArray(String text, int maxChars) {
-        // TODO what will happen if a text value without spaces at all is given?
+        // TODO no whitespaces?
 
         //remove whitespace at beginning and end of string
         //then remove consecutive whitespace
