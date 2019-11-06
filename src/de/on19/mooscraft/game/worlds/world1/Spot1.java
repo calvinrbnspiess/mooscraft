@@ -37,4 +37,16 @@ public class Spot1 extends Spot {
         System.out.println("after");
     }
 
+
+   /* Screen spot1 = new Screen();
+        String spot1won = "Gewonnen";
+        String spot1lost = "Verloren";
+        if (character.getHealth() >= 25) {
+        spot1.append(StringTools.addPadding(spot1won, 112, 12));
+    } else {
+        spot1.append(StringTools.addPadding(spot1lost, 112, 12));
+    }
+        renderer.printScreen(spot1);
+}*/
+
 }
