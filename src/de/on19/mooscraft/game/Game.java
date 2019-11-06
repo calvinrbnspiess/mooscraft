@@ -151,151 +151,44 @@ public class Game {
                 "Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
         chooseCharacter.append(StringTools.addPadding(introWorld, 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
-        //Intro Hexe Magalia
-        String helloHexe = "> \u001b[1;96m Ich bin Hexe Magalia.\u001b[0m";
-        String[] iconWitch = new String[]{
-                "        ^ ",
-                "       / \\ ",
-                "        \\  \\",
-                "        /   \\",
-                "       /    /",
-                "      /     \\",
-                "     /       \\",
-                "    /          \\",
-                " \\_/____________\\_/",
-                "  \\______________/ "};
 
-        chooseCharacter.append(StringTools.addPadding(helloHexe, 112, 12));
+        //Intro Hexe Magalia
+        chooseCharacter.append(StringTools.addPadding(Witch.getGreeting(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconWitch);
-        chooseCharacter.append(StringTools.emptyLines(1));
-        String hexe1 = "Ich helfe dir durch das Spiel mit meinen dunklen, bösen Zaubertränken. Mein Ziel ist es die Macht mit Hilfe der Magie an mich zu reißen. Ich will alles beherrschen und durch meine Dämonenbeschwörungen allem Sterblichem ein Ende setzen.";
-        chooseCharacter.append(StringTools.emptyLines(1));
-        chooseCharacter.append(StringTools.addPadding(hexe1, 112, 12));
-        String hexe2 = "Ego fuo dius imperium Turrismaga!!!";
-        chooseCharacter.append(StringTools.emptyLines(1));
-        chooseCharacter.append(StringTools.addPadding(hexe2, 112, 12));
-        String hexe3 = "Wählst du mich als Spielcharakter, so erhälst du die größte \u001b[1;91mWillenskraft " +
-                "[50]\u001b[0m um ans " +
-                "Ziel zu kommen. Gefahren des Weges Bescheid. Jedoch bin ich dementsprechend alt und habe " +
-                "nicht mehr so viel \u001b[1;91mLebensenergie [25]\u001b[0m und \u001b[1;91mStärke [20]\u001b[0m. Dafür " +
-                "sind meine \u001b[1;91mZauberkraft [40]\u001b[0m und \u001b[1;91mWeisheit [30]\u001b[0m umso stärker.";
-        chooseCharacter.append(StringTools.addPadding(hexe3, 112, 12));
+        chooseCharacter.append(Warrior.getIcon());
+        chooseCharacter.append(StringTools.emptyLines(2));
+        chooseCharacter.append(Witch.getDescriptionArray());
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro Kriegerin Bellatrix
-        String helloWarrior = "> \u001b[1;96mIch bin Kriegerin Bellatrix.\u001b[0m";
-        String[] iconWarrior = new String[]{
-                "        ^",
-                "       / \\",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "       / \\",
-                "       / \\",
-        };
-        chooseCharacter.append(StringTools.addPadding(helloWarrior, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(Warrior.getGreeting(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconWarrior);
+        chooseCharacter.append(Warrior.getIcon());
         chooseCharacter.append(StringTools.emptyLines(2));
-        String warrior1 = "Meine Aufgabe ist es im Land meines Vaters, dem Herrscher von Arcis Borbetomagus, die Burg in Worms vor unerwünschten Eindringlingen zu bewahren. Ich komme in Frieden, aber besitze genügend \u001b[1;91mStärke [50]\u001b[0m und \u001b[1;91mWillenskraft [40]\u001b[0m um unser Land zu verteidigen. Als Tochter des Herrschers bin ich jung und voller \u001b[1;91mLebensenergie [80]\u001b[0m. Jedoch mangelt es mit an \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit [10]\u001b[0m.";
-        chooseCharacter.append(StringTools.addPadding(warrior1, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(Warrior.getDescription(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro White Mage Kelii
-        String helloWhiteMage = "> \u001b[1;96mIch bin der Weiße Magier Kelii.\u001b[0m";
-        String[] iconWhiteMage = new String[]{
-                "        ^ ",
-                "       ( ) ",
-                "       \\ / ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "       | | ",
-                "       |_| ",
-        };
-        chooseCharacter.append(StringTools.addPadding(helloWhiteMage, 112, 12));
-        chooseCharacter.append(iconWhiteMage);
+        chooseCharacter.append(StringTools.addPadding(WhiteMage.getGreeting(), 112, 12));
+        chooseCharacter.append(WhiteMage.getIcon());
         chooseCharacter.append(StringTools.emptyLines(2));
-        String whiteMage1 = "Ich bin der älteste Charakter in Mooscraft; jedoch nur äußerlich. Auf den ersten Blick mag mein sehr langer weißer Bart aussehen als wäre ich gealtert. Jedoch habe ich Mittels meiner \u001b[1;91mWeisheit [50]\u001b[0m einen Zaubertrank entwickelt, welcher mich stets auf dem Stand eines 25 Jahre jungen Burschen hält. Meine \u001b[1;91mLebensenergie [80]\u001b[0m reicht aus um den Weg mit etwas Geschick zu meistern. Als Urgestein der Magie habe ich natürlich auch stets einen Zauberspruch zur Verteidigung auf den Lippen \u001b[1;91mZauberkraft [35]\u001b[0m. Leider hat der Jungtrunk auf Dauer eine kleine Nebenwirkung. Er wirkt sich auf meine \u001b[1;91mWillenskraft [20]\u001b[0m aus worauf hin ich kurzzeitig zum Komiker mutiere \u001b[1;91m(Willenskraft [20])\u001b[0m.";
-        chooseCharacter.append(StringTools.addPadding(whiteMage1, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(WhiteMage.getDescription(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro Rogue Bandito
-        String hellorogue = "> \u001b[1;96mIch bin der Schurke Bandito.\u001b[0m";
-        String[] iconRogue = new String[]{
-                "           ^ ",
-                "          / \\ ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "        _______",
-                "        -------",
-                "          | | ",
-                "          |_| ",
-        };
-
-        chooseCharacter.append(StringTools.addPadding(hellorogue, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(Rogue.getGreeting(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconRogue);
+        chooseCharacter.append(Rogue.getIcon());
         chooseCharacter.append(StringTools.emptyLines(2));
-        String rogue1 = "Meine Hinterhalte sind deine Fallen. Mit schlauen Tricks verzerre ich deine " +
-                "Sinneswahrnehmung und nichts ist mehr so wie es scheint \u001b[1;91m(Willenskraft [30])" +
-                "\u001b[0m. Ich bin klug und fix \u001b[1;91m(Lebensenergie [70])\u001b[0m. Ich kann mich schnell auf Land " +
-                "fortbewegen und kenne die besten Verstecke. Wählst du mich, bist du cleverer als die Anderen und durchblickst jede " +
-                "Situation mit einem kühlen Kopf. Vor Wasser bin ich allerdings scheu und durch meine " +
-                "Cleverness mussten meine Muskeln leiden. Dadurch ist meine \u001b[1;91mStärke [30]\u001b[0m nicht " +
-                "ausreichend für einen Kampf auf Augenhöhe. Außerdem bin ich wenig bewandert in den Feldern der Zauberkraft und des" +
-                " Wissens, wodurch ich nur wenig \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit " +
-                "[10]\u001b[0m bieten kann.";
-        chooseCharacter.append(StringTools.addPadding(rogue1, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(Rogue.getDescription(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro Mermaidman Marin
-        String[] iconMermaidMan = new String[]{
-                "                                              .                                                                 ",
-                "                                             .oko;.                                                             ",
-                "                                              ,kXWKc                                                            ",
-                "                                               ,0MM0c.      .';llo,                                             ",
-                "                                               .:OWMWXkl:okOXNNWXc                                              ",
-                "                                                 ;0WMMMMMMMMMKc;'                                               ",
-                "                                                  .,oKMMMMOcc'                                                  ",
-                "                                                    .OMMM0,                                                     ",
-                "                                                   ,0MMMMX:                                                     ",
-                "                                                  ,0MMWWx.                                                      ",
-                "                                                  :KMMMWO'                                                      ",
-                "                                                 :XMMMMWWk.                                                     ",
-                "                                                 'OMMMMMMXl                                                     ",
-                "                                                 lNMMMMMMMO'                                                    ",
-                "                                                 :XMMMMMMMNo.                                                   ",
-                "                                                .xWMMMMMMMMW0:                                                  ",
-                "                                                 lNMMMMMMMMMWo                                                  ",
-        };
-
-        String hellomermaidman = "> \u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m";
-        chooseCharacter.append(StringTools.addPadding(hellomermaidman, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(MermaidMan.getGreeting(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconMermaidMan);
+        chooseCharacter.append(MermaidMan.getIcon());
         chooseCharacter.append(StringTools.emptyLines(1));
-
-        String mermaidman1 = "Im Wasser bin ich unschlagbar. Dort ist meine Heimat und diese beschütze ich " +
-                "mit den mir gegebenen Fähigkeiten \u001b[1;91m(Willenskraft [40])\u001b[0m. Geboren bin ich im " +
-                "Fluss Mittelklinge, welchen ich kenne wie meine Westentasche, da ich nun schon ein Weilchen auf " +
-                "dieser Welt wandle \u001b[1;91m(Lebensenergie [50])\u001b[0m. Wählst du mich, sind deine Chancen " +
-                "auf Land geringer, dafür im Wasser umso höher. Auch an \u001b[1;91mStärke [40]\u001b[0m habe ich " +
-                "über die Jahre zugelegt und bekämpfe in der Nähe von Wasser jeden Gegner. Mit \u001b[1;" +
-                "91mZauberkraft [10]\u001b[0m oder tiefer  \u001b[1;91mWeisheit [30]\u001b[0m kann ich dagegen nicht " +
-                "auftrumphen.";
-        chooseCharacter.append(StringTools.addPadding(mermaidman1, 112, 12));
+        chooseCharacter.append(StringTools.addPadding(MermaidMan.getDescription(), 112, 12));
         chooseCharacter.append(StringTools.emptyLines(2));
 
         chooseCharacter.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
