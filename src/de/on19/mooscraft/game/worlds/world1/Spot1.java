@@ -40,16 +40,13 @@ public class Spot1 extends Spot {
         System.out.println("after");
     }
 
-
-   /* Screen spot1 = new Screen();
-        String spot1won = "Gewonnen";
-        String spot1lost = "Verloren";
-        if (character.getHealth() >= 25) {
-        spot1.append(StringTools.addPadding(spot1won, 112, 12));
-    } else {
-        spot1.append(StringTools.addPadding(spot1lost, 112, 12));
-    }
-        renderer.printScreen(spot1);
-}*/
-
 }
+//game over method
+  /*  private String dead = "ZU wenig Lebensenergie. Du bist tot."
+
+    Screen gameOver = new Screen();
+        if (character.getHealth() < 0) {
+        gameOver.append(StringTools.addPadding(spotwon, 112, 12));
+
+        renderer.printScreen(character.gameOverOutput);*/
+    }

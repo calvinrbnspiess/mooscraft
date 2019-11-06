@@ -1,6 +1,6 @@
 package de.on19.mooscraft.game.characters;
 
-import de.on19.mooscraft.game.worlds.Spot;
+import de.on19.mooscraft.renderer.Screen;
 
 public class Character {
 
@@ -16,7 +16,7 @@ public class Character {
     private int visitedSpots;
 
     public Character() {
-        this(0,0,0,0,0);
+        this(0, 0, 0, 0, 0);
         /**
          * constructor gives actual values to the parameters given to the variables before via Character constructor
          *this.  refers to class attributes
@@ -24,7 +24,7 @@ public class Character {
     }
 
     public Character(String name) {
-        this(0,0,0,0,0);
+        this(0, 0, 0, 0, 0);
         this.setName(name);
     }
 
@@ -44,17 +44,20 @@ public class Character {
         this.visitedSpots = 0;
     }
 
-    /** getter and setter methods are necessary to call them later in other classes and change values
+    /**
+     * getter and setter methods are necessary to call them later in other classes and change values
      * therefore, they are public
-    */
+     */
 
     //health
-   public void setHealth(int health){
-       this.health = health;
-   }
-    public int getHealth(){ //no parameters necessary since there is only a return value and no value provided into a variable
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getHealth() { //no parameters necessary since there is only a return value and no value provided into a variable
         return health;
     }
+
     public void addHealth(int health) {
         this.setHealth(this.getHealth() + health);
     }
@@ -63,11 +66,13 @@ public class Character {
     public int getStrength() {
         return strength;
     }
+
     public void setStrength(int strength) {
         this.strength = strength;
     }
+
     public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
-       this.setStrength(this.getStrength() + strength);
+        this.setStrength(this.getStrength() + strength);
     }
 
     //witchcraft
@@ -75,20 +80,24 @@ public class Character {
     public int getWitchcraft() {
         return witchcraft;
     }
+
     public void setWitchcraft(int witchcraft) {
         this.witchcraft = witchcraft;
     }
+
     public void addWitchcraft(int witchcraft) {
-       this.setWitchcraft(this.getWitchcraft() + witchcraft);
+        this.setWitchcraft(this.getWitchcraft() + witchcraft);
     }
 
     //willpower
     public int getWillpower() {
         return willpower;
     }
+
     public void setWillpower(int willpower) {
         this.willpower = willpower;
     }
+
     public void addWillpower(int willpower) {
         this.setWillpower(this.getWillpower() + willpower);
     }
@@ -97,9 +106,11 @@ public class Character {
     public int getWisdom() {
         return wisdom;
     }
+
     public void setWisdom(int wisdom) {
         this.wisdom = wisdom;
     }
+
     public void addWisdom(int wisdom) {
         this.setWisdom(this.getWisdom() + wisdom);
     }
@@ -113,10 +124,42 @@ public class Character {
     }
 
     public void increaseVisitedSpots() {
-       this.visitedSpots += 1;
+        this.visitedSpots += 1;
     }
 
     public int getVisitedSpots() {
         return visitedSpots;
+    }
+
+    Screen gameOver = new Screen();
+
+    String[] gameOverOutput = {
+
+
+            "   ▄██████▄     ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████       ▄██████▄   ▄█    █▄     ▄████████  ▄████████",
+            "  ███    ███   ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
+            "  ███    █▀    ███    ███ ███   ███   ███   ███    █▀       ███    ███ ███    ███   ███    █▀   ███    ███",
+            "  ▄███         ███    ███ ███   ███   ███  ▄███▄▄▄          ███    ███ ███    ███  ▄███▄▄▄     ▄███▄▄▄▄██▀",
+            "▀▀███ ████▄  ▀███████████ ███   ███   ███▀▀███▀▀▀           ███    ███ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀",
+            "  ███    ███   ███    ███ ███   ███   ███   ███    █▄       ███    ███ ███    ███   ███    █▄  ▀███████████",
+            "  ███    ███   ███    ███ ███   ███   ███   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
+            "  ████████▀    ███    █▀   ▀█   ███   █▀    ██████████       ▀██████▀   ▀██████▀    ██████████  ███    ███",
+                                                                                                            "███    ███" ,
+    };
+
+    public String[] getGameOver() {
+        return gameOverOutput;
+
+        //game over method
+        //String spotwon --> als private in spot definiert
+
+    /*Screen gameOver = new Screen();
+        if (character.getHealth() < 0) {
+        gameOver.append(StringTools.addPadding(spotwon, 112, 12));
+    } else {
+        gameOver.append(StringTools.addPadding(lostcastle, 112, 12));
+    }
+        renderer.printScreen(castle);
+}*/
     }
 }
