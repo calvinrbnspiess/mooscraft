@@ -51,7 +51,7 @@ public class GuideAction implements DescriptedAction {
                 "|  B |                     |  B |                     |  B |                     |  B |                     ----",
                 "     _______       _______       _______       _______       _______       _______      _______       _______",
                 "     |Feld1|       |Feld3|       |Feld1|       |Feld3|       |Feld1|       |Feld3|      |Feld1|       |Feld3|",
-                "            _______ gui                    _______                     _______                    _______",
+                "            _______                     _______                     _______                    _______",
                 "            |Feld2|                     |Feld2|                     |Feld2|                    |Feld2|"};
         return instructionsIcon;
     }
