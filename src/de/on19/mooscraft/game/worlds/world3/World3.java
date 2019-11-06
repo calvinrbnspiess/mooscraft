@@ -6,7 +6,7 @@ import de.on19.mooscraft.utils.StringTools;
 public class World3 extends World {
 
     public World3() throws UnsupportedOperationException {
-        super(new String[]{       StringTools.wrapToLength("Du befindest dich nun am Eingang der dritten Welt von Turrismaga, um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen, sie werden versuchen alles daran zu setzten dir deine magischen Kräfte sowie deine letzte Lebensenergie zu rauben also halt dich in acht.", 112),
+        super(new String[]{       StringTools.wrapToLength("Du befindest dich nun am Eingang der dritten Welt von Turismaga, um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen, sie werden versuchen alles daran zu setzten dir deine magischen Kräfte sowie deine letzte Lebensenergie zu rauben also halt dich in acht.", 112),
                         "                                             .:;. .::.    .:;. ,:.                                              ",
                         "                                             .oo:,:oo:,,,,:oo:;lo'                                              ",
                         "                                             .ldddddddddddddodddo.                                              ",
