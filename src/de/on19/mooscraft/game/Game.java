@@ -56,7 +56,7 @@ public class Game {
 
     public String getPlayerIndicator(Character character) {
         String name = "Spieler: " + character.getName() + " (" + this.getCharacterClass(character) + ")";
-        String health = "Lebensenergie (" + character.getHealth() + "/100) " + TextTools.repeat("❤", (int) Math.ceil((float) character.getHealth() / 10));
+        String health = "Lebensenergie (" + character.getHealth() + "/100) " + TextTools.repeat("❤", (int) Math.ceil((float) character.getHealth() / 10)) + TextTools.repeat("○", (int) Math.floor((float) (100 - character.getHealth()) / 10));
 
         int indicatorLength = name.length() + health.length();
         int remainingSpace = 112 - indicatorLength; // should not be (x < 0)
