@@ -1,6 +1,6 @@
 package de.on19.mooscraft.renderer;
 
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +31,7 @@ public class Screen {
     }
 
     public void append(String[] lines) {
-        StringTools.append(this.lines, lines);
+        TextTools.append(this.lines, lines);
     }
 
     public void appendLine(String s) {

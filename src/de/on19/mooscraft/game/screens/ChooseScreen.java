@@ -1,7 +1,7 @@
 package de.on19.mooscraft.game.screens;
 
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class ChooseScreen extends Screen {
     }
 
     public void addOptions(String[] options) {
-        StringTools.append(this.options, options);
+        TextTools.append(this.options, options);
     }
 
     public List<String> getOptions() {
@@ -61,12 +61,12 @@ public class ChooseScreen extends Screen {
         // Arrays.asList() only returns a list with fixed size, so we need to pass it into a new list
         List<String> content = new ArrayList<String>(Arrays.asList(super.getContent()));
 
-        StringTools.append(content, StringTools.emptyLines(1));
+        TextTools.append(content, TextTools.emptyLines(1));
 
         // get nicely formatted options from above
-        StringTools.append(content, getFormattedOptions());
+        TextTools.append(content, getFormattedOptions());
 
-        StringTools.append(content, StringTools.emptyLines(1));
+        TextTools.append(content, TextTools.emptyLines(1));
 
         content.add(this.instruction);
 

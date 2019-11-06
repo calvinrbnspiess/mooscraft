@@ -1,6 +1,5 @@
 package de.on19.mooscraft.renderer;
 
-import de.on19.mooscraft.game.screens.SplashScreen;
 import org.fusesource.jansi.AnsiConsole;
 
 import static org.fusesource.jansi.Ansi.ansi;

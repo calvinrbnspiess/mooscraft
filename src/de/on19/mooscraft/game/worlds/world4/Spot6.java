@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot6 extends Spot {
 
@@ -17,10 +17,10 @@ public class Spot6 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Die Untiefen des Mooscraft-Moores ≈≈≈", 112));
-        s.append(StringTools.emptyLines(1));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Die Untiefen des Mooscraft-Moores ≈≈≈", 112));
+        s.append(TextTools.emptyLines(1));
         String text = "Die Nymphe lauert in den tiefen des Moores, du bemerkst sie leider zu spät, sie versucht  sogar dich in den Moor dein bevorstehendes Ende zu locken allerdings vergebens.";
-        s.append(StringTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, 112, 12));
         s.appendLine("Sie raubt dir mit ihrer schrillen Stimme 10 Einheiten deiner Lebensenergie. Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-10);

@@ -2,8 +2,6 @@ package de.on19.mooscraft.game.worlds;
 
 import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
-import de.on19.mooscraft.game.interaction.ActionHandler;
-import de.on19.mooscraft.renderer.Renderer;
 
 public abstract class Spot {
 

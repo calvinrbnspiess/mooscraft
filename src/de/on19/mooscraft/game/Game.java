@@ -16,7 +16,7 @@ import de.on19.mooscraft.game.worlds.world3.World3;
 import de.on19.mooscraft.game.worlds.world4.World4;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class Game {
     public void printGameScreen(Screen prior) {
         Screen screen = new Screen();
         screen.append(this.getStatsIndicator(this.character));
-        screen.append(StringTools.emptyLines(1));
+        screen.append(TextTools.emptyLines(1));
         screen.append(prior.getContent());
 
         this.renderer.printScreen(screen, true);
@@ -55,12 +55,12 @@ public class Game {
 
     public String getPlayerIndicator(Character character) {
         String name = "Spieler: " + character.getName() + " (" + this.getCharacterClass(character) + ")";
-        String health = "Lebensenergie (" + character.getHealth() + "/100) " + StringTools.repeat("❤",  (int) Math.ceil((float) character.getHealth() / 10));
+        String health = "Lebensenergie (" + character.getHealth() + "/100) " + TextTools.repeat("❤", (int) Math.ceil((float) character.getHealth() / 10));
 
         int indicatorLength = name.length() + health.length();
         int remainingSpace = 112 - indicatorLength; // should not be (x < 0)
 
-        return health + StringTools.repeat(" ", remainingSpace) + name;
+        return health + TextTools.repeat(" ", remainingSpace) + name;
     }
 
     public String[] getStatsIndicator(Character character) {
@@ -73,22 +73,22 @@ public class Game {
         int remainingSpace = 112 - statusLength; // should not be (x < 0)
 
         // 4 properties -> 3 gaps between
-        String surroundingSpace = StringTools.repeat(" ", (int) Math.ceil(remainingSpace / 3));
+        String surroundingSpace = TextTools.repeat(" ", (int) Math.ceil(remainingSpace / 3));
 
         String statusLine = strength + surroundingSpace + witchcraft + surroundingSpace + willpower + surroundingSpace + wisdom;
 
-        return new String[] {
-                StringTools.repeat("━", 112),
+        return new String[]{
+                TextTools.repeat("━", 112),
                 this.getPlayerIndicator(character),
-            statusLine,
-            StringTools.repeat("━", 112),
-            this.getProgressIndicator(character),
-                StringTools.repeat("━", 112)
+                statusLine,
+                TextTools.repeat("━", 112),
+                this.getProgressIndicator(character),
+                TextTools.repeat("━", 112)
         };
     }
 
     public String getCharacterClass(Character character) {
-        switch(character.getClass().getSimpleName()) {
+        switch (character.getClass().getSimpleName()) {
             case "MermaidMan":
                 return "Meerjungfraumann";
             case "Rogue":
@@ -117,7 +117,7 @@ public class Game {
             int indicatorSpotLength = (int) indicatorLength / w.getPathLength();
             for (int i = 0; i < w.getPathLength(); i++) {
                 iterationIndex++;
-                indicator += StringTools.repeat(visitedSpots >= iterationIndex ? "█" : "░", indicatorSpotLength);
+                indicator += TextTools.repeat(visitedSpots >= iterationIndex ? "█" : "░", indicatorSpotLength);
             }
 
             indicator = indicator + "|";
@@ -129,7 +129,7 @@ public class Game {
 
         indicator = indicator + " " + Math.round(percentage) + "%";
 
-        return StringTools.centerInRow(indicator, 112);
+        return TextTools.centerInRow(indicator, 112);
     }
 
     //sequential processing of the following lines
@@ -145,10 +145,10 @@ public class Game {
 
         //intro World
         Screen intro = new Screen();
-        intro.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
-        intro.append(StringTools.emptyLines(1));
+        intro.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        intro.append(TextTools.emptyLines(1));
         intro.appendLine("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.");
-        intro.append(StringTools.emptyLines(1));
+        intro.append(TextTools.emptyLines(1));
         intro.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(intro);
@@ -158,12 +158,12 @@ public class Game {
 
         //Intro Hexe Magalia
         Screen magalia = new Screen();
-        magalia.append(StringTools.addPadding(Witch.getGreeting(), 112, 12));
-        magalia.append(StringTools.emptyLines(2));
+        magalia.append(TextTools.addPadding(Witch.getGreeting(), 112, 12));
+        magalia.append(TextTools.emptyLines(2));
         magalia.append(Warrior.getIcon());
-        magalia.append(StringTools.emptyLines(2));
+        magalia.append(TextTools.emptyLines(2));
         magalia.append(Witch.getDescriptionArray());
-        magalia.append(StringTools.emptyLines(2));
+        magalia.append(TextTools.emptyLines(2));
         magalia.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(magalia);
@@ -171,12 +171,12 @@ public class Game {
 
         //Intro Kriegerin Bellatrix
         Screen bellatrix = new Screen();
-        bellatrix.append(StringTools.addPadding(Warrior.getGreeting(), 112, 12));
-        bellatrix.append(StringTools.emptyLines(2));
+        bellatrix.append(TextTools.addPadding(Warrior.getGreeting(), 112, 12));
+        bellatrix.append(TextTools.emptyLines(2));
         bellatrix.append(Warrior.getIcon());
-        bellatrix.append(StringTools.emptyLines(2));
-        bellatrix.append(StringTools.addPadding(Warrior.getDescription(), 112, 12));
-        bellatrix.append(StringTools.emptyLines(2));
+        bellatrix.append(TextTools.emptyLines(2));
+        bellatrix.append(TextTools.addPadding(Warrior.getDescription(), 112, 12));
+        bellatrix.append(TextTools.emptyLines(2));
         bellatrix.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(bellatrix);
@@ -184,11 +184,11 @@ public class Game {
 
         //Intro White Mage Kelii
         Screen kelii = new Screen();
-        kelii.append(StringTools.addPadding(WhiteMage.getGreeting(), 112, 12));
+        kelii.append(TextTools.addPadding(WhiteMage.getGreeting(), 112, 12));
         kelii.append(WhiteMage.getIcon());
-        kelii.append(StringTools.emptyLines(2));
-        kelii.append(StringTools.addPadding(WhiteMage.getDescription(), 112, 12));
-        kelii.append(StringTools.emptyLines(2));
+        kelii.append(TextTools.emptyLines(2));
+        kelii.append(TextTools.addPadding(WhiteMage.getDescription(), 112, 12));
+        kelii.append(TextTools.emptyLines(2));
         kelii.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(kelii);
@@ -196,12 +196,12 @@ public class Game {
 
         //Intro Rogue Bandito
         Screen bandito = new Screen();
-        bandito.append(StringTools.addPadding(Rogue.getGreeting(), 112, 12));
-        bandito.append(StringTools.emptyLines(2));
+        bandito.append(TextTools.addPadding(Rogue.getGreeting(), 112, 12));
+        bandito.append(TextTools.emptyLines(2));
         bandito.append(Rogue.getIcon());
-        bandito.append(StringTools.emptyLines(2));
-        bandito.append(StringTools.addPadding(Rogue.getDescription(), 112, 12));
-        bandito.append(StringTools.emptyLines(2));
+        bandito.append(TextTools.emptyLines(2));
+        bandito.append(TextTools.addPadding(Rogue.getDescription(), 112, 12));
+        bandito.append(TextTools.emptyLines(2));
         bandito.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(bandito);
@@ -209,12 +209,12 @@ public class Game {
 
         //Intro Mermaidman Marin
         Screen marin = new Screen();
-        marin.append(StringTools.addPadding(MermaidMan.getGreeting(), 112, 12));
-        marin.append(StringTools.emptyLines(2));
+        marin.append(TextTools.addPadding(MermaidMan.getGreeting(), 112, 12));
+        marin.append(TextTools.emptyLines(2));
         marin.append(MermaidMan.getIcon());
-        marin.append(StringTools.emptyLines(1));
-        marin.append(StringTools.addPadding(MermaidMan.getDescription(), 112, 12));
-        marin.append(StringTools.emptyLines(2));
+        marin.append(TextTools.emptyLines(1));
+        marin.append(TextTools.addPadding(MermaidMan.getDescription(), 112, 12));
+        marin.append(TextTools.emptyLines(2));
         marin.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(marin);
@@ -222,10 +222,10 @@ public class Game {
 
         //intro World
         ChooseScreen chooseCharacter = new ChooseScreen();
-        chooseCharacter.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
-        chooseCharacter.append(StringTools.emptyLines(2));
+        chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        chooseCharacter.append(TextTools.emptyLines(2));
         String introWorld = "Du hast verstanden und eine Wahl getroffen? Vergiss nicht: Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
-        chooseCharacter.append(StringTools.addPadding(introWorld, 112, 12));
+        chooseCharacter.append(TextTools.addPadding(introWorld, 112, 12));
 
         chooseCharacter.addOptions(new String[]{
                 "Magalia (Hexe)",
@@ -269,7 +269,7 @@ public class Game {
         character.prepareGameOverScreen(new GameOverScreen(this));
 
         Screen chooseName = new Screen();
-        chooseName.append(new String[]{StringTools.centerInRow("≈≈≈ Bitte gebe einen Namen ein ≈≈≈", 112)});
+        chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gebe einen Namen ein ≈≈≈", 112)});
 
         renderer.printScreen(chooseName, true);
 
@@ -282,7 +282,7 @@ public class Game {
         });
 
         Screen printName = new Screen();
-        printName.append(new String[]{StringTools.wrapToLength("Viel Erfolg auf deinem Weg " + character.getName(), 112)});
+        printName.append(new String[]{TextTools.wrapToLength("Viel Erfolg auf deinem Weg " + character.getName(), 112)});
         renderer.printScreen(printName, true);
 
         for (World w : this.worlds) {
@@ -296,14 +296,14 @@ public class Game {
 
         Screen castle = new Screen();
         if (character.getHealth() >= 25) {
-            castle.append(StringTools.addPadding(woncastel, 112, 12));
+            castle.append(TextTools.addPadding(woncastel, 112, 12));
         } else {
-            castle.append(StringTools.addPadding(lostcastle, 112, 12));
+            castle.append(TextTools.addPadding(lostcastle, 112, 12));
         }
         renderer.printScreen(castle);
         String[] castleIcon = new String[]{
-                        "                                                      :0Oc.                                         ",
-                        "                                                      cNWN0Odoc;'..                                             " +
+                "                                                      :0Oc.                                         ",
+                "                                                      cNWN0Odoc;'..                                             " +
                         "                                                      cWMMMMMMMWNX0kdl'                                         " +
                         "                                                      cWMMMMMWX0Oxoc;,.                                         " +
                         "                                                      cNN0oc:,..                                                " +

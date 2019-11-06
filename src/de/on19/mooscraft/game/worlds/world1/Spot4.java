@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot4 extends Spot {
 
@@ -18,11 +18,11 @@ public class Spot4 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ Plötzlich auf dem Weg ≈≈≈", 112));
-        s.append(StringTools.emptyLines(2));
+        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ Plötzlich auf dem Weg ≈≈≈", 112));
+        s.append(TextTools.emptyLines(2));
         String text = "Auf einmal hörst du ein Zischen, ganz aus der Nähe. Eine schwarz glänzende Schlange bewegt sich auf dich zu. Du bist nicht schnell genug der giftige Biss trifft dich.";
-        s.append(StringTools.addPadding(text, 112, 12));
-        s.append(StringTools.emptyLines(1));
+        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.emptyLines(1));
         s.appendLine("Du verlierst 5 Einheiten an Lebensenergie, erschöpft gehst du weiter. Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-5);

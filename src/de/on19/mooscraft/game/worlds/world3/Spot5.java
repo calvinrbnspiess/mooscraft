@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot5 extends Spot {
 
@@ -17,10 +17,10 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ im Hexenturm ≈≈≈", 112));
-        s.append(StringTools.emptyLines(1));
+        s.appendLine(TextTools.centerInRow("≈≈≈ im Hexenturm ≈≈≈", 112));
+        s.append(TextTools.emptyLines(1));
         String text = "Die ominöse Frau D. lebt schon seit geraumer Zeit im Hexenturm, sie ist die gute Seele von Mooscraft.";
-        s.append(StringTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, 112, 12));
         s.appendLine("Deswegen schenkt sie dir deswegen 5 Einheiten Lebensenergie Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(5);

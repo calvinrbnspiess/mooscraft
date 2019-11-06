@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StringTools {
+public class TextTools {
 
     public static final String MATCH_NON_WORDS = "[^\\p{L}+]";
     public static final String MATCH_WHITESPACE = "\\s";
@@ -28,8 +28,8 @@ public class StringTools {
         // TODO no whitespaces?
 
         // decrease maxChars by one to make space for line-break-indicator
-        if(!text.contains(" ")) {
-            for(int i = maxChars; i <= text.length(); i += maxChars) {
+        if (!text.contains(" ")) {
+            for (int i = maxChars; i <= text.length(); i += maxChars) {
                 text = text.substring(0, i - 1) + System.lineSeparator() + text.substring(i - 1);
             }
             return text;
@@ -65,8 +65,8 @@ public class StringTools {
         text = text.trim().replaceAll("\\s{2,}", " ");
 
         // fix bug when entering a too short string
-        if(text.length() < maxChars) {
-            return new String[] { text };
+        if (text.length() < maxChars) {
+            return new String[]{text};
         }
 
         List<String> lines = new ArrayList<String>();

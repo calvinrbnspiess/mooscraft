@@ -1,18 +1,15 @@
-import de.on19.mooscraft.utils.StringTools;
-
-import java.util.Arrays;
+import de.on19.mooscraft.utils.TextTools;
 
 /**
- *  colors for worlds
- *
- *  public static final String WORLDONE = "\u001b[1;95m";
- public static final String WORLDTWO = "\u001b[1;92m";
- public static final String WORLDTHREE = "\u001b[1;91m";
- public static final String WORLDFOUR = "\u001b[1;96m";
- color table:
- https://en.wikipedia.org/wiki/ANSI_escape_code
- Table about 3/4bit; use FG Code
- *
+ * colors for worlds
+ * <p>
+ * public static final String WORLDONE = "\u001b[1;95m";
+ * public static final String WORLDTWO = "\u001b[1;92m";
+ * public static final String WORLDTHREE = "\u001b[1;91m";
+ * public static final String WORLDFOUR = "\u001b[1;96m";
+ * color table:
+ * https://en.wikipedia.org/wiki/ANSI_escape_code
+ * Table about 3/4bit; use FG Code
  */
 public class TestJansi {
 
@@ -26,12 +23,12 @@ public class TestJansi {
 
         System.out.println("--");
 
-        System.out.println(StringTools.wrapToLength(text, 112));
-        System.out.println(StringTools.wrapToLength(textNoWhitespace, 112));
+        System.out.println(TextTools.wrapToLength(text, 112));
+        System.out.println(TextTools.wrapToLength(textNoWhitespace, 112));
 
         System.out.println("--");
 
-        for(String line : StringTools.wrapToLengthArray(textNoWhitespace, 112)) {
+        for (String line : TextTools.wrapToLengthArray(textNoWhitespace, 112)) {
             System.out.println(line);
         }
 
@@ -57,9 +54,10 @@ public class TestJansi {
     }
 
 }
-/**Source for above Code
+/**
+ * Source for above Code
  * https://stackoverflow.com/questions/56140910/setting-up-a-classpath-for-jansi
- *
+ * <p>
  * Color table for ANSI Escape Codes
  * https://en.wikipedia.org/wiki/ANSI_escape_code
  */

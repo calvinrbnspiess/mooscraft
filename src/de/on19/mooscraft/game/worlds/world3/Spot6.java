@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot6 extends Spot {
 
@@ -17,10 +17,10 @@ public class Spot6 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Angriff aus dem Nichts ≈≈≈", 112));
-        s.append(StringTools.emptyLines(1));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Angriff aus dem Nichts ≈≈≈", 112));
+        s.append(TextTools.emptyLines(1));
         String text = "Ein fieser unvorhersehbarer Angriff des Schützen aus der Ferne sorgt dafür, dass du nun den Weg mit einem Pfeil in deinem Körper weiter gehen musst.";
-        s.append(StringTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, 112, 12));
         s.appendLine("Durch diesen Angriff verlierst du 20 Einheiten Lebensenergie. Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-20);

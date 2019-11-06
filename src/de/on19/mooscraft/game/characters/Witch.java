@@ -1,20 +1,23 @@
 package de.on19.mooscraft.game.characters;
 
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Witch extends Character {
-    /**extends me and that this class builds on an other class (here class Character). Therefore, the class
+    /**
+     * extends me and that this class builds on an other class (here class Character). Therefore, the class
      * extends the overall class
      */
 
     public Witch() {
         super(25, 20, 40, 50, 30);
     }
-    /**super calls constructor of Character class
+
+    /**
+     * super calls constructor of Character class
      * know which constructor by comparison of used parameters
      */
 
@@ -50,11 +53,11 @@ public class Witch extends Character {
 
         List<String> lines = new ArrayList<String>();
 
-        lines.addAll(Arrays.asList(StringTools.addPadding(description1, 112, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description1, 112, 12)));
         lines.add("");
-        lines.addAll(Arrays.asList(StringTools.addPadding(description2, 112, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description2, 112, 12)));
         lines.add("");
-        lines.addAll(Arrays.asList(StringTools.addPadding(description3, 112, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description3, 112, 12)));
 
         return lines.toArray(new String[0]);
     }
