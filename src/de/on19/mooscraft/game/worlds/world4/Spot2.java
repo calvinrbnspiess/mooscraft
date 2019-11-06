@@ -17,7 +17,7 @@ public class Spot2 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Entdeckung einer Höhle ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
         String text = "Du stößt auf eine Höhle voller Edelsteine, Juwelen und anderen Kostbarkeiten. Mitten in all den wertvollen Gegenständen Truhe des Alchemisten.";
         s.append(StringTools.addPadding(text, 112, 12));

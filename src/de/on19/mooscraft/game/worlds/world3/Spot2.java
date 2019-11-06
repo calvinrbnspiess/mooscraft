@@ -17,7 +17,7 @@ public class Spot2 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Ein Zelt ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
         String text = "Auf deinem Weg zum Hexenturm kommst du am Zelt der Heilerin vorbei. Die Wunden deines letztens Kampfes werden verbunden und deine Chakra-Energie geerdet du lädst der Glaube an dich selbst wird wieder größer.";
         s.append(StringTools.addPadding(text, 112, 12));

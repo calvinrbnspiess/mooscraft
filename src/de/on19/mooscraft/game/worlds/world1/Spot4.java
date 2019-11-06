@@ -17,18 +17,16 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Plötzlich auf dem Weg ≈≈≈", 112));
         s.append(StringTools.emptyLines(2));
-        String text = "Auf einmal hörst du ein Zischen, ganz aus der Nähe. Eine schwarz glänzende Schlange bewegt sich auf dich zu. Bist du schnell genug, entkommst du, ansonsten verlierst du Lebensenergie aufgrund des giftigen Bisses.";
+        String text = "Auf einmal hörst du ein Zischen, ganz aus der Nähe. Eine schwarz glänzende Schlange bewegt sich auf dich zu. Du bist nicht schnell genug der giftige Biss trifft dich.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.append(StringTools.emptyLines(1));
-        s.appendLine("Erschöpft gehst du weiter. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Du verlierst 5 Einheiten an Lebensenergie, erschöpft gehst du weiter. Gib <weiter> ein, um fortzufahren.");
 
         game.printGameScreen(s);
         character.addHealth(-5);
-        /*z.B. health zufügen
-         * character.addhealth(parameter eingeben)
-         */
+
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

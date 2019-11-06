@@ -17,20 +17,15 @@ public class Spot6 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈", 112));
         s.append(StringTools.emptyLines(2));
-        String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst kleine Fee. Sie möchte dir gerne einen Wunsch erfüllen, da sie gehört hat wie tapfer du bis hier warst. Mehr Lebensenergie, Stärke, Zauberkraft oder Willenskraft gewinnen?";
+        String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst kleine Fee. Da sie gehört hat wie tapfer du bis hier warst. Schenkt sie dir Stärke";
         s.append(StringTools.addPadding(text, 112, 12));
         s.append(StringTools.emptyLines(1));
-        s.appendLine("Entscheide dich. Gib <weiter> ein, um fortzufahren.");
-
+        s.appendLine("Du bekommst 10 Einheiten Stärke. Gib <weiter> ein, um fortzufahren.");
         game.printGameScreen(s);
 
-        /* HIER FEHLT NOCH DIE AUSWAHL MÖGLICHKEIT GIBT ES DIE ÜBERHAUPT?
-         * oder kein Parameter wird bearbeitet
-         * z.B. health zufügen
-         * character.addhealth(parameter eingeben)
-         */
+        character.addStrength(10);
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

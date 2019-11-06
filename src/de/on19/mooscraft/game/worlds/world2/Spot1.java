@@ -17,19 +17,23 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Am Fluss Mittelklinge ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        String text = "Nahe am Wasser da lebts sich gut. Albert seine Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus, manche schenken dir beim Vernaschen, extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen, ziehen dir gegenteilig dazu einiges davon ab, so dass du am Ende deiner Kräfte bist.";
+
+        String text = "Nahe am Wasser da lebts sich gut. Albert seine Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus, manche schenken dir beim Vernaschen, extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen, ziehen dir einiges davon ab.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du probierst eine blau leuchtende Blume und verlierst 5 Einheiten Willenskraft. Gib <weiter> ein, um fortzufahren.");
 
         game.printGameScreen(s);
+
+        character.addWillpower(-5);
         //character.addHealth(10);
         /*extra Stärke, Willenskraft oder Lebensenergie (jeweils +10) ?
         (Stärke, Lebensenergie oder Willenskraft -5, per Zufall?)
            z.B. health zufügen
          * character.addhealth(parameter eingeben)
          */
+
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

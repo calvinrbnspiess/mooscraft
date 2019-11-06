@@ -17,7 +17,7 @@ public class Spot3 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ An einem See auf einem Felsen ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
         String text = "Sirenen-Angriff, Mischwesen mit einem Vogelkörper und einem Frauenkopf locken dich mit ihrer Stimme ins Verderben, du kannst mit deinen letzten Kräften entkommen.";
         s.append(StringTools.addPadding(text, 112, 12));
