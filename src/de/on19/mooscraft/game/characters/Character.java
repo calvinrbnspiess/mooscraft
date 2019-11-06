@@ -131,35 +131,31 @@ public class Character {
         return visitedSpots;
     }
 
-    Screen gameOver = new Screen();
+    //game over method
+    public int getgameOver(String) {
+        Screen gameOver = new Screen();
 
-    String[] gameOverOutput = {
+        String[] gameOverOutput = {
 
 
-            "   ▄██████▄     ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████       ▄██████▄   ▄█    █▄     ▄████████  ▄████████",
-            "  ███    ███   ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
-            "  ███    █▀    ███    ███ ███   ███   ███   ███    █▀       ███    ███ ███    ███   ███    █▀   ███    ███",
-            "  ▄███         ███    ███ ███   ███   ███  ▄███▄▄▄          ███    ███ ███    ███  ▄███▄▄▄     ▄███▄▄▄▄██▀",
-            "▀▀███ ████▄  ▀███████████ ███   ███   ███▀▀███▀▀▀           ███    ███ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀",
-            "  ███    ███   ███    ███ ███   ███   ███   ███    █▄       ███    ███ ███    ███   ███    █▄  ▀███████████",
-            "  ███    ███   ███    ███ ███   ███   ███   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
-            "  ████████▀    ███    █▀   ▀█   ███   █▀    ██████████       ▀██████▀   ▀██████▀    ██████████  ███    ███",
-                                                                                                            "███    ███" ,
-    };
+                "   ▄██████▄     ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████       ▄██████▄   ▄█    █▄     ▄████████  ▄████████",
+                "  ███    ███   ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
+                "  ███    █▀    ███    ███ ███   ███   ███   ███    █▀       ███    ███ ███    ███   ███    █▀   ███    ███",
+                "  ▄███         ███    ███ ███   ███   ███  ▄███▄▄▄          ███    ███ ███    ███  ▄███▄▄▄     ▄███▄▄▄▄██▀",
+                "▀▀███ ████▄  ▀███████████ ███   ███   ███▀▀███▀▀▀           ███    ███ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀",
+                "  ███    ███   ███    ███ ███   ███   ███   ███    █▄       ███    ███ ███    ███   ███    █▄  ▀███████████",
+                "  ███    ███   ███    ███ ███   ███   ███   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
+                "  ████████▀    ███    █▀   ▀█   ███   █▀    ██████████       ▀██████▀   ▀██████▀    ██████████  ███    ███",
+                                                                                                                "███    ███",
+        };
+        gameOver.setContent(gameOverOutput);
+        }
 
-    public String[] getGameOver() {
-        return gameOverOutput;
-
-        //game over method
-        //String spotwon --> als private in spot definiert
-
-    /*Screen gameOver = new Screen();
         if (character.getHealth() < 0) {
-        gameOver.append(StringTools.addPadding(spotwon, 112, 12));
-    } else {
-        gameOver.append(StringTools.addPadding(lostcastle, 112, 12));
+        gameOver.append(StringTools.addPadding(gameOverOutput, 112, 12));
+
+        renderer.printScreen(gameOver);
+
     }
-        renderer.printScreen(castle);
-}*/
-    }
+}
 }
