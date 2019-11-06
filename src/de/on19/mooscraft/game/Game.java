@@ -207,10 +207,10 @@ public class Game {
         ChooseAction chooseAction = new ChooseAction(chooseCharacter);
 
         // character needs to be uniquely chosen
-        while(chooseAction.getChosenOption() == null) {
+        while (chooseAction.getChosenOption() == null) {
             handler.waitForAction(chooseAction);
 
-            if(chooseAction.getChosenOption() == null) {
+            if (chooseAction.getChosenOption() == null) {
                 Screen s = new Screen();
                 s.appendLine("Du hast keine eindeutige Option gewählt. Probier's nochmal.");
                 renderer.printScreen(s, false);
@@ -220,15 +220,15 @@ public class Game {
         String chosenOption = chooseAction.getChosenOption();
         String[] formattedOptions = chooseCharacter.getFormattedOptions();
 
-        if(formattedOptions[0].equals(chosenOption)) {
+        if (formattedOptions[0].equals(chosenOption)) {
             character = new Witch();
-        } else if(formattedOptions[1].equals(chosenOption)) {
+        } else if (formattedOptions[1].equals(chosenOption)) {
             character = new Warrior();
-        } else if(formattedOptions[2].equals(chosenOption)) {
+        } else if (formattedOptions[2].equals(chosenOption)) {
             character = new WhiteMage();
-        } else if(formattedOptions[3].equals(chosenOption)) {
+        } else if (formattedOptions[3].equals(chosenOption)) {
             character = new Rogue();
-        } else if(formattedOptions[4].equals(chosenOption)) {
+        } else if (formattedOptions[4].equals(chosenOption)) {
             character = new MermaidMan();
         }
 
@@ -268,32 +268,32 @@ public class Game {
         }
         renderer.printScreen(castle);
         String[] castelIcon = new String[]{
-        "                                                      :0Oc.                                         " ,
-        "                                                      cNWN0Odoc;'..                                             \n" +
-        "                                                      cWMMMMMMMWNX0kdl'                                         \n" +
-        "                                                      cWMMMMMWX0Oxoc;,.                                         \n" +
-        "                                                      cNN0oc:,..                                                \n" +
-        "                                                      cX0;                                                      \n" +
-        "                                        .odl.  :dd;  .OWNx.  :dd;  'ddl.                                        \n" +
-        "                                        ;XMX; .xMMd  :NMMK, .kMMd  cNMK,                                        \n" +
-        "                                        ;XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,                                        \n" +
-        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        \n" +
-        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        \n" +
-        "                                        'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.                                        \n" +
-        "                                         .',kMMMMMMMMMMMMMMMMMMMMMWd'..                                         \n" +
-        "                                           .OMMMMMMMMMWWWMMMMMMMMMMx.                                           \n" +
-        "                                           ;XMMMMMMW0l;,,;oKWMMMMMM0'                                           \n" +
-        "                                           oMMMMMMMO.      ,0MMMMMMWc                                           \n" +
-        "                                          .OMMMMMMMx.      .kMMMMMMMx.                                          \n" +
-        "                                          :NMMMMMMMd       .kMMMMMMMK,                                          \n" +
-        "                                          dMMMMMMMMd       .kMMMMMMMWl                                          \n" +
-        "                                         '0MMMMMMMMKdooooooxXMMMMMMMMk.                                         \n" +
-        "                                         cNMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                         \n" +
-        "                                        .xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                         \n" +
-        "                                        ,KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.                                        \n" +
-        "                                        .oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.  "
-        }
-
+                        "                                                      :0Oc.                                         ",
+                        "                                                      cNWN0Odoc;'..                                             " +
+                        "                                                      cWMMMMMMMWNX0kdl'                                         " +
+                        "                                                      cWMMMMMWX0Oxoc;,.                                         " +
+                        "                                                      cNN0oc:,..                                                " +
+                        "                                                      cX0;                                                      " +
+                        "                                        .odl.  :dd;  .OWNx.  :dd;  'ddl.                                        " +
+                        "                                        ;XMX; .xMMd  :NMMK, .kMMd  cNMK,                                        " +
+                        "                                        ;XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,                                        " +
+                        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        " +
+                        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        " +
+                        "                                        'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.                                        " +
+                        "                                         .',kMMMMMMMMMMMMMMMMMMMMMWd'..                                         " +
+                        "                                           .OMMMMMMMMMWWWMMMMMMMMMMx.                                           " +
+                        "                                           ;XMMMMMMW0l;,,;oKWMMMMMM0'                                           " +
+                        "                                           oMMMMMMMO.      ,0MMMMMMWc                                           " +
+                        "                                          .OMMMMMMMx.      .kMMMMMMMx.                                          " +
+                        "                                          :NMMMMMMMd       .kMMMMMMMK,                                          " +
+                        "                                          dMMMMMMMMd       .kMMMMMMMWl                                          " +
+                        "                                         '0MMMMMMMMKdooooooxXMMMMMMMMk.                                         " +
+                        "                                         cNMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                         " +
+                        "                                        .xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                         " +
+                        "                                        ,KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.                                        " +
+                        "                                        .oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.  "
+        };
+    }
 
     public Renderer getRenderer() {
         return this.renderer;
