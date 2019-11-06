@@ -67,42 +67,57 @@ public class Character {
         this.strength = strength;
     }
     public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
-       this.setStrength(this.getStrength() + strength);
+
+
+       int strengthAfter  = this.getStrength() + strength;
+       if (strengthAfter < 0) {
+           this.setStrength(0);
+           return;
+       };
+
+       this.setStrength(strengthAfter);
     }
 
     //witchcraft
 
-    public int getWitchcraft() {
-        return witchcraft;
-    }
-    public void setWitchcraft(int witchcraft) {
-        this.witchcraft = witchcraft;
-    }
+    public int getWitchcraft() { return witchcraft; }
+    public void setWitchcraft(int witchcraft) { this.witchcraft = witchcraft; }
     public void addWitchcraft(int witchcraft) {
-       this.setWitchcraft(this.getWitchcraft() + witchcraft);
+
+        int witchcraftAfter  = this.getWitchcraft() + witchcraft;
+        if (witchcraftAfter < 0) {
+            this.setWitchcraft(0);
+            return;
+        }
+       this.setWitchcraft(witchcraftAfter);
     }
 
     //willpower
-    public int getWillpower() {
-        return willpower;
-    }
-    public void setWillpower(int willpower) {
-        this.willpower = willpower;
-    }
-    public void addWillpower(int willpower) {
-        this.setWillpower(this.getWillpower() + willpower);
+    public int getWillpower() { return willpower; }
+    public void setWillpower(int willpower) { this.willpower = willpower; }
+        public void addWillpower(int willpower) {
+
+            int willpowerAfter  = this.getWillpower() + willpower;
+            if (willpowerAfter < 0) {
+                this.setWillpower(0);
+                return;
+            }
+                this.setWillpower(willpowerAfter);
     }
 
     //wisdom
-    public int getWisdom() {
-        return wisdom;
-    }
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
-    }
+    public int getWisdom() { return wisdom;  }
+    public void setWisdom(int wisdom) { this.wisdom = wisdom; }
     public void addWisdom(int wisdom) {
-        this.setWisdom(this.getWisdom() + wisdom);
+
+       int wisdomAfter  = this.getWisdom() + wisdom;
+        if (wisdomAfter < 0) {
+            this.setWisdom(0);
+            return;
+        }
+        this.setWisdom(wisdomAfter);
     }
+
 
     public String getName() {
         return name;
