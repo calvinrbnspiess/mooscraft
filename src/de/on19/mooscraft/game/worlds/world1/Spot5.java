@@ -30,11 +30,11 @@ public class Spot5 extends Spot {
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
-            System.out.println("exception");
+
 
             e.printStackTrace();
         }
-        System.out.println("after");
+
     }
 
 }
