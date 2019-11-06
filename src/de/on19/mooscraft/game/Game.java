@@ -267,7 +267,7 @@ public class Game {
             castle.append(StringTools.addPadding(lostcastle, 112, 12));
         }
         renderer.printScreen(castle);
-        String[] castelIcon = new String[]{
+        String[] castleIcon = new String[]{
                         "                                                      :0Oc.                                         ",
                         "                                                      cNWN0Odoc;'..                                             " +
                         "                                                      cWMMMMMMMWNX0kdl'                                         " +
