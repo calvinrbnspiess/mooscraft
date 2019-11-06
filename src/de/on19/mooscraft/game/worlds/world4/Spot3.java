@@ -17,15 +17,13 @@ public class Spot3 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ ein Gnom ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
-        s.append(StringTools.emptyLines(2));
         String text = "Du wirst von einem Gnom auf fiese Art und Weise ausgetrickst er hat es geschafft dir dein Geld aus der Tasche zu ziehen.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Seine hinterlistige Art kostet dich 20 Einheiten Willenskraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.getRenderer().printScreen(s, true);
+        game.printGameScreen(s);
         character.addWillpower(-20);
 
         try {

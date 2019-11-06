@@ -17,15 +17,13 @@ public class Spot2 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Entdeckung einer Höhle ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
-        s.append(StringTools.emptyLines(2));
         String text = "Du stößt auf eine Höhle voller Edelsteine, Juwelen und anderen Kostbarkeiten. Mitten in all den wertvollen Gegenständen Truhe des Alchemisten.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Du öffnest die Truhe und erhälst dadurch 10 Einheiten an Weisheit. Gib <weiter> ein, um fortzufahren.");
 
-        game.getRenderer().printScreen(s, true);
+        game.printGameScreen(s);
         character.addWisdom(10);
 
         try {

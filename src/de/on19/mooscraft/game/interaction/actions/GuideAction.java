@@ -9,7 +9,7 @@ import de.on19.mooscraft.utils.StringTools;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HelpAction implements DescriptedAction {
+public class GuideAction implements DescriptedAction {
 
     public static String getActionDescription(DescriptedAction a) {
         return "<" + a.getAction() + "> - " + StringTools.wrapToLength(a.getDescription(), 112);
@@ -29,29 +29,12 @@ public class HelpAction implements DescriptedAction {
     public void onCommand(String[] args, ActionHandler handler) {
         Screen screen = new Screen();
         screen.append(new String[]{
-              StringTools.centerInRow("≈≈≈ Befehlsübersicht ≈≈≈", 112),
-              "Folgende Befehle sind definiert. Du kannst diese jederzeit aufrufen:",
+                StringTools.centerInRow("≈≈≈ \u001b[1;91mSpielanleitung\u001b[0m ≈≈≈", 112),
         });
 
-        screen.append(StringTools.emptyLines(2));
-
-        screen.append(getSystemActionDescriptions(handler).toArray(new String[0]));
-
-        screen.append(StringTools.emptyLines(2));
-
-
-        // Print description for awaitedAction
-
-        Action awaitedAction = handler.getAwaitedAction();
-
-        if(awaitedAction instanceof DescriptedAction) {
-            screen.append(new String[] {
-                    "Im Moment wird folgende Aktion erwartet:",
-                    getActionDescription((DescriptedAction) awaitedAction)
-            });
-        } else {
-            screen.appendLine("Im Moment wird keine Aktion erwartet.");
-        }
+        String instructions = "Mooscraft besteht aus 4 Welten welche du alle überleben musst um die Burg am " +
+                "Ende des Spieles erobern zu können. Ziel der Mission ist es am Ende noch so viel wie möglich Lebensenergie zu haben. Ausschlaggebende Faktoren hierfür sind Erstens die Wahl deines Spielchrakteres und Zweitens für welchen Weg du dich entscheidest. Am Startpunkt jeder der vier Welten musst du dich an einer Weggabelung für Option A oder B entscheiden, je nachdem hast du dann einen Weg durch die Welt gefunden der dir mehr oder weniger Kräfte raubt. Wenn du die richtigen Entscheidungen triffst steht deiner Herrschaft über Mooscraft nichts mehr im Wege.";
+        screen.append(StringTools.addPadding(instructions, 112, 12));
 
         handler.getRenderer().printScreen(screen, false);
     }
@@ -63,12 +46,12 @@ public class HelpAction implements DescriptedAction {
 
     @Override
     public String getAction() {
-        return "help";
+        return "guide";
     }
 
     @Override
     public String getDescription() {
-        return "Zeigt eine Übersicht aller Befehle an.";
+        return "Zeigt eine Spielanleitung an.";
     }
 
 }

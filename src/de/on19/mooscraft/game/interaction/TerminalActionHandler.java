@@ -1,6 +1,7 @@
 package de.on19.mooscraft.game.interaction;
 
 import de.on19.mooscraft.game.interaction.actions.ExitAction;
+import de.on19.mooscraft.game.interaction.actions.GuideAction;
 import de.on19.mooscraft.game.interaction.actions.HelpAction;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.renderer.Screen;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 public class TerminalActionHandler implements ActionHandler {
 
     private Scanner scanner;
-    private static List<DescriptedAction> systemActions = List.of(new HelpAction(), new ExitAction());
+    private static List<DescriptedAction> systemActions = List.of(new HelpAction(), new GuideAction(), new ExitAction());
     // used to synchronize parallel tasks
     private Object notifier;
     private Action awaitedAction;

@@ -37,12 +37,6 @@ public class SplashScreen extends Screen {
         super.appendLine("Verfügbare Befehle:");
         super.append(HelpAction.getSystemActionDescriptions(handler).toArray(new String[0]));
         super.append(StringTools.emptyLines(2));
-        String instructionHead = "> \u001b[1;91mSpielanleitung\u001b[0m";
-        super.append(StringTools.addPadding(instructionHead, 112, 12));
-        String instructions = "Mooscraft besteht aus 4 Welten welche du alle überleben musst um die Burg am " +
-                "Ende des Spieles erobern zu können. Ziel der Mission ist es am Ende noch so viel wie möglich Lebensenergie zu haben. Ausschlaggebende Faktoren hierfür sind Erstens die Wahl deines Spielchrakteres und Zweitens für welchen Weg du dich entscheidest. Am Startpunkt jeder der vier Welten musst du dich an einer Weggabelung für Option A oder B entscheiden, je nachdem hast du dann einen Weg durch die Welt gefunden der dir mehr oder weniger Kräfte raubt. Wenn du die richtigen Entscheidungen triffst steht deiner Herrschaft über Mooscraft nichts mehr im Wege.";
-        super.append(StringTools.addPadding(instructions, 112, 12));
-        super.append(StringTools.emptyLines(2));
         super.appendLine("Du hast alles verstanden? Dann gib zum Fortfahren bitte <weiter> ein.");
     }
 

@@ -21,7 +21,7 @@ public class World1 extends World {
                         "                                            ,kOOOOkONMMMMMWKOOOOOOl.                                            ",
                         "                                                   'OMMMMMNc                                                    ",
                         "                                                   .d0000KO,                                                    " },
-                "Wähle einen Weg.");
+                "Du stehst nun vor einer Weggabelung und musst dich entscheiden. Welchen Weg wählst du?");
 
         super.getSpotsPool().add(new Spot1(this));
         super.getSpotsPool().add(new Spot2(this));
@@ -32,9 +32,9 @@ public class World1 extends World {
         super.getSpotsPool().add(new Spot6(this));
 
         // add all 6 spots
-        super.generatePath("Den linken Wege musste gehen");
+        super.generatePath("Links sieht es duster aus, etwas weiter hinten siehst du schon eine Lichtquelle.");
         super.generatePath(
-                "Nur wer sein Ziel kennt, findet diesen Weg.");
+                "Dieser Weg wirkt freundlicher. Jedoch tönen unheimliche Geräusche bis zu dir hin.");
     }
 
 }

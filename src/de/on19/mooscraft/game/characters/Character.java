@@ -29,7 +29,7 @@ public class Character {
     }
 
     public Character(int health, int strength, int witchcraft, int willpower, int wisdom) {
-        this.name = "Unnamed Player";
+        this.name = "Unbekannter Spieler";
         /**constructor
          * gives basic values (in brackets) to the variables (called by this.)
          */

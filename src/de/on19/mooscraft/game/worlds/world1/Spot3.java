@@ -17,19 +17,17 @@ public class Spot3 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ Tief im Odenwald ≈≈≈", 112));
-        s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
-        s.append(StringTools.emptyLines(2));
-        String text = "Die Seherin sagt dir deine Zukunft voraus, dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet: “Ich sehe Dunkles kommen. Um deinem Untergang zu entkommen, brauchst du jenes, welches dir Kraft schenkt.” ";
-        s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Verwirrt gehst du weiter. Gib <weiter> ein, um fortzufahren.");
 
-        game.getRenderer().printScreen(s, true);
+        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ In einem Zelt im Odenwald ≈≈≈", 112));
+        s.append(StringTools.emptyLines(2));
+        String text = "Die Seherin sagt dir deine Zukunft voraus. Dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet: “Ich sehe Dunkles kommen. Um deinem Untergang zu entkommen brauchst du jenes, welches dir Kraft schenkt.” ";
+        s.append(StringTools.addPadding(text, 112, 12));
+        s.append(StringTools.emptyLines(1));
+        s.appendLine(" Du verlierst 5 Einheiten an Stärke und gehst verwirrt weiter. Gib <weiter> ein, um fortzufahren.");
+
+        game.printGameScreen(s);
         character.addStrength(-5);
-        /*z.B. health zufügen
-         * character.addhealth(parameter eingeben)
-         */
+
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {

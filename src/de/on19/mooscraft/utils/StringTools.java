@@ -11,7 +11,7 @@ public class StringTools {
 
     public static String repeat(String string, int length) {
         String output = "";
-        for (int i = 0; i <= length; i++) {
+        for (int i = 0; i < length; i++) {
             output = output + string;
         }
         return output;

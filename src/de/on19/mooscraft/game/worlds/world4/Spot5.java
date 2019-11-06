@@ -17,15 +17,13 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+        s.appendLine(StringTools.centerInRow("≈≈≈ Die Dunkelheit als Feind? ≈≈≈", 112));
         s.append(StringTools.emptyLines(1));
-        s.appendLine(game.getProgressIndicator(character));
-        s.append(StringTools.emptyLines(2));
         String text = "Es ist Mittlerweile Nacht geworden und du siehst nicht mehr wirklich ob du dich noch auf dem Weg befindest. Unvorhersehbar versinkst versehentlich bis zur Brust im Mooscraft-Moor, mit Hilfe es eines Zaubertrankes kannst du dich gerade noch so hinaus retten.";
         s.append(StringTools.addPadding(text, 112, 12));
         s.appendLine("Doch das kostet dich 10 Einheiten an Zauberkraft. Gib <weiter> ein, um fortzufahren.");
 
-        game.getRenderer().printScreen(s, true);
+        game.printGameScreen(s);
         character.addWitchcraft(-10);
 
         try {
