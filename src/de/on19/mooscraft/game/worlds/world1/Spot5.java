@@ -17,7 +17,8 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Im Nebel ≈≈≈", 112));
+
+        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ Im Nebel ≈≈≈", 112));
         s.append(StringTools.emptyLines(2));
         String text = "Langsam verlierst du mehr und mehr die Sicht. Du steckst in einem dichten undurchdringlichen Nebel und versuchst vorsichtig weiterzugehen um herauszukommen. Nach kurzer Zeit lichtet sich auch schon der Nebel und du siehst etwas auf dich zukommen.";
         s.append(StringTools.addPadding(text, 112, 12));

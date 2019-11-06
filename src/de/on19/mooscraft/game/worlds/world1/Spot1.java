@@ -17,7 +17,8 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
+
+        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(StringTools.emptyLines(2));
         String text = "Mester lebt tief im Odenwald, alleine und mit einem kleinen Drachen “Exernius”. Begegnest du seiner vermoosten Hütte, gib acht! Denn die Nähe eines Eindringlings zu seinem Heim weckt Exernius und löst einen Stromkreis aus, aus welchem du nicht entfliehen kannst bis Exernius dich besiegt hat.";
         s.append(StringTools.addPadding(text, 112, 12));
@@ -37,16 +38,13 @@ public class Spot1 extends Spot {
         System.out.println("after");
     }
 
-
-   /* Screen spot1 = new Screen();
-        String spot1won = "Gewonnen";
-        String spot1lost = "Verloren";
-        if (character.getHealth() >= 25) {
-        spot1.append(StringTools.addPadding(spot1won, 112, 12));
-    } else {
-        spot1.append(StringTools.addPadding(spot1lost, 112, 12));
-    }
-        renderer.printScreen(spot1);
-}*/
-
 }
+//game over method
+  /*  private String dead = "ZU wenig Lebensenergie. Du bist tot."
+
+    Screen gameOver = new Screen();
+        if (character.getHealth() < 0) {
+        gameOver.append(StringTools.addPadding(spotwon, 112, 12));
+
+        renderer.printScreen(character.gameOverOutput);*/
+ //   }

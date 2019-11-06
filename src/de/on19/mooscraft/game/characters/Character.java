@@ -1,5 +1,6 @@
 package de.on19.mooscraft.game.characters;
 
+import de.on19.mooscraft.game.screens.GameOverScreen;
 import de.on19.mooscraft.game.worlds.Spot;
 
 public class Character {
@@ -14,6 +15,8 @@ public class Character {
     private int wisdom;
 
     private int visitedSpots;
+    private GameOverScreen gameOverScreen;
+
 
     public Character() {
         this(0,0,0,0,0);
@@ -51,6 +54,10 @@ public class Character {
     //health
    public void setHealth(int health){
        this.health = health;
+
+       if(this.health <= 0 && this.gameOverScreen != null) {
+           this.gameOverScreen.print();
+       }
    }
     public int getHealth(){ //no parameters necessary since there is only a return value and no value provided into a variable
         return health;
@@ -133,5 +140,13 @@ public class Character {
 
     public int getVisitedSpots() {
         return visitedSpots;
+    }
+
+    public GameOverScreen getGameOverScreen() {
+        return this.gameOverScreen;
+    }
+
+    public void prepareGameOverScreen(GameOverScreen gameOverScreen) {
+        this.gameOverScreen = gameOverScreen;
     }
 }

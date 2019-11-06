@@ -1,15 +1,12 @@
 package de.on19.mooscraft.game.worlds.world1;
 
-import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.utils.StringTools;
-
-import java.util.List;
 
 public class World1 extends World {
 
     public World1() throws UnsupportedOperationException {
-        super(new String[]{       StringTools.wrapToLength("Ein dichter Wald erwartet dich Ein bisschen mulmig ist dir zumute doch du weißt, du musst da durch um zur Burg Worms zu gelangen. Dieses Ziel treibt dich voran in die Dunkelheit. Auf dich warten überirdische Kämpfe, giftige Wesen, die im Odenwald lauern und dichter Nebel, der dir deine klare Sicht nimmt. Auch den berühmten Mester wirst du antreffen, also nimm dich in Acht, denn du weißt was über ihn erzählt wird.", 112), "                                                     .;;:,.                                                     ",
+        super(new String[]{       StringTools.wrapToLength(">\u001b[1;95mEin dichter Wald erwartet dich Ein bisschen mulmig ist dir zumute doch du weißt, du musst da durch um zur Burg Worms zu gelangen. Dieses Ziel treibt dich voran in die Dunkelheit. Auf dich warten überirdische Kämpfe, giftige Wesen, die im Odenwald lauern und dichter Nebel, der dir deine klare Sicht nimmt. Auch den berühmten Mester wirst du antreffen, also nimm dich in Acht, denn du weißt was über ihn erzählt wird.", 112), "                                                     .;;:,.                                                     ",
                         "                                                    ,0MMMXl.                                                    ",
                         "                                                   :KMMMMMWd.                                                   ",
                         "                                                  cXMMMMMMMMk.                                                  ",
