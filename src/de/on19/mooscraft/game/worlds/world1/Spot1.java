@@ -39,12 +39,3 @@ public class Spot1 extends Spot {
     }
 
 }
-//game over method
-  /*  private String dead = "ZU wenig Lebensenergie. Du bist tot."
-
-    Screen gameOver = new Screen();
-        if (character.getHealth() < 0) {
-        gameOver.append(StringTools.addPadding(spotwon, 112, 12));
-
-        renderer.printScreen(character.gameOverOutput);*/
- //   }
