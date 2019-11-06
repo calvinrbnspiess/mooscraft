@@ -153,43 +153,63 @@ public class Game {
         chooseCharacter.append(StringTools.emptyLines(2));
 
         //Intro Hexe Magalia
-        chooseCharacter.append(StringTools.addPadding(Witch.getGreeting(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(Warrior.getIcon());
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(Witch.getDescriptionArray());
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen magalia = new Screen();
+        magalia.append(StringTools.addPadding(Witch.getGreeting(), 112, 12));
+        magalia.append(StringTools.emptyLines(2));
+        magalia.append(Warrior.getIcon());
+        magalia.append(StringTools.emptyLines(2));
+        magalia.append(Witch.getDescriptionArray());
+        magalia.append(StringTools.emptyLines(2));
+
+        renderer.printScreen(magalia);
+        handler.waitForAction(new ContinueAction());
 
         //Intro Kriegerin Bellatrix
-        chooseCharacter.append(StringTools.addPadding(Warrior.getGreeting(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(Warrior.getIcon());
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(StringTools.addPadding(Warrior.getDescription(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen bellatrix = new Screen();
+        bellatrix.append(StringTools.addPadding(Warrior.getGreeting(), 112, 12));
+        bellatrix.append(StringTools.emptyLines(2));
+        bellatrix.append(Warrior.getIcon());
+        bellatrix.append(StringTools.emptyLines(2));
+        bellatrix.append(StringTools.addPadding(Warrior.getDescription(), 112, 12));
+        bellatrix.append(StringTools.emptyLines(2));
+
+        renderer.printScreen(bellatrix);
+        handler.waitForAction(new ContinueAction());
 
         //Intro White Mage Kelii
-        chooseCharacter.append(StringTools.addPadding(WhiteMage.getGreeting(), 112, 12));
-        chooseCharacter.append(WhiteMage.getIcon());
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(StringTools.addPadding(WhiteMage.getDescription(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen kelii = new Screen();
+        kelii.append(StringTools.addPadding(WhiteMage.getGreeting(), 112, 12));
+        kelii.append(WhiteMage.getIcon());
+        kelii.append(StringTools.emptyLines(2));
+        kelii.append(StringTools.addPadding(WhiteMage.getDescription(), 112, 12));
+        kelii.append(StringTools.emptyLines(2));
+
+        renderer.printScreen(kelii);
+        handler.waitForAction(new ContinueAction());
 
         //Intro Rogue Bandito
-        chooseCharacter.append(StringTools.addPadding(Rogue.getGreeting(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(Rogue.getIcon());
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(StringTools.addPadding(Rogue.getDescription(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen bandito = new Screen();
+        bandito.append(StringTools.addPadding(Rogue.getGreeting(), 112, 12));
+        bandito.append(StringTools.emptyLines(2));
+        bandito.append(Rogue.getIcon());
+        bandito.append(StringTools.emptyLines(2));
+        bandito.append(StringTools.addPadding(Rogue.getDescription(), 112, 12));
+        bandito.append(StringTools.emptyLines(2));
+
+        renderer.printScreen(bandito);
+        handler.waitForAction(new ContinueAction());
 
         //Intro Mermaidman Marin
-        chooseCharacter.append(StringTools.addPadding(MermaidMan.getGreeting(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(MermaidMan.getIcon());
-        chooseCharacter.append(StringTools.emptyLines(1));
-        chooseCharacter.append(StringTools.addPadding(MermaidMan.getDescription(), 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen marin = new Screen();
+        marin.append(StringTools.addPadding(MermaidMan.getGreeting(), 112, 12));
+        marin.append(StringTools.emptyLines(2));
+        marin.append(MermaidMan.getIcon());
+        marin.append(StringTools.emptyLines(1));
+        marin.append(StringTools.addPadding(MermaidMan.getDescription(), 112, 12));
+        marin.append(StringTools.emptyLines(2));
+
+        renderer.printScreen(marin);
+        handler.waitForAction(new ContinueAction());
 
         chooseCharacter.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
 
