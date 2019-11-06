@@ -143,14 +143,18 @@ public class Game {
          */
         handler.waitForAction(new ContinueAction());
 
-        ChooseScreen chooseCharacter = new ChooseScreen();
-
         //intro World
-        String introWorld = "Um die Welt zu durchqueren und die Burg " +
-                "                zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. " +
-                "Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
-        chooseCharacter.append(StringTools.addPadding(introWorld, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen intro = new Screen();
+        intro.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        intro.append(StringTools.emptyLines(1));
+        intro.appendLine("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.");
+        intro.append(StringTools.emptyLines(1));
+        intro.appendLine("Gib <weiter> ein, um fortzufahren.");
+
+        renderer.printScreen(intro);
+
+        handler.waitForAction(new ContinueAction());
+
 
         //Intro Hexe Magalia
         Screen magalia = new Screen();
@@ -160,6 +164,7 @@ public class Game {
         magalia.append(StringTools.emptyLines(2));
         magalia.append(Witch.getDescriptionArray());
         magalia.append(StringTools.emptyLines(2));
+        magalia.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(magalia);
         handler.waitForAction(new ContinueAction());
@@ -172,6 +177,7 @@ public class Game {
         bellatrix.append(StringTools.emptyLines(2));
         bellatrix.append(StringTools.addPadding(Warrior.getDescription(), 112, 12));
         bellatrix.append(StringTools.emptyLines(2));
+        bellatrix.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(bellatrix);
         handler.waitForAction(new ContinueAction());
@@ -183,6 +189,7 @@ public class Game {
         kelii.append(StringTools.emptyLines(2));
         kelii.append(StringTools.addPadding(WhiteMage.getDescription(), 112, 12));
         kelii.append(StringTools.emptyLines(2));
+        kelii.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(kelii);
         handler.waitForAction(new ContinueAction());
@@ -195,6 +202,7 @@ public class Game {
         bandito.append(StringTools.emptyLines(2));
         bandito.append(StringTools.addPadding(Rogue.getDescription(), 112, 12));
         bandito.append(StringTools.emptyLines(2));
+        bandito.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(bandito);
         handler.waitForAction(new ContinueAction());
@@ -207,11 +215,17 @@ public class Game {
         marin.append(StringTools.emptyLines(1));
         marin.append(StringTools.addPadding(MermaidMan.getDescription(), 112, 12));
         marin.append(StringTools.emptyLines(2));
+        marin.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         renderer.printScreen(marin);
         handler.waitForAction(new ContinueAction());
 
+        //intro World
+        ChooseScreen chooseCharacter = new ChooseScreen();
         chooseCharacter.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        chooseCharacter.append(StringTools.emptyLines(2));
+        String introWorld = "Du hast verstanden und eine Wahl getroffen? Vergiss nicht: Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
+        chooseCharacter.append(StringTools.addPadding(introWorld, 112, 12));
 
         chooseCharacter.addOptions(new String[]{
                 "Magalia (Hexe)",

@@ -21,7 +21,7 @@ public class Spot6 extends Spot {
         s.append(StringTools.emptyLines(1));
         String text = "Du steuerst auf eine Klippe zu und siehst es geht 100 Meter weit in die Tiefe. Hast du genügend Zauberkraft (>20), springst du über die Klippe. Wenn aber nicht, fällst du mitten im Sprung, landest auf dem Boden und verlierst somit weitere wertvolle Lebensenergie und Stärke. ";
         s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Diese waghaltige Aktion kostet dich 5 Einheiten an Lebensenergie und Stärke. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine("Diese waghalsige Aktion kostet dich 5 Einheiten an Lebensenergie und Stärke. Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-5);
         character.addStrength(-5);
