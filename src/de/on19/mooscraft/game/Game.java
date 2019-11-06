@@ -7,6 +7,7 @@ import de.on19.mooscraft.game.interaction.actions.ChooseAction;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
+import de.on19.mooscraft.game.screens.GameOverScreen;
 import de.on19.mooscraft.game.screens.SplashScreen;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.game.worlds.world1.World1;
@@ -338,6 +339,8 @@ public class Game {
             character = new MermaidMan();
         }
 
+        character.prepareGameOverScreen(new GameOverScreen(this));
+
         Screen chooseName = new Screen();
         chooseName.append(new String[]{StringTools.centerInRow("≈≈≈ Bitte gebe einen Namen ein ≈≈≈", 112)});
 
@@ -379,5 +382,9 @@ public class Game {
 
     public ActionHandler getHandler() {
         return this.handler;
+    }
+
+    public Character getCharacter() {
+        return character;
     }
 }
