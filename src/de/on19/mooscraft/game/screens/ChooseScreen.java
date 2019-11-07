@@ -19,32 +19,35 @@ public class ChooseScreen extends Screen {
     public List<String> options;
     public String instruction;
 
-    //choose Screen: for choose Situations like choosing a character or choosing a path
+    //constructor: choose Screen: for choose Situations like choosing a character or choosing a path
     public ChooseScreen() {
-        super(); //?
-        this.options = new ArrayList<String>(); //why do we make a list above, if we make a new array list here? Difference list and arraylist
-        this.instruction = ""; //placeholder
+        super(); //constructor of the higher ranked class called and used
+        this.options = new ArrayList<String>(); //initlaisation arrayList
+        this.instruction = ""; //placeholder for following instruction text
     }
     //clears screen
     public void clear() {
-        super.clear(); //where is method clear?
-        options.clear();
+        super.clear(); //method of Screen class is called
+        options.clear(); //screen is cleared
         instruction = "";
     }
 
     //additional choice option e.g.: 2 characters to choose before --> add a third character to choose
+    //ONE option
     public void addOption(String option) {
         this.options.add(option);
     }
 
-    //new option is visualized
+    //multiple options are added via arrayList
+    //MULTIPLE options
     public void addOptions(String[] options) {
         TextTools.append(this.options, options);
     }
 
+    //output all options
     public List<String> getOptions() {
         return this.options;
-    } //why return again?
+    }
 
     //initialize instruction method
     public void setInstruction(String instruction) {
@@ -53,17 +56,16 @@ public class ChooseScreen extends Screen {
 
     //formation of the options typed in by user
     public String[] getFormattedOptions() {
-        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray(); //all characters possible
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray(); //every letter as an element of an arrayList
 
-        String[] formattedContent = new String[options.size()]; //??
+        String[] formattedContent = new String[options.size()]; //new String array with placeholders for every option
 
         for (int i = 0; i < options.size(); i++) { //??
             // display number instead of letter when there are too many options
-            // Character.toString() converts decimal charcode to String
-
+            //we got an array of options, for every option a automatically generated letter is positioned at the front
             String delimeter = (options.size() >= alphabet.length ? i : Character.toString(alphabet[i]).toUpperCase()) + ". ";
-
-            formattedContent[i] = delimeter + options.get(i); //??
+            // Character.toString() converts decimal charcode to String
+            formattedContent[i] = delimeter + options.get(i); //options get: returns element at a specific position; arrayListmethod
         }
         return formattedContent;
     }

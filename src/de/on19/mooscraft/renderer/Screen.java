@@ -20,9 +20,9 @@ public class Screen {
         this(); //??
         this.setContent(lines);
     }
-    //clears screen --> isn`` that method already implemented in ChooseScreen?
+    //clears screen
     public void clear() {
-        this.lines.clear();
+        this.lines.clear(); //clears initialized arrayList
         this.debugInformationLines.clear();
     }
 
