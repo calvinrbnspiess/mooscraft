@@ -78,16 +78,13 @@ public class Character {
     }
 
     public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
+       int strengthAfter  = this.getStrength() + strength;
+       if (strengthAfter < 0) {          // sobald der Wert unter 0 geht
+           this.setStrength(0);          // wird er gleich 0 gesetzt (bei jedem Wert außer Health)
+           return;
+       }
 
-
-        int strengthAfter = this.getStrength() + strength;
-        if (strengthAfter < 0) {
-            this.setStrength(0);
-            return;
-        }
-        ;
-
-        this.setStrength(strengthAfter);
+       this.setStrength(strengthAfter);
     }
 
     //witchcraft
