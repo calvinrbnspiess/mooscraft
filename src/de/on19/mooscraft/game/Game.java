@@ -149,7 +149,7 @@ public class Game {
         String skipMessage = continueMessage + " Du kannst mit <überspringen> direkt zur Auswahl springen.";
 
         Screen intro = new Screen();
-        intro.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        intro.append(new String[]{TextTools.centerInRow("≈≈≈ \u001b[1;36mWähle deinen Charakter \u001b[0m ≈≈≈", 112)});
         intro.append(TextTools.emptyLines(1));
         intro.appendLine("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.");
         intro.append(TextTools.emptyLines(1));
@@ -252,7 +252,7 @@ public class Game {
         }
         //intro World
         ChooseScreen chooseCharacter = new ChooseScreen();
-        chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ \u001b[1;36mWähle deinen Charakter \u001b[0m ≈≈≈", 112)});
         chooseCharacter.append(TextTools.emptyLines(2));
         String introWorld = "Du hast verstanden und eine Wahl getroffen? Vergiss nicht: Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
         chooseCharacter.append(TextTools.addPadding(introWorld, 112, 12));

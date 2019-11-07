@@ -1,5 +1,3 @@
-import de.on19.mooscraft.utils.TextTools;
-
 /**
  * colors for worlds
  * <p>
@@ -14,7 +12,7 @@ import de.on19.mooscraft.utils.TextTools;
 public class TestJansi {
 
     public static void main(String[] args) {
-
+/*
         String text = "Es war einmal eine Welt vor der unseren, beherrscht von Ungeheuern, Zauberern und Zauberinnen und Wasserwesen. Sie alle kämpften mit den unterschiedlichsten Kräften um die Eroberung der Burg. Doch Vorsicht war geboten, denn viele Fallen und Feinde lauerten in den dunkelsten Ecken und den tiefsten Verstecken um sie daran zu hindern. Viel Energie, Kraft und Stärke war gefordert um die Welt zu durchlaufen und mit genügend Kräften ans Ziel zu kommen. Egal ob Hexe, Kriegerin, Magier, Schurke oder Meerjungfraumann, sie alle machten sich auf den Weg zur Burg, denn es kann nur einen Herrscher über die Welt geben.";
         String textNoWhitespace = text.replaceAll("\\s", "");
 
@@ -30,16 +28,18 @@ public class TestJansi {
 
         for (String line : TextTools.wrapToLengthArray(textNoWhitespace, 112)) {
             System.out.println(line);
-        }
+        }*/
 
         //color all following text
-        System.out.println("\u001b[1;92m Willkommen im Odenwald.");
+        System.out.println("\u001b[1;32m Überschriftenfarbe.");
+        System.out.println("Willkommen im Odenwald.");
         System.out.println("Hello Magalia");
         System.out.println("Hello Rogue");
-        System.out.println("Hello White Mage");
+        System.out.println("Hello White Mage\u001b[0m");
 
         //just color a text snippet
-        System.out.println("\u001b[1;92m Willkommen im Odenwald.\u001b[0m");
+        System.out.println("\u001b[1;36m Überschriftenfarbe.\u001b[0m");
+        System.out.println("Willkommen im Odenwald.");
         System.out.println("Hello Magalia");
         System.out.println("Hello Rogue");
         System.out.println("Hello White Mage");

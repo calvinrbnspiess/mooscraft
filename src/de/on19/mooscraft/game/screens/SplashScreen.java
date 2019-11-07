@@ -33,7 +33,7 @@ public class SplashScreen extends Screen {
 
         super.append(TextTools.addPadding(introduction, 112, 12));
         super.append(TextTools.emptyLines(2));
-        super.append(new String[]{TextTools.centerInRow("≈≈≈ So lasset die Reise beginnen ≈≈≈", 112)});
+        super.append(new String[]{TextTools.centerInRow("≈≈≈ \u001b[1;36mSo lasset die Reise beginnen\u001b[0m ≈≈≈", 112)});
         super.append(TextTools.emptyLines(2));
         super.appendLine("Verfügbare Befehle:");
         super.append(HelpAction.getSystemActionDescriptions(handler).toArray(new String[0]));
