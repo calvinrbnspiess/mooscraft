@@ -77,8 +77,8 @@ public class Character {
 
 
        int strengthAfter  = this.getStrength() + strength;
-       if (strengthAfter < 0) {
-           this.setStrength(0);
+       if (strengthAfter < 0) {          // sobald der Wert unter 0 geht
+           this.setStrength(0);          // wird er gleich 0 gesetzt (bei jedem Wert außer Health)
            return;
        };
 
