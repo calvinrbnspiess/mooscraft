@@ -3,23 +3,24 @@ package de.on19.mooscraft.game.screens;
 import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
-import java.util.ArrayList;
+import java.util.ArrayList; //where can I find the Arraylist, Array, List
 import java.util.Arrays;
 import java.util.List;
 
-public class ChooseScreen extends Screen {
-
+    //All screens exist of two parts: instructions and options
+public class ChooseScreen extends Screen { //where do I find Screen?
+    //Initialisation
     public List<String> options;
     public String instruction;
 
     public ChooseScreen() {
-        super();
-        this.options = new ArrayList<String>();
-        this.instruction = "";
+        super(); //?
+        this.options = new ArrayList<String>(); //why do we make a list above, if we make a new array list here?
+        this.instruction = ""; //placeholder
     }
-
+    //clears screen
     public void clear() {
-        super.clear();
+        super.clear(); //where is method clear?
         options.clear();
         instruction = "";
     }
