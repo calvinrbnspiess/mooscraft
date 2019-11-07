@@ -12,17 +12,17 @@ public class Rogue extends Character {
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "   ^   ",
-                " / \\ ",
-                "  | |  ",
-                "  | |  ",
-                "  | |  ",
-                "  | |  ",
-                "  | |  ",
-                "_______",
-                "-------",
-                "  | |  ",
-                "  |_|  ",
+                "> \u001b[1;91m   ^   ",
+                "                / \\ ",
+                "                | |  ",
+                "                | |  ",
+                "                | |  ",
+                "                | |  ",
+                "                | |  ",
+                "              _______",
+                "              -------",
+                "                | |  ",
+                "                |_|  \u001b[0m",
         };
 
         return icon;

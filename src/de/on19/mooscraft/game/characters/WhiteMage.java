@@ -12,17 +12,17 @@ public class WhiteMage extends Character {
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                " ^  ",
-                "( ) ",
-                "\\ /",
-                " |  ",
-                " |  ",
-                " |  ",
-                " |  ",
-                " |  ",
-                " |  ",
-                "| | ",
-                "|_| ",
+                "> \u001b[1;91m ^  ",
+                "              ( ) ",
+                "              \\ /",
+                "               |  ",
+                "               |  ",
+                "               |  ",
+                "               |  ",
+                "               |  ",
+                "               |  ",
+                "              | | ",
+                "              |_| \u001b[0m",
         };
 
         return icon;

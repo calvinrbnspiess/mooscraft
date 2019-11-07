@@ -12,7 +12,7 @@ public class MermaidMan extends Character {
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                " .                    ",
+                " >\u001b[1;91m                  ",
                 ".oko;.                ",
                 " ,kXWKc               ",
                 "  ,0MM0c.      .';llo,",
@@ -28,7 +28,7 @@ public class MermaidMan extends Character {
                 "    lNMMMMMMMO'       ",
                 "    :XMMMMMMMNo.      ",
                 "   .xWMMMMMMMMW0:     ",
-                "    lNMMMMMMMMMWo     ",
+                "    lNMMMMMMMMMWo    \u001b[0m  ",
         };
 
         return icon;
