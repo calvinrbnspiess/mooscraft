@@ -103,7 +103,7 @@ public class TextTools {
 
     public static String[] centerInRow(String[] rows, int maxChars) {
         List<String> formattedLines = new ArrayList<String>();
-        for(String line : rows) {
+        for (String line : rows) {
             formattedLines.add(centerInRow(line, maxChars));
         }
 

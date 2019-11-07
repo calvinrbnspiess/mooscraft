@@ -3,9 +3,9 @@ package de.on19.mooscraft.game.worlds.world4;
 import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot3 extends Spot {
@@ -23,7 +23,7 @@ public class Spot3 extends Spot {
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Seine hinterlistige Art kostet dich 20 Einheiten Willenskraft.",112));
+        s.appendLine(TextTools.wrapToLength("Seine hinterlistige Art kostet dich 20 Einheiten Willenskraft.", 112));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addWillpower(-20);

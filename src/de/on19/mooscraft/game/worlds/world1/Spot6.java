@@ -3,9 +3,9 @@ package de.on19.mooscraft.game.worlds.world1;
 import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot6 extends Spot {

@@ -25,7 +25,7 @@ public class SkippableContinueAction implements DescriptedAction {
 
     @Override
     public void onCommand(String[] args, ActionHandler handler) {
-        if(args[0].equals("überspringen")) {
+        if (args[0].equals("überspringen")) {
             this.wasSkipped = true;
         }
     }

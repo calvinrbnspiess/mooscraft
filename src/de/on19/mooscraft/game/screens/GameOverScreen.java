@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.interaction.actions.ExitAction;
 import de.on19.mooscraft.utils.TextTools;
 
 public class GameOverScreen extends Screen {
-//is implemented in game class and lays in "character". no renderer in character class --> therefore manual implementation
+    //is implemented in game class and lays in "character". no renderer in character class --> therefore manual implementation
     private Game game;
 
     public GameOverScreen(Game game) { //created constructor which generates new object game
@@ -31,6 +31,7 @@ public class GameOverScreen extends Screen {
         super.append(TextTools.emptyLines(2));
         super.appendLine("Du kannst das Spiel nun mit <exit> verlassen.");
     }
+
     //??
     public void print() {
         this.game.getRenderer().printScreen(this); //renderer prints screen, this (is screen)

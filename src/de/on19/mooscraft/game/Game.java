@@ -6,14 +6,11 @@ import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.actions.*;
 import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.game.screens.GameOverScreen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.game.screens.SplashScreen;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.game.worlds.world1.World1;
-import de.on19.mooscraft.game.worlds.world2.World2;
-import de.on19.mooscraft.game.worlds.world3.World3;
 import de.on19.mooscraft.game.worlds.world4.World4;
 import de.on19.mooscraft.renderer.Renderer;
-import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 import java.util.List;
@@ -299,7 +296,7 @@ public class Game {
         Screen chooseName = new Screen();
         chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gib einen Namen ein ≈≈≈", 112)});
         chooseName.append(TextTools.emptyLines(1));
-        chooseName.append(TextTools.addPadding("Herzlichen Glückwunsch! Du hast die Klasse '" + getCharacterClass(character) +"' gewählt! Du kannst nun einen Namen für dich wählen:", 112, 12));
+        chooseName.append(TextTools.addPadding("Herzlichen Glückwunsch! Du hast die Klasse '" + getCharacterClass(character) + "' gewählt! Du kannst nun einen Namen für dich wählen:", 112, 12));
         renderer.printScreen(chooseName, true);
 
         handler.waitForAction(new GameAction() {
@@ -324,30 +321,30 @@ public class Game {
         //new Screen for last action: win the castle
         String castleHeadline = "≈≈≈ Die Burg Arcis Borbetomagus ≈≈≈";
         String[] castleIcon = new String[]{
-                        "              :0Oc.             ",
-                        "              cNWN0Odoc;'..     ",
-                        "              cWMMMMMMMWNX0kdl' ",
-                        "              cWMMMMMWX0Oxoc;,. ",
-                        "              cNN0oc:,..        ",
-                        "              cX0;              ",
-                        ".odl.  :dd;  .OWNx.  :dd;  'ddl.",
-                        ";XMX; .xMMd  :NMMK, .kMMd  cNMK,",
-                        ";XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,",
-                        ";XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,",
-                        ";XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,",
-                        "'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.",
-                        " .',kMMMMMMMMMMMMMMMMMMMMMWd'.. ",
-                        "   .OMMMMMMMMMWWWMMMMMMMMMMx.   ",
-                        "   ;XMMMMMMW0l;,,;oKWMMMMMM0'   ",
-                        "   oMMMMMMMO.      ,0MMMMMMWc   ",
-                        "  .OMMMMMMMx.      .kMMMMMMMx.  ",
-                        "  :NMMMMMMMd       .kMMMMMMMK,  ",
-                        "  dMMMMMMMMd       .kMMMMMMMWl  ",
-                        " '0MMMMMMMMKdooooooxXMMMMMMMMk. ",
-                        " cNMMMMMMMMMMMMMMMMMMMMMMMMMMX; ",
-                        ".xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo ",
-                        ",KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.",
-                        ".oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl."
+                "              :0Oc.             ",
+                "              cNWN0Odoc;'..     ",
+                "              cWMMMMMMMWNX0kdl' ",
+                "              cWMMMMMWX0Oxoc;,. ",
+                "              cNN0oc:,..        ",
+                "              cX0;              ",
+                ".odl.  :dd;  .OWNx.  :dd;  'ddl.",
+                ";XMX; .xMMd  :NMMK, .kMMd  cNMK,",
+                ";XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,",
+                ";XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,",
+                ";XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,",
+                "'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.",
+                " .',kMMMMMMMMMMMMMMMMMMMMMWd'.. ",
+                "   .OMMMMMMMMMWWWMMMMMMMMMMx.   ",
+                "   ;XMMMMMMW0l;,,;oKWMMMMMM0'   ",
+                "   oMMMMMMMO.      ,0MMMMMMWc   ",
+                "  .OMMMMMMMx.      .kMMMMMMMx.  ",
+                "  :NMMMMMMMd       .kMMMMMMMK,  ",
+                "  dMMMMMMMMd       .kMMMMMMMWl  ",
+                " '0MMMMMMMMKdooooooxXMMMMMMMMk. ",
+                " cNMMMMMMMMMMMMMMMMMMMMMMMMMMX; ",
+                ".xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo ",
+                ",KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.",
+                ".oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl."
         };
         String wonCastle = "Hurraaaaaa! Du warst mächtig genug, um die Monster von Mooscraft zu besiegen. Das Volk ist dir zu ewiger Treue verpflichtet, da du es von den Qualen der Monster Mester und Preisler befreit hast. Damit dein Volk dich gebührend huldigen kann, erklimme mit Hilfe deiner verbliebenen Lebensenergie die Mauern der Burg Arcis Borbetomagus. Nun kannst du ganz Mooscraft überblicken mit seinem grünen Odenwald, der rauschenden Mittelklinge, dem zauberhaften Hexenturm Turismaga. Lass dich als neue/r Herrscher/in von Mooscraft gebührend feiern.";
         String lostCastle = "Oh nein! Die Kämpfe gegen die Monster Mester und Preisler haben dir die letzte Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg Arcis Borbetomagus die Wände hinunter in die Tiefe. Doch eine verlorene Schlacht ist kein verlorener Krieg. Wähle deine Parameter weiser und trau dich erneut durch die Pforten von Mooscraft.";

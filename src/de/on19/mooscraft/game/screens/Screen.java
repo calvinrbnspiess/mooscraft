@@ -13,11 +13,13 @@ public class Screen {
     public Screen() {
         this.lines = new ArrayList<String>(); //why now an arraylist?
     }
+
     //what does method Screen make?
     public Screen(String[] lines) { //why String[], not String()
         this(); //??
         this.setContent(lines);
     }
+
     //clears screen
     public void clear() {
         this.lines.clear(); //clears initialized arrayList

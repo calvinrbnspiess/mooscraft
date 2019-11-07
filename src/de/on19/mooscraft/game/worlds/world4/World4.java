@@ -11,6 +11,24 @@ public class World4 extends World {
     // same like before - just fixed formatting
     // cannot define variables before callling super() -> so had to create new method
 
+    public World4() throws UnsupportedOperationException {
+        super(getText(),
+                "Du hast die letzte Gabelung erreicht. Welcher Weg wird dich zur Herrschaft führen?.");
+
+        super.getSpotsPool().add(new Spot1(this));
+        super.getSpotsPool().add(new Spot2(this));
+        super.getSpotsPool().add(new Spot3(this));
+
+        super.getSpotsPool().add(new Spot4(this));
+        super.getSpotsPool().add(new Spot5(this));
+        super.getSpotsPool().add(new Spot6(this));
+
+        // add all 6 spots
+        super.generatePath("Gehst du links, lauern dunkle Gestalten in den Tiefen des Moors. ");
+        super.generatePath(
+                "Auf der anderen Seite sieht es aus, als wenn dich das Moor tief in den Sumpf hinunterziehen will.");
+    }
+
     private static String[] getText() {
         List<String> text = new ArrayList<String>();
 
@@ -38,24 +56,6 @@ public class World4 extends World {
         }, 112));
 
         return text.toArray(new String[0]);
-    }
-
-    public World4() throws UnsupportedOperationException {
-        super(getText(),
-                "Du hast die letzte Gabelung erreicht. Welcher Weg wird dich zur Herrschaft führen?.");
-
-        super.getSpotsPool().add(new Spot1(this));
-        super.getSpotsPool().add(new Spot2(this));
-        super.getSpotsPool().add(new Spot3(this));
-
-        super.getSpotsPool().add(new Spot4(this));
-        super.getSpotsPool().add(new Spot5(this));
-        super.getSpotsPool().add(new Spot6(this));
-
-        // add all 6 spots
-        super.generatePath("Gehst du links, lauern dunkle Gestalten in den Tiefen des Moors. ");
-        super.generatePath(
-                "Auf der anderen Seite sieht es aus, als wenn dich das Moor tief in den Sumpf hinunterziehen will.");
     }
 
 }

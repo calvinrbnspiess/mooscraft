@@ -46,6 +46,11 @@ public class Character {
         this.visitedSpots = 0;
     }
 
+    public static String[] getIcon() {
+        // return no standard icon
+        return new String[0];
+    }
+
     public int getHealth() { //no parameters necessary since there is only a return value and no value provided into a variable
         return health;
     }
@@ -77,17 +82,17 @@ public class Character {
         this.strength = strength;
     }
 
-    public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
-       int strengthAfter  = this.getStrength() + strength;
-       if (strengthAfter < 0) {          // sobald der Wert unter 0 geht
-           this.setStrength(0);          // wird er gleich 0 gesetzt (bei jedem Wert außer Health)
-           return;
-       }
-
-       this.setStrength(strengthAfter);
-    }
-
     //witchcraft
+
+    public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
+        int strengthAfter = this.getStrength() + strength;
+        if (strengthAfter < 0) {          // sobald der Wert unter 0 geht
+            this.setStrength(0);          // wird er gleich 0 gesetzt (bei jedem Wert außer Health)
+            return;
+        }
+
+        this.setStrength(strengthAfter);
+    }
 
     public int getWitchcraft() {
         return witchcraft;
@@ -145,7 +150,6 @@ public class Character {
         this.setWisdom(wisdomAfter);
     }
 
-
     public String getName() {
         return this.name;
     }
@@ -168,10 +172,5 @@ public class Character {
 
     public void prepareGameOverScreen(GameOverScreen gameOverScreen) {
         this.gameOverScreen = gameOverScreen;
-    }
-
-    public static String[] getIcon() {
-        // return no standard icon
-        return new String[0];
     }
 }

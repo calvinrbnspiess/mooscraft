@@ -2,17 +2,18 @@ package de.on19.mooscraft.game.screens;
 
 import de.on19.mooscraft.utils.TextTools;
 
-import java.util.ArrayList; //where can I find the Arraylist, Array, List
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /**
  * three different screen classes since every one got different structure
  * ChooseScreen: with choice options
  * ScoreboardScreen: only displays
  * Splashscreen: displays in the beginning
  */
-    //All screens exist of two parts: instructions and options
-    //class screen --> file renderer
+//All screens exist of two parts: instructions and options
+//class screen --> file renderer
 public class ChooseScreen extends Screen {
     //Initialisation
     public List<String> options;
@@ -24,6 +25,7 @@ public class ChooseScreen extends Screen {
         this.options = new ArrayList<String>(); //initlaisation arrayList
         this.instruction = ""; //placeholder for following instruction text
     }
+
     //clears screen
     public void clear() {
         super.clear(); //method of Screen class is called
