@@ -150,7 +150,7 @@ public class Character {
 
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -171,5 +171,10 @@ public class Character {
 
     public void prepareGameOverScreen(GameOverScreen gameOverScreen) {
         this.gameOverScreen = gameOverScreen;
+    }
+
+    public static String[] getIcon() {
+        // return no standard icon
+        return new String[0];
     }
 }

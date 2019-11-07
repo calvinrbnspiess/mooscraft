@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot6 extends Spot {
@@ -21,7 +21,10 @@ public class Spot6 extends Spot {
         s.append(TextTools.emptyLines(1));
         String text = "Ein fieser unvorhersehbarer Angriff des Schützen aus der Ferne sorgt dafür, dass du nun den Weg mit einem Pfeil in deinem Körper weiter gehen musst.";
         s.append(TextTools.addPadding(text, 112, 12));
-        s.appendLine("Durch diesen Angriff verlierst du 20 Einheiten Lebensenergie. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.emptyLines(1));
+
+        s.appendLine(TextTools.wrapToLength("Durch diesen Angriff verlierst du 20 Einheiten Lebensenergie.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-20);
         game.printGameScreen(s);

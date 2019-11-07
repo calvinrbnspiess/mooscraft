@@ -7,28 +7,28 @@ public class MermaidMan extends Character {
     }
 
     public static String getGreeting() {
-        return "> \u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m";
+        return ">>> \u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m <<<";
     }
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "                                              .                                                                 ",
-                "                                             .oko;.                                                             ",
-                "                                              ,kXWKc                                                            ",
-                "                                               ,0MM0c.      .';llo,                                             ",
-                "                                               .:OWMWXkl:okOXNNWXc                                              ",
-                "                                                 ;0WMMMMMMMMMKc;'                                               ",
-                "                                                  .,oKMMMMOcc'                                                  ",
-                "                                                    .OMMM0,                                                     ",
-                "                                                   ,0MMMMX:                                                     ",
-                "                                                  ,0MMWWx.                                                      ",
-                "                                                  :KMMMWO'                                                      ",
-                "                                                 :XMMMMWWk.                                                     ",
-                "                                                 'OMMMMMMXl                                                     ",
-                "                                                 lNMMMMMMMO'                                                    ",
-                "                                                 :XMMMMMMMNo.                                                   ",
-                "                                                .xWMMMMMMMMW0:                                                  ",
-                "                                                 lNMMMMMMMMMWo                                                  ",
+                " .                    ",
+                ".oko;.                ",
+                " ,kXWKc               ",
+                "  ,0MM0c.      .';llo,",
+                "  .:OWMWXkl:okOXNNWXc ",
+                "    ;0WMMMMMMMMMKc;'  ",
+                "     .,oKMMMMOcc'     ",
+                "       .OMMM0,        ",
+                "      ,0MMMMX:        ",
+                "     ,0MMWWx.         ",
+                "     :KMMMWO'         ",
+                "    :XMMMMWWk.        ",
+                "    'OMMMMMMXl        ",
+                "    lNMMMMMMMO'       ",
+                "    :XMMMMMMMNo.      ",
+                "   .xWMMMMMMMMW0:     ",
+                "    lNMMMMMMMMMWo     ",
         };
 
         return icon;

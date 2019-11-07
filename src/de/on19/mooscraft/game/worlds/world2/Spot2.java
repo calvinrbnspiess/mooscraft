@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot2 extends Spot {
@@ -21,7 +21,9 @@ public class Spot2 extends Spot {
         s.append(TextTools.emptyLines(1));
         String text = "Du begegnest einem groß gebauten schlanken Wesen mit langen hellen Haaren. Ein Elf kommt auf dich zu. Aber keine Angst, Elfen sind friedliche Wesen, er erklärt dir den schnellsten Weg zur Burg, so dass du dich wieder auf den Weg machst. Immer noch voller Hoffnung.";
         s.append(TextTools.addPadding(text, 112, 12));
-        s.appendLine(" Du begibst dich wieder auf den Weg. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.emptyLines(1));
+        s.appendLine(TextTools.wrapToLength("Du begibst dich wieder auf den Weg.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         game.printGameScreen(s);
 

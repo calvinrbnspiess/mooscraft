@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot4 extends Spot {
@@ -21,7 +21,10 @@ public class Spot4 extends Spot {
         s.append(TextTools.emptyLines(1));
         String text = "Du kommst auf einen rauschenden Wasserfall zu. Dort holst du dir eine kleine Erfrischung und trinkst einen kleinen Schluck Wasser und holst dir dadurch etwas mehr Lebensenergie.";
         s.append(TextTools.addPadding(text, 112, 12));
-        s.appendLine("Deinen Durst hast du nun gelöscht und nun wieder 5 Einheiten mehr an Lebensenergie. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.emptyLines(1));
+
+        s.appendLine(TextTools.wrapToLength("Deinen Durst hast du nun gelöscht und nun wieder 5 Einheiten mehr an Lebensenergie.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(5);
         game.printGameScreen(s);

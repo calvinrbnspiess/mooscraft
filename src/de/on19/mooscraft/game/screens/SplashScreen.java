@@ -2,7 +2,6 @@ package de.on19.mooscraft.game.screens;
 
 import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.actions.HelpAction;
-import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class SplashScreen extends Screen {

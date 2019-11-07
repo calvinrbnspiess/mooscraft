@@ -4,7 +4,7 @@ import de.on19.mooscraft.game.interaction.actions.ExitAction;
 import de.on19.mooscraft.game.interaction.actions.GuideAction;
 import de.on19.mooscraft.game.interaction.actions.HelpAction;
 import de.on19.mooscraft.renderer.Renderer;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 import java.util.List;

@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot5 extends Spot {
@@ -23,7 +23,8 @@ public class Spot5 extends Spot {
         String text = "Langsam verlierst du mehr und mehr die Sicht. Du steckst in einem dichten undurchdringlichen Nebel und versuchst vorsichtig weiterzugehen um herauszukommen. Nach kurzer Zeit lichtet sich auch schon der Nebel und du siehst etwas auf dich zukommen.";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine("Du gehst immer weiter darauf zu. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine(TextTools.wrapToLength("Du gehst immer weiter darauf zu.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         game.printGameScreen(s);
 

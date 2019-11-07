@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot5 extends Spot {
@@ -21,7 +21,10 @@ public class Spot5 extends Spot {
         s.append(TextTools.emptyLines(1));
         String text = "Im Gebüsch fällt dir eine merkwürdig leuchtende Flasche auf. Du hebst sie auf und aus der Flasche weicht Nebel aus, bis dieser sich zu einem großen Geist formt. “Ich habe dich erwartet.”, sagt Romanus der Flaschengeist. “Wünsche erfülle ich zwar keine, dafür trage ich dich ein Stück den Berg hinauf, so dass du deine Kräfte einsparen kannst.” ";
         s.append(TextTools.addPadding(text, 112, 12));
-        s.appendLine("Genau das macht er dann auch und kurz darauf siehst du schon ein neues Abenteuer, das auf dich wartet. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.emptyLines(1));
+
+        s.appendLine(TextTools.wrapToLength("Genau das macht er dann auch und kurz darauf siehst du schon ein neues Abenteuer, das auf dich wartet.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addWitchcraft(-10);
         game.printGameScreen(s);

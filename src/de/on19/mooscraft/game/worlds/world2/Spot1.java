@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot1 extends Spot {
@@ -22,7 +22,9 @@ public class Spot1 extends Spot {
 
         String text = "Nahe am Wasser da lebts sich gut. Albert seine Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus, manche schenken dir beim Vernaschen, extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen, ziehen dir einiges davon ab.";
         s.append(TextTools.addPadding(text, 112, 12));
-        s.appendLine("Du probierst eine blau leuchtende Blume und verlierst 5 Einheiten Willenskraft. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.emptyLines(1));
+        s.appendLine(TextTools.wrapToLength("Du probierst eine blau leuchtende Blume und verlierst 5 Einheiten Willenskraft.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addWillpower(-5);
         game.printGameScreen(s);

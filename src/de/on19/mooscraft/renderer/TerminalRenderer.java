@@ -1,5 +1,6 @@
 package de.on19.mooscraft.renderer;
 
+import de.on19.mooscraft.game.screens.Screen;
 import org.fusesource.jansi.AnsiConsole;
 
 import static org.fusesource.jansi.Ansi.ansi;
@@ -9,6 +10,7 @@ public class TerminalRenderer implements Renderer { //what is class implement?
     public TerminalRenderer() {
         AnsiConsole.systemInstall();
     }
+
     @Override
     public void printScreen(Screen s, boolean erase) {
         if (erase) {

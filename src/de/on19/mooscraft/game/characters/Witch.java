@@ -22,21 +22,21 @@ public class Witch extends Character {
      */
 
     public static String getGreeting() {
-        return "> \u001b[1;96m Ich bin Hexe Magalia.\u001b[0m";
+        return ">>> \u001b[1;96m Ich bin Hexe Magalia.\u001b[0m <<<";
     }
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "<\u001b[1;91m        ^ ",
-                "                    / \\ ",
-                "                   \\  \\",
-                "                    /   \\",
-                "                   /    /",
-                "                  /     \\",
-                "                 /       \\",
-                "                /          \\",
-                "            \\_/____________\\_/",
-                "             \\______________/ \u001b[0m"
+                "<\u001b[1;91m                     ^                  ",
+                "             / \\                ",
+                "             \\  \\               ",
+                "             /   \\              ",
+                "             /    /               ",
+                "           /     \\              ",
+                "          /       \\             ",
+                "         /          \\           ",
+                "      \\_/____________\\_/        ",
+                "    \\______________/ \u001b[0m"
         };
 
         return icon;

@@ -7,22 +7,22 @@ public class Rogue extends Character {
     }
 
     public static String getGreeting() {
-        return "> \u001b[1;96mIch bin der Schurke Bandito.\u001b[0m";
+        return ">>> \u001b[1;96mIch bin der Schurke Bandito.\u001b[0m <<<";
     }
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "           ^ ",
-                "          / \\ ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "        _______",
-                "        -------",
-                "          | | ",
-                "          |_| ",
+                "   ^   ",
+                " / \\ ",
+                "  | |  ",
+                "  | |  ",
+                "  | |  ",
+                "  | |  ",
+                "  | |  ",
+                "_______",
+                "-------",
+                "  | |  ",
+                "  |_|  ",
         };
 
         return icon;

@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot2 extends Spot {
@@ -21,7 +21,10 @@ public class Spot2 extends Spot {
         s.append(TextTools.emptyLines(1));
         String text = "Auf deinem Weg zum Hexenturm kommst du am Zelt der Heilerin vorbei. Die Wunden deines letztens Kampfes werden verbunden und deine Chakra-Energie geerdet du lädst der Glaube an dich selbst wird wieder größer.";
         s.append(TextTools.addPadding(text, 112, 12));
-        s.appendLine("Du hast nun wieder 10 Einheiten mehr Willenskraft. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.emptyLines(1));
+
+        s.appendLine(TextTools.wrapToLength("Du hast nun wieder 10 Einheiten mehr Willenskraft.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addWillpower(10);
         game.printGameScreen(s);

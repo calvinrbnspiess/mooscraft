@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot1 extends Spot {
@@ -23,7 +23,8 @@ public class Spot1 extends Spot {
         String text = "Mester lebt tief im Odenwald, alleine und mit einem kleinen Drachen “Exernius”. Begegnest du seiner vermoosten Hütte, gib acht! Denn die Nähe eines Eindringlings zu seinem Heim weckt Exernius und löst einen Stromkreis aus, aus welchem du nicht entfliehen kannst bis Exernius dich besiegt hat.";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine("Du nimmst den Kampf auf und verlierst 5 Einheiten an Lebensenergie. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine(TextTools.wrapToLength("Du nimmst den Kampf auf und verlierst 5 Einheiten an Lebensenergie.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-5);
         game.printGameScreen(s);

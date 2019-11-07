@@ -1,6 +1,5 @@
 package de.on19.mooscraft.game.screens;
 
-import de.on19.mooscraft.renderer.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList; //where can I find the Arraylist, Array, List

@@ -4,7 +4,7 @@ import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ChooseAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -3,7 +3,7 @@ package de.on19.mooscraft.game.interaction.actions;
 import de.on19.mooscraft.game.interaction.Action;
 import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.DescriptedAction;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList;

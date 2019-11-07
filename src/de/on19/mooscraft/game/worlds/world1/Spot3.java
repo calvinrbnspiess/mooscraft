@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot3 extends Spot {
@@ -23,7 +23,8 @@ public class Spot3 extends Spot {
         String text = "Die Seherin sagt dir deine Zukunft voraus. Dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet: “Ich sehe Dunkles kommen. Um deinem Untergang zu entkommen brauchst du jenes, welches dir Kraft schenkt.” ";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(" Du verlierst 5 Einheiten an Stärke und gehst verwirrt weiter. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine(TextTools.wrapToLength("Du verlierst 5 Einheiten an Stärke und gehst verwirrt weiter.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addStrength(-5);
         game.printGameScreen(s);

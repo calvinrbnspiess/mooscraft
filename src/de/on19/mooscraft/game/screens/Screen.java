@@ -1,4 +1,4 @@
-package de.on19.mooscraft.renderer;
+package de.on19.mooscraft.game.screens;
 
 import de.on19.mooscraft.utils.TextTools;
 
@@ -9,11 +9,9 @@ import java.util.List;
 public class Screen {
 
     private List<String> lines;
-    private List<String> debugInformationLines; //what is meant by this?
 
     public Screen() {
         this.lines = new ArrayList<String>(); //why now an arraylist?
-        this.debugInformationLines = new ArrayList<String>();
     }
     //what does method Screen make?
     public Screen(String[] lines) { //why String[], not String()
@@ -23,7 +21,6 @@ public class Screen {
     //clears screen --> isn`` that method already implemented in ChooseScreen?
     public void clear() {
         this.lines.clear();
-        this.debugInformationLines.clear();
     }
 
     //prepend does not work; what does it do?
@@ -51,14 +48,6 @@ public class Screen {
     public void setContent(String[] lines) {
         this.clear();
         this.append(lines);
-    }
-
-    //does it work? what does it make?
-    public void setDebugInformation(String[] values) {
-        this.debugInformationLines.clear();
-        for (String value : values) {
-            this.debugInformationLines.add(value);
-        }
     }
 
 }

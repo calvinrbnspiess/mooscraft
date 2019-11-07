@@ -65,7 +65,7 @@ public class TextTools {
         text = text.trim().replaceAll("\\s{2,}", " ");
 
         // fix bug when entering a too short string
-        if (text.length() < maxChars) {
+        if (text.length() <= maxChars) {
             return new String[]{text};
         }
 
@@ -99,6 +99,15 @@ public class TextTools {
     public static String centerInRow(String text, int maxChars) {
         int padding = Math.round((maxChars - text.length()) / 2);
         return repeat(" ", padding) + text;
+    }
+
+    public static String[] centerInRow(String[] rows, int maxChars) {
+        List<String> formattedLines = new ArrayList<String>();
+        for(String line : rows) {
+            formattedLines.add(centerInRow(line, maxChars));
+        }
+
+        return formattedLines.toArray(new String[0]);
     }
 
     public static String[] emptyLines(int amount) {

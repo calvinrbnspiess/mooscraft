@@ -3,10 +3,7 @@ package de.on19.mooscraft.game;
 import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.characters.*;
 import de.on19.mooscraft.game.interaction.ActionHandler;
-import de.on19.mooscraft.game.interaction.actions.ChooseAction;
-import de.on19.mooscraft.game.interaction.actions.ContinueAction;
-import de.on19.mooscraft.game.interaction.actions.GameAction;
-import de.on19.mooscraft.game.interaction.actions.SkippableContinueAction;
+import de.on19.mooscraft.game.interaction.actions.*;
 import de.on19.mooscraft.game.screens.ChooseScreen;
 import de.on19.mooscraft.game.screens.GameOverScreen;
 import de.on19.mooscraft.game.screens.SplashScreen;
@@ -16,7 +13,7 @@ import de.on19.mooscraft.game.worlds.world2.World2;
 import de.on19.mooscraft.game.worlds.world3.World3;
 import de.on19.mooscraft.game.worlds.world4.World4;
 import de.on19.mooscraft.renderer.Renderer;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 import java.util.List;
@@ -33,7 +30,9 @@ public class Game {
         this.renderer = renderer;
         this.handler = handler;
         this.character = null;
-        this.worlds = List.of(new World1(), new World2(), new World3(), new World4());
+        this.worlds = List.of(new World4());
+
+//        this.worlds = List.of(new World1(), new World2(), new World3(), new World4());
     }
 
     // print screen and status information
@@ -151,7 +150,7 @@ public class Game {
         Screen intro = new Screen();
         intro.append(new String[]{TextTools.centerInRow("≈≈≈ \u001b[1;36mWähle deinen Charakter \u001b[0m ≈≈≈", 112)});
         intro.append(TextTools.emptyLines(1));
-        intro.appendLine("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.");
+        intro.append(TextTools.addPadding("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.", 112, 12));
         intro.append(TextTools.emptyLines(1));
         intro.appendLine(skipMessage);
 
@@ -179,9 +178,9 @@ public class Game {
         if (!skippableAction.isSkipped()) {
             //Intro Hexe Magalia
             Screen magalia = new Screen();
-            magalia.append(TextTools.addPadding(Witch.getGreeting(), 112, 12));
+            magalia.appendLine(TextTools.centerInRow(Witch.getGreeting(), 112));
             magalia.append(TextTools.emptyLines(2));
-            magalia.append(Witch.getIcon());
+            magalia.append(TextTools.centerInRow(Witch.getIcon(), 112));
             magalia.append(TextTools.emptyLines(2));
             magalia.append(Witch.getDescriptionArray());
             magalia.append(TextTools.emptyLines(2));
@@ -194,9 +193,9 @@ public class Game {
         if (!skippableAction.isSkipped()) {
             //Intro Kriegerin Bellatrix
             Screen bellatrix = new Screen();
-            bellatrix.append(TextTools.addPadding(Warrior.getGreeting(), 112, 12));
+            bellatrix.appendLine(TextTools.centerInRow(Warrior.getGreeting(), 112));
             bellatrix.append(TextTools.emptyLines(2));
-            bellatrix.append(Warrior.getIcon());
+            bellatrix.append(TextTools.centerInRow(Warrior.getIcon(), 112));
             bellatrix.append(TextTools.emptyLines(2));
             bellatrix.append(TextTools.addPadding(Warrior.getDescription(), 112, 12));
             bellatrix.append(TextTools.emptyLines(2));
@@ -209,8 +208,9 @@ public class Game {
         if (!skippableAction.isSkipped()) {
             //Intro White Mage Kelii
             Screen kelii = new Screen();
-            kelii.append(TextTools.addPadding(WhiteMage.getGreeting(), 112, 12));
-            kelii.append(WhiteMage.getIcon());
+            kelii.appendLine(TextTools.centerInRow(WhiteMage.getGreeting(), 112));
+            kelii.append(TextTools.emptyLines(2));
+            kelii.append(TextTools.centerInRow(WhiteMage.getIcon(), 112));
             kelii.append(TextTools.emptyLines(2));
             kelii.append(TextTools.addPadding(WhiteMage.getDescription(), 112, 12));
             kelii.append(TextTools.emptyLines(2));
@@ -223,9 +223,9 @@ public class Game {
         if (!skippableAction.isSkipped()) {
             //Intro Rogue Bandito
             Screen bandito = new Screen();
-            bandito.append(TextTools.addPadding(Rogue.getGreeting(), 112, 12));
+            bandito.appendLine(TextTools.centerInRow(Rogue.getGreeting(), 112));
             bandito.append(TextTools.emptyLines(2));
-            bandito.append(Rogue.getIcon());
+            bandito.append(TextTools.centerInRow(Rogue.getIcon(), 112));
             bandito.append(TextTools.emptyLines(2));
             bandito.append(TextTools.addPadding(Rogue.getDescription(), 112, 12));
             bandito.append(TextTools.emptyLines(2));
@@ -238,9 +238,9 @@ public class Game {
         if (!skippableAction.isSkipped()) {
             //Intro Mermaidman Marin
             Screen marin = new Screen();
-            marin.append(TextTools.addPadding(MermaidMan.getGreeting(), 112, 12));
+            marin.appendLine(TextTools.centerInRow(MermaidMan.getGreeting(), 112));
             marin.append(TextTools.emptyLines(2));
-            marin.append(MermaidMan.getIcon());
+            marin.append(TextTools.centerInRow(MermaidMan.getIcon(), 112));
             marin.append(TextTools.emptyLines(1));
             marin.append(TextTools.addPadding(MermaidMan.getDescription(), 112, 12));
             marin.append(TextTools.emptyLines(2));
@@ -296,11 +296,10 @@ public class Game {
             character = new MermaidMan();
         }
 
-        character.prepareGameOverScreen(new GameOverScreen(this));
-
         Screen chooseName = new Screen();
-        chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gebe einen Namen ein ≈≈≈", 112)});
-
+        chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gib einen Namen ein ≈≈≈", 112)});
+        chooseName.append(TextTools.emptyLines(1));
+        chooseName.append(TextTools.addPadding("Herzlichen Glückwunsch! Du hast die Klasse '" + getCharacterClass(character) +"' gewählt! Du kannst nun einen Namen für dich wählen:", 112, 12));
         renderer.printScreen(chooseName, true);
 
         handler.waitForAction(new GameAction() {
@@ -310,6 +309,8 @@ public class Game {
                 character.setName(args[0]);
             }
         });
+
+        character.prepareGameOverScreen(new GameOverScreen(this));
 
         Screen printName = new Screen();
         printName.append(new String[]{TextTools.wrapToLength("Viel Erfolg auf deinem Weg " + character.getName(), 112)});
@@ -321,42 +322,55 @@ public class Game {
 
 
         //new Screen for last action: win the castle
-        String woncastel = "Hurraaaaaa! Du warst mächtig genug um die Monster von Mooscraft zu besiegen. Das Volk ist dir zu ewiger Treue verpflichtet, da du es von den Qualen der Monster Mester und Preisler befreit hast. Damit dein Volk dich gebührend huldigen kann, erklimme mit Hilfe deiner verbliebenen Lebensenergie die Mauern der Burg Arcis Borbetomagus. Nun kannst du ganz Mooscraft überblicken mit seinem grünen Odenwald, der rauschenden Mittelklinge, dem zauberhaften Hexenturm Turismaga. Lass dich als neue/r Herrscher/in von Mooscraft gebührend feiern.";
-        String lostcastle = "Oh nein! Die Kämpfe gegen Monster Mester und Preisler haben dir die letzte Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg Arcis Borbetomagus die Wände hinunter in die Tiefe. Doch eine verlorene Schlacht ist kein verlorener Krieg. Wähle deine Parameter weiser und trau dich erneut durch die Pforten von Mooscraft.";
+        String castleHeadline = "≈≈≈ Die Burg Arcis Borbetomagus ≈≈≈";
+        String[] castleIcon = new String[]{
+                        "              :0Oc.             ",
+                        "              cNWN0Odoc;'..     ",
+                        "              cWMMMMMMMWNX0kdl' ",
+                        "              cWMMMMMWX0Oxoc;,. ",
+                        "              cNN0oc:,..        ",
+                        "              cX0;              ",
+                        ".odl.  :dd;  .OWNx.  :dd;  'ddl.",
+                        ";XMX; .xMMd  :NMMK, .kMMd  cNMK,",
+                        ";XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,",
+                        ";XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,",
+                        ";XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,",
+                        "'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.",
+                        " .',kMMMMMMMMMMMMMMMMMMMMMWd'.. ",
+                        "   .OMMMMMMMMMWWWMMMMMMMMMMx.   ",
+                        "   ;XMMMMMMW0l;,,;oKWMMMMMM0'   ",
+                        "   oMMMMMMMO.      ,0MMMMMMWc   ",
+                        "  .OMMMMMMMx.      .kMMMMMMMx.  ",
+                        "  :NMMMMMMMd       .kMMMMMMMK,  ",
+                        "  dMMMMMMMMd       .kMMMMMMMWl  ",
+                        " '0MMMMMMMMKdooooooxXMMMMMMMMk. ",
+                        " cNMMMMMMMMMMMMMMMMMMMMMMMMMMX; ",
+                        ".xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo ",
+                        ",KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.",
+                        ".oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl."
+        };
+        String wonCastle = "Hurraaaaaa! Du warst mächtig genug, um die Monster von Mooscraft zu besiegen. Das Volk ist dir zu ewiger Treue verpflichtet, da du es von den Qualen der Monster Mester und Preisler befreit hast. Damit dein Volk dich gebührend huldigen kann, erklimme mit Hilfe deiner verbliebenen Lebensenergie die Mauern der Burg Arcis Borbetomagus. Nun kannst du ganz Mooscraft überblicken mit seinem grünen Odenwald, der rauschenden Mittelklinge, dem zauberhaften Hexenturm Turismaga. Lass dich als neue/r Herrscher/in von Mooscraft gebührend feiern.";
+        String lostCastle = "Oh nein! Die Kämpfe gegen die Monster Mester und Preisler haben dir die letzte Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg Arcis Borbetomagus die Wände hinunter in die Tiefe. Doch eine verlorene Schlacht ist kein verlorener Krieg. Wähle deine Parameter weiser und trau dich erneut durch die Pforten von Mooscraft.";
 
         Screen castle = new Screen();
+        castle.appendLine(TextTools.centerInRow(castleHeadline, 112));
+        castle.append(TextTools.emptyLines(1));
+        castle.append(TextTools.centerInRow(castleIcon, 112));
+        castle.append(TextTools.emptyLines(1));
+        castle.appendLine(TextTools.centerInRow("In ewiger Treue, '" + character.getName() + "'!", 112));
+
         if (character.getHealth() >= 25) {
-            castle.append(TextTools.addPadding(woncastel, 112, 12));
+            castle.append(TextTools.addPadding(wonCastle, 112, 12));
         } else {
-            castle.append(TextTools.addPadding(lostcastle, 112, 12));
+            castle.append(TextTools.addPadding(lostCastle, 112, 12));
         }
+        castle.append(TextTools.emptyLines(2));
+        castle.appendLine(TextTools.centerInRow("Punktzahl: " + Math.round((float) (character.getWillpower() * character.getWitchcraft() * character.getStrength() * character.getWisdom()) / 10), 112));
+        castle.append(TextTools.emptyLines(2));
+        castle.appendLine("Du kannst das Spiel nun mit <exit> verlassen.");
         renderer.printScreen(castle);
-        String[] castleIcon = new String[]{
-                "                                                      :0Oc.                                         ",
-                "                                                      cNWN0Odoc;'..                                             " +
-                        "                                                      cWMMMMMMMWNX0kdl'                                         " +
-                        "                                                      cWMMMMMWX0Oxoc;,.                                         " +
-                        "                                                      cNN0oc:,..                                                " +
-                        "                                                      cX0;                                                      " +
-                        "                                        .odl.  :dd;  .OWNx.  :dd;  'ddl.                                        " +
-                        "                                        ;XMX; .xMMd  :NMMK, .kMMd  cNMK,                                        " +
-                        "                                        ;XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,                                        " +
-                        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        " +
-                        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        " +
-                        "                                        'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.                                        " +
-                        "                                         .',kMMMMMMMMMMMMMMMMMMMMMWd'..                                         " +
-                        "                                           .OMMMMMMMMMWWWMMMMMMMMMMx.                                           " +
-                        "                                           ;XMMMMMMW0l;,,;oKWMMMMMM0'                                           " +
-                        "                                           oMMMMMMMO.      ,0MMMMMMWc                                           " +
-                        "                                          .OMMMMMMMx.      .kMMMMMMMx.                                          " +
-                        "                                          :NMMMMMMMd       .kMMMMMMMK,                                          " +
-                        "                                          dMMMMMMMMd       .kMMMMMMMWl                                          " +
-                        "                                         '0MMMMMMMMKdooooooxXMMMMMMMMk.                                         " +
-                        "                                         cNMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                         " +
-                        "                                        .xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                         " +
-                        "                                        ,KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.                                        " +
-                        "                                        .oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.  "
-        };
+
+        this.getHandler().waitForAction(new ExitAction());
     }
 
     public Renderer getRenderer() {
@@ -368,6 +382,6 @@ public class Game {
     }
 
     public Character getCharacter() {
-        return character;
+        return this.character;
     }
 }

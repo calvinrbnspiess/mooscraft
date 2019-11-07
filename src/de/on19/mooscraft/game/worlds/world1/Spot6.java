@@ -5,7 +5,7 @@ import de.on19.mooscraft.game.characters.Character;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.utils.TextTools;
 
 public class Spot6 extends Spot {
@@ -23,7 +23,8 @@ public class Spot6 extends Spot {
         String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst kleine Fee. Da sie gehört hat wie tapfer du bis hier warst. Schenkt sie dir Stärke";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine("Du bekommst 10 Einheiten Stärke. Gib <weiter> ein, um fortzufahren.");
+        s.appendLine(TextTools.wrapToLength("Du bekommst 10 Einheiten Stärke.", 112));
+        s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addStrength(10);
         game.printGameScreen(s);
