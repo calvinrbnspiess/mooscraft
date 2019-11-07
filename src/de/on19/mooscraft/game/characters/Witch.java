@@ -27,16 +27,16 @@ public class Witch extends Character {
 
     public static String[] getIcon() {
         String[] iconMermaidMan = new String[]{
-                "        ^ ",
-                "       / \\ ",
-                "        \\  \\",
-                "        /   \\",
-                "       /    /",
-                "      /     \\",
-                "     /       \\",
-                "    /          \\",
-                " \\_/____________\\_/",
-                "  \\______________/ "
+                "<\u001b[1;91m        ^ ",
+                "                    / \\ ",
+                "                   \\  \\",
+                "                    /   \\",
+                "                   /    /",
+                "                  /     \\",
+                "                 /       \\",
+                "                /          \\",
+                "            \\_/____________\\_/",
+                "             \\______________/ \u001b[0m"
         };
 
         return iconMermaidMan;
