@@ -6,7 +6,7 @@ import de.on19.mooscraft.utils.TextTools;
 public class World4 extends World {
 
     public World4() throws UnsupportedOperationException {
-        super(new String[]{TextTools.wrapToLength("Nicht mehr lange und du hast es geschafft die begehrte Burg zu erreichen. In der finalen vierten Welt Arcis Borbetomagus wird nun noch einmal deine Kraft im Kampf gefordert. Ob Duell oder Truppen Angriff, du wirst auf allen Ebenen ein letztes Mal gefordert. Wenn du durch Sumpf und Moor gegangen und all dies überlebst hast du das Zeug dazu der neuer Anwärter für die Herrschaft über Mooscraft zu werden.\n", 112),
+        super(new String[]{TextTools.wrapToLength("Nicht mehr lange und du hast es geschafft die begehrte Burg zu erreichen. In der finalen vierten Welt Arcis Borbetomagus wird nun noch einmal deine Kraft im Kampf gefordert. Ob Duell oder Truppenangriff, du wirst auf allen Ebenen ein letztes Mal gefordert. Wenn du durch Sumpf und Moor gegangen und all dies überlebst hast du das Zeug dazu der/die neue/r Anwärter/in für die Herrschaft über Mooscraft zu werden.\n", 112),
                         "                                                       ,ll                                                        ",
                         "                                                       :Oko                                                       ",
                         "                                             'oc.    ddOKkdo,   .ol.                                              ",
@@ -25,7 +25,7 @@ public class World4 extends World {
                         "                                    lWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                     ",
                         "                                    oWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                     ",
                         "                                    ;dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo.                                   "},
-                "Du hast die letzte Gabelung erreicht. Entscheide dich bitte welcher Weg dich zu deinem Ziel bringt..");
+                "Du hast die letzte Gabelung erreicht. Welcher Weg wird dich zur Herrschaft führen?.");
 
         super.getSpotsPool().add(new Spot1(this));
         super.getSpotsPool().add(new Spot2(this));
@@ -38,7 +38,7 @@ public class World4 extends World {
         // add all 6 spots
         super.generatePath("Gehst du links, lauern dunkle Gestalten in den Tiefen des Moors. ");
         super.generatePath(
-                "Auf der anderen Seite sieht es ganz danach aus, als wenn dich das Moor tief in den Sumpf hinunterziehen will.");
+                "Auf der anderen Seite sieht es aus, als wenn dich das Moor tief in den Sumpf hinunterziehen will.");
     }
 
 }

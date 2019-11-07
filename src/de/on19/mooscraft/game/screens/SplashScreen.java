@@ -29,7 +29,7 @@ public class SplashScreen extends Screen {
         super.setContent(content);
         super.append(TextTools.emptyLines(1));
 
-        String introduction = "Es war einmal eine Welt vor der unseren, beherrscht von Ungeheuern, Zauberern und Zauberinnen und Wasserwesen. Sie alle kämpften mit den unterschiedlichsten Kräften um die Eroberung der Burg. Doch Vorsicht war geboten, denn viele Fallen und Feinde lauerten in den dunkelsten Ecken und den tiefsten Verstecken um sie daran zu hindern. Viel Energie, Kraft und Stärke war gefordert um die Welt zu durchlaufen und mit genügend Kräften ans Ziel zu kommen. Egal ob Hexe, Kriegerin, Magier, Schurke oder Meerjungfraumann, sie alle machten sich auf den Weg zur Burg, denn es kann nur einen Herrscher über die Welt geben.";
+        String introduction = "Es war einmal eine Welt vor der unseren, beherrscht von Ungeheuern, Zauberern und Zauberinnen und Wasserwesen. Sie alle kämpfen mit den unterschiedlichsten Kräften um die Eroberung der Burg. Doch Vorsicht ist geboten, denn viele Fallen und Feinde lauern in den dunkelsten Ecken und tiefsten Verstecken. Viel Energie, Kraft und Stärke ist gefordert um die Welt zu durchlaufen und mit genügend Kräften ans Ziel zu kommen. Egal ob Hexe, Kriegerin, Magier, Schurke oder Meerjungfraumann, sie alle machen sich auf den Weg zur Burg, denn es kann nur einen Herrscher oder eine Herrscherin über die Welt geben.";
 
         super.append(TextTools.addPadding(introduction, 112, 12));
         super.append(TextTools.emptyLines(2));

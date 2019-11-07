@@ -6,7 +6,7 @@ import de.on19.mooscraft.utils.TextTools;
 public class World2 extends World {
 
     public World2() throws UnsupportedOperationException {
-        super(new String[]{TextTools.wrapToLength("Langsam erreichst du den bekanntesten Fluss in ganz Mooscraft. Die Mittelklinge ist nicht nur Dank ihrem Namen sehr furchteinflößend. Pass gut auf, dass du nicht von einen der Stromstellen mitgerissen wirst. Um im Wasser zu überleben, braucht es höchste Konzentration und eine innere Ruhe. Bereite dich gut auf den nächsten Abschnitt deiner Reise vor und sie auf jede Gefahr gefasst.", 112),
+        super(new String[]{TextTools.wrapToLength("Langsam erreichst du den bekanntesten Fluss in ganz Mooscraft. Die Mittelklinge ist nicht nur Dank ihres Namens furchteinflößend. Pass gut auf, dass du nicht von einer der Stromschnellen mitgerissen wirst. Um im Wasser zu überleben, braucht es höchste Konzentration und innere Ruhe. Bereite dich gut auf den nächsten Abschnitt deiner Reise vor und sei auf jede Gefahr gefasst.", 112),
                         "                                                 ...',,,,,'..                                                 ",
                         "                                                   .,cdk0KNNWWWWWNXKOo.                                              ",
                         "                                                 .,lkKWMMMMMMMMMMMMMMNk,                                               ",
