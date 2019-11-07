@@ -13,7 +13,6 @@ import java.util.List;
  * Splashscreen: displays in the beginning
  */
 //All screens exist of two parts: instructions and options
-//class screen --> file renderer
 public class ChooseScreen extends Screen {
     //Initialisation
     public List<String> options;
@@ -22,7 +21,7 @@ public class ChooseScreen extends Screen {
     //constructor: choose Screen: for choose Situations like choosing a character or choosing a path
     public ChooseScreen() {
         super(); //constructor of the higher ranked class called and used
-        this.options = new ArrayList<String>(); //initlaisation arrayList
+        this.options = new ArrayList<String>(); //initialisation arrayList
         this.instruction = ""; //placeholder for following instruction text
     }
 
@@ -72,7 +71,7 @@ public class ChooseScreen extends Screen {
     }
 
     @Override //method of sophisticated class gets overwritten (hint)
-    public String[] getContent() { //what does this method do in general?
+    public String[] getContent() {
         // Arrays.asList() only returns a list with fixed size, so we need to pass it into a new list: why??
         List<String> content = new ArrayList<String>(Arrays.asList(super.getContent())); //standard content of class super is printed + content provided in this method
 

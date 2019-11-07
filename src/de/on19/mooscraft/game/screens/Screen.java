@@ -10,13 +10,14 @@ public class Screen {
 
     private List<String> lines;
 
+    //creates arraylist
     public Screen() {
-        this.lines = new ArrayList<String>(); //why now an arraylist?
+        this.lines = new ArrayList<String>();
     }
 
-    //what does method Screen make?
-    public Screen(String[] lines) { //why String[], not String()
-        this(); //??
+    //visualizes content
+    public Screen(String[] lines) {
+        this();
         this.setContent(lines);
     }
 
@@ -46,7 +47,7 @@ public class Screen {
         return lines.toArray(new String[0]);
     }
 
-    //clears ols content, visualizes new content
+    //clears old content, visualizes new content
     public void setContent(String[] lines) {
         this.clear();
         this.append(lines);

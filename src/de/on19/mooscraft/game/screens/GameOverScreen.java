@@ -32,7 +32,6 @@ public class GameOverScreen extends Screen {
         super.appendLine("Du kannst das Spiel nun mit <exit> verlassen.");
     }
 
-    //??
     public void print() {
         this.game.getRenderer().printScreen(this); //renderer prints screen, this (is screen)
         //try and catch: try: tests errors in code block; catch: handles errors in code
