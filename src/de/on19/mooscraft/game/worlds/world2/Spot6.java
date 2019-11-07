@@ -19,22 +19,25 @@ public class Spot6 extends Spot {
         Screen s = new Screen();
         s.appendLine(TextTools.centerInRow("≈≈≈ Der Wald lichtet sich ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
-        String text = "Du steuerst auf eine Klippe zu und siehst es geht 100 Meter weit in die Tiefe. Hast du genügend Zauberkraft (>20), springst du über die Klippe. Wenn aber nicht, fällst du mitten im Sprung, landest auf dem Boden und verlierst somit weitere wertvolle Lebensenergie und Stärke. ";
+        String text = "Du steuerst auf eine Klippe zu und siehst es geht 100 Meter weit in die Tiefe. Hast du genügend Zauberkraft (>20), springst du über die Klippe. Wenn aber nicht, fällst du mitten im Sprung, landest auf dem Boden und verlierst somit weitere wertvolle Lebensenergie. ";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Diese waghalsige Aktion kostet dich 5 Einheiten an Lebensenergie und Stärke.", 112));
+
+        String woncliff = "Du hattest genügend Stärke und konntest dich aus dem Spinnennetz ohne weiteres befreien.";
+        String lostcliff = "Oh nein, leider hattest du nicht genügend Zauberkraft und verlierst nun 5 Einheiten Lebensenergie.";
+
+        if (character.getWitchcraft() >= 20) {
+            s.append(TextTools.addPadding(woncliff, 112, 12));
+        } else {
+            s.append(TextTools.addPadding(lostcliff, 112, 12));
+            character.addHealth(-5);
+        }
+
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
-        character.addHealth(-5);
-        character.addStrength(-5);
         game.printGameScreen(s);
 
-
-        // TODO:
-        /*
-        Methode Auswahl
-         */
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
