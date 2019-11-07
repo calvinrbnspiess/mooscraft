@@ -28,7 +28,7 @@ public class MermaidMan extends Character {
                 "    lNMMMMMMMO'       ",
                 "    :XMMMMMMMNo.      ",
                 "   .xWMMMMMMMMW0:     ",
-                "    lNMMMMMMMMMWo    \u001b[0m  ",
+                "        lNMMMMMMMMMWo    \u001b[0m  ",
         };
 
         return icon;

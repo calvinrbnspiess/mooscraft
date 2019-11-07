@@ -11,7 +11,7 @@ public class Warrior extends Character {
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "> \u001b[1;91m ^  ",
+                "> \u001b[1;91m                    ^  ",
                 "              / \\",
                 "               |  ",
                 "               |  ",
@@ -21,7 +21,7 @@ public class Warrior extends Character {
                 "               |  ",
                 "               |  ",
                 "              / \\",
-                "              / \\\u001b[0m",
+                "                  / \\\u001b[0m",
         };
 
         return icon;
