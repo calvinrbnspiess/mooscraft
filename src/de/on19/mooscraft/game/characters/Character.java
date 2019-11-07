@@ -19,8 +19,8 @@ public class Character {
 
     public Character() {
         this(0, 0, 0, 0, 0);
-        /**
-         * constructor gives actual values to the parameters given to the variables before via Character constructor
+
+        /*constructor gives actual values to the parameters given to the variables before via Character constructor
          *this.  refers to class attributes
          */
     }
@@ -29,15 +29,21 @@ public class Character {
         this(0, 0, 0, 0, 0);
         this.setName(name);
     }
+        /*
+         * Methode verlangt Name als String Eingabe
+         */
 
     public Character(int health, int strength, int witchcraft, int willpower, int wisdom) {
         this.name = "Unbekannter Spieler";
-        /**constructor
+        /*constructor
          * gives basic values (in brackets) to the variables (called by this.)
+         * folglich wird der oben verlangte den vom Konstruktor gesetzten Werten zugeordnet
          */
         this.health = health;
-        /**this: refers to class declared before above (e.g. public int health)
+        /*this: refers to class declared before above (e.g. public int health)
          * only "health" without "this" just refers to parameters in brackets within this Method
+         * folglich wird erst in der Charakter-Klasse aus dem Standartwert 0 ein brauchbarer int-Wert wenn die Methode augerufen wird
+         * und dort dann inizialisiert wird
          */
         this.strength = strength;
         this.witchcraft = witchcraft;
@@ -50,12 +56,15 @@ public class Character {
         // return no standard icon
         return new String[0];
     }
+    //standartmäßig wird kein Icon ausgegeben da der Array null ist das Icon wird erst im String der Klasse eingebunden
+
 
     public int getHealth() { //no parameters necessary since there is only a return value and no value provided into a variable
         return health;
     }
+    // die Methode ist lediglich dafür zuständig den Healthwert abzufragen aber wir brauchen ihn nicht als Rückgabewert
 
-    /**
+    /*
      * getter and setter methods are necessary to call them later in other classes and change values
      * therefore, they are public
      */
@@ -63,26 +72,36 @@ public class Character {
     //health
     public void setHealth(int health) {
         this.health = health;
+        //void weil sie keinen Wert zurückliefert sondern ihn überprüft
+        // setzt den health wert als int-wert
 
         if (this.health <= 0 && this.gameOverScreen != null) {
             this.gameOverScreen.print();
         }
+        /*es wird überprüft ob der gesetzte Wert kleiner oder ungleich Null ist
+        * und sollte dies der Fall sein dann wird in Folge dessen der Gameoverscreen ausgegeben
+         */
     }
 
     public void addHealth(int health) {
         this.setHealth(this.getHealth() + health);
     }
+    /* die add Health Methode setzt durch die set Health Methode den Wert als aktuellen Health
+     * welcher sich ergibt wenn der vorher gemerkte Healthwert und der der addiert bzw. subtrahiert wird
+     */
+
 
     //strength
     public int getStrength() {
         return strength;
     }
+     // Methode gibt den aktuellen Strenght Wert zurück (zum abfragen)
 
     public void setStrength(int strength) {
         this.strength = strength;
     }
+    // Methode nimmt sich den Strenght Wert vom Feld und setzt ihn als die Variable strenght
 
-    //witchcraft
 
     public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
         int strengthAfter = this.getStrength() + strength;
@@ -93,6 +112,12 @@ public class Character {
 
         this.setStrength(strengthAfter);
     }
+
+    /* diese Methode nimmt sich dann den aktuellen Strenght Wert der Gettermethode addiert den Wert der Settermethode
+     * gibt das Ergebnis zurück und setzt den Wert der als Strenghtafter durch die setter methode
+     */
+
+    //witchcraft
 
     public int getWitchcraft() {
         return witchcraft;
@@ -153,24 +178,33 @@ public class Character {
     public String getName() {
         return this.name;
     }
+    // der oben als String verlangte Name wird durch die Methode abgefragt und zurückgegeben
 
     public void setName(String name) {
         this.name = name;
     }
 
+    // durch diese Methode wird der eigegebene abgefragte Name als Name gesetzt
+
     public void increaseVisitedSpots() {
         this.visitedSpots += 1;
     }
+
+    // durch diese Methode wird jedesmal wenn ein Feld betreten wird die Anzahl der betretenen Felder um eins erhöht
 
     public int getVisitedSpots() {
         return visitedSpots;
     }
 
+    // durch diese Methode wird der aktuelle Stand an betretenen Feldern zurück gegeben
+
     public GameOverScreen getGameOverScreen() {
         return this.gameOverScreen;
     }
+    // die Variable die oben aufgerufen wird wird nun als GameOverScreen ausgegeben
 
     public void prepareGameOverScreen(GameOverScreen gameOverScreen) {
         this.gameOverScreen = gameOverScreen;
     }
+    // Gameoverscreen wird vorbereitet
 }
