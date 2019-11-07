@@ -29,17 +29,21 @@ public class Spot3 extends Spot {
         String wonspider = "Du hattest genügend Stärke und konntest dich aus dem Spinnennetz ohne weiteres befreien.";
         String lostspider = "Oh nein, leider hattest du nicht genügend Stärke und verlierst nun 5 Einheiten Lebensenergie.";
 
+        // ausgabe in abhängigkeit von dem besagten Parameter
+
         if (character.getStrength() >= 25) {
             s.append(TextTools.addPadding(wonspider, 112, 12));
         } else {
             s.append(TextTools.addPadding(lostspider, 112, 12));
             character.addHealth(-5);
         }
+        // if bedingung wenn stärke >=25 dann wird nichts abgezogen ansonsten wird Lebensenergie abgezogen
 
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
 
         game.printGameScreen(s);
+        // screen wird danach ausgegeben
 
         try {
             game.getHandler().waitForAction(new ContinueAction());

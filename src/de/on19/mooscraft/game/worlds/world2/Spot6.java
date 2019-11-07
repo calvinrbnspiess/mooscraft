@@ -24,7 +24,7 @@ public class Spot6 extends Spot {
         s.append(TextTools.emptyLines(1));
 
 
-        String woncliff = "Du hattest genügend Stärke und konntest dich aus dem Spinnennetz ohne weiteres befreien.";
+        String woncliff = "Du hattest genügend Zauberkraft und konntest die Klippe problemlos überwinden.";
         String lostcliff = "Oh nein, leider hattest du nicht genügend Zauberkraft und verlierst nun 5 Einheiten Lebensenergie.";
 
         if (character.getWitchcraft() >= 20) {
