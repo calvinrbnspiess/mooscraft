@@ -4,7 +4,7 @@ import de.on19.mooscraft.game.interaction.Action;
 import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.DescriptedAction;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +12,13 @@ import java.util.List;
 public class HelpAction implements DescriptedAction {
 
     public static String getActionDescription(DescriptedAction a) {
-        return "<" + a.getAction() + "> - " + StringTools.wrapToLength(a.getDescription(), 112);
+        return "<" + a.getAction() + "> - " + TextTools.wrapToLength(a.getDescription(), 112);
     }
 
     public static List<String> getSystemActionDescriptions(ActionHandler handler) {
         List<String> lines = new ArrayList<String>();
 
-        for(DescriptedAction a : handler.getSystemActions()) {
+        for (DescriptedAction a : handler.getSystemActions()) {
             lines.add(getActionDescription(a));
         }
 
@@ -29,23 +29,23 @@ public class HelpAction implements DescriptedAction {
     public void onCommand(String[] args, ActionHandler handler) {
         Screen screen = new Screen();
         screen.append(new String[]{
-              StringTools.centerInRow("≈≈≈ Befehlsübersicht ≈≈≈", 112),
-              "Folgende Befehle sind definiert. Du kannst diese jederzeit aufrufen:",
+                TextTools.centerInRow("≈≈≈ Befehlsübersicht ≈≈≈", 112),
+                "Folgende Befehle sind definiert. Du kannst diese jederzeit aufrufen:",
         });
 
-        screen.append(StringTools.emptyLines(2));
+        screen.append(TextTools.emptyLines(2));
 
         screen.append(getSystemActionDescriptions(handler).toArray(new String[0]));
 
-        screen.append(StringTools.emptyLines(2));
+        screen.append(TextTools.emptyLines(2));
 
 
         // Print description for awaitedAction
 
         Action awaitedAction = handler.getAwaitedAction();
 
-        if(awaitedAction instanceof DescriptedAction) {
-            screen.append(new String[] {
+        if (awaitedAction instanceof DescriptedAction) {
+            screen.append(new String[]{
                     "Im Moment wird folgende Aktion erwartet:",
                     getActionDescription((DescriptedAction) awaitedAction)
             });

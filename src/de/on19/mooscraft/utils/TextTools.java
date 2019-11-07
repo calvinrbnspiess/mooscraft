@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StringTools {
+public class TextTools {
 
     public static final String MATCH_NON_WORDS = "[^\\p{L}+]";
     public static final String MATCH_WHITESPACE = "\\s";
@@ -25,7 +25,15 @@ public class StringTools {
      * @return wrapped string
      */
     public static String wrapToLength(String text, int maxChars) {
-        // TODO what will happen if a text value without spaces at all is given?
+        // TODO no whitespaces?
+
+        // decrease maxChars by one to make space for line-break-indicator
+        if (!text.contains(" ")) {
+            for (int i = maxChars; i <= text.length(); i += maxChars) {
+                text = text.substring(0, i - 1) + System.lineSeparator() + text.substring(i - 1);
+            }
+            return text;
+        }
 
         //remove whitespace at beginning and end of string
         //then remove consecutive whitespace
@@ -50,15 +58,15 @@ public class StringTools {
      * @return wrapped string
      */
     public static String[] wrapToLengthArray(String text, int maxChars) {
-        // TODO what will happen if a text value without spaces at all is given?
+        // TODO no whitespaces?
 
         //remove whitespace at beginning and end of string
         //then remove consecutive whitespace
         text = text.trim().replaceAll("\\s{2,}", " ");
 
         // fix bug when entering a too short string
-        if(text.length() < maxChars) {
-            return new String[] { text };
+        if (text.length() < maxChars) {
+            return new String[]{text};
         }
 
         List<String> lines = new ArrayList<String>();

@@ -1,6 +1,6 @@
 package de.on19.mooscraft.game.characters;
 
-import de.on19.mooscraft.renderer.Screen;
+import de.on19.mooscraft.game.screens.GameOverScreen;
 
 public class Character {
 
@@ -14,6 +14,8 @@ public class Character {
     private int wisdom;
 
     private int visitedSpots;
+    private GameOverScreen gameOverScreen;
+
 
     public Character() {
         this(0, 0, 0, 0, 0);
@@ -44,6 +46,10 @@ public class Character {
         this.visitedSpots = 0;
     }
 
+    public int getHealth() { //no parameters necessary since there is only a return value and no value provided into a variable
+        return health;
+    }
+
     /**
      * getter and setter methods are necessary to call them later in other classes and change values
      * therefore, they are public
@@ -52,10 +58,10 @@ public class Character {
     //health
     public void setHealth(int health) {
         this.health = health;
-    }
 
-    public int getHealth() { //no parameters necessary since there is only a return value and no value provided into a variable
-        return health;
+        if (this.health <= 0 && this.gameOverScreen != null) {
+            this.gameOverScreen.print();
+        }
     }
 
     public void addHealth(int health) {
@@ -72,7 +78,16 @@ public class Character {
     }
 
     public void addStrength(int strength) {     //character`s strength value token + strength value to be added = new strength value
-        this.setStrength(this.getStrength() + strength);
+
+
+        int strengthAfter = this.getStrength() + strength;
+        if (strengthAfter < 0) {
+            this.setStrength(0);
+            return;
+        }
+        ;
+
+        this.setStrength(strengthAfter);
     }
 
     //witchcraft
@@ -86,7 +101,13 @@ public class Character {
     }
 
     public void addWitchcraft(int witchcraft) {
-        this.setWitchcraft(this.getWitchcraft() + witchcraft);
+
+        int witchcraftAfter = this.getWitchcraft() + witchcraft;
+        if (witchcraftAfter < 0) {
+            this.setWitchcraft(0);
+            return;
+        }
+        this.setWitchcraft(witchcraftAfter);
     }
 
     //willpower
@@ -99,7 +120,13 @@ public class Character {
     }
 
     public void addWillpower(int willpower) {
-        this.setWillpower(this.getWillpower() + willpower);
+
+        int willpowerAfter = this.getWillpower() + willpower;
+        if (willpowerAfter < 0) {
+            this.setWillpower(0);
+            return;
+        }
+        this.setWillpower(willpowerAfter);
     }
 
     //wisdom
@@ -112,8 +139,15 @@ public class Character {
     }
 
     public void addWisdom(int wisdom) {
-        this.setWisdom(this.getWisdom() + wisdom);
+
+        int wisdomAfter = this.getWisdom() + wisdom;
+        if (wisdomAfter < 0) {
+            this.setWisdom(0);
+            return;
+        }
+        this.setWisdom(wisdomAfter);
     }
+
 
     public String getName() {
         return name;
@@ -131,31 +165,11 @@ public class Character {
         return visitedSpots;
     }
 
-    //game over method
-    public int getgameOver(String) {
-        Screen gameOver = new Screen();
-
-        String[] gameOverOutput = {
-
-
-                "   ▄██████▄     ▄████████   ▄▄▄▄███▄▄▄▄      ▄████████       ▄██████▄   ▄█    █▄     ▄████████  ▄████████",
-                "  ███    ███   ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
-                "  ███    █▀    ███    ███ ███   ███   ███   ███    █▀       ███    ███ ███    ███   ███    █▀   ███    ███",
-                "  ▄███         ███    ███ ███   ███   ███  ▄███▄▄▄          ███    ███ ███    ███  ▄███▄▄▄     ▄███▄▄▄▄██▀",
-                "▀▀███ ████▄  ▀███████████ ███   ███   ███▀▀███▀▀▀           ███    ███ ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀▀▀",
-                "  ███    ███   ███    ███ ███   ███   ███   ███    █▄       ███    ███ ███    ███   ███    █▄  ▀███████████",
-                "  ███    ███   ███    ███ ███   ███   ███   ███    ███      ███    ███ ███    ███   ███    ███  ███    ███",
-                "  ████████▀    ███    █▀   ▀█   ███   █▀    ██████████       ▀██████▀   ▀██████▀    ██████████  ███    ███",
-                                                                                                                "███    ███",
-        };
-        gameOver.setContent(gameOverOutput);
-        }
-
-        if (character.getHealth() < 0) {
-        gameOver.append(StringTools.addPadding(gameOverOutput, 112, 12));
-
-        renderer.printScreen(gameOver);
-
+    public GameOverScreen getGameOverScreen() {
+        return this.gameOverScreen;
     }
-}
+
+    public void prepareGameOverScreen(GameOverScreen gameOverScreen) {
+        this.gameOverScreen = gameOverScreen;
+    }
 }

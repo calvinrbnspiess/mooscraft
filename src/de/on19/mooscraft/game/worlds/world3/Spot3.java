@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot3 extends Spot {
 
@@ -17,23 +17,23 @@ public class Spot3 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(StringTools.centerInRow("≈≈≈ An einem See auf einem Felsen ≈≈≈", 112));
-        s.append(StringTools.emptyLines(1));
+        s.appendLine(TextTools.centerInRow("≈≈≈ An einem See auf einem Felsen ≈≈≈", 112));
+        s.append(TextTools.emptyLines(1));
         String text = "Sirenen-Angriff, Mischwesen mit einem Vogelkörper und einem Frauenkopf locken dich mit ihrer Stimme ins Verderben, du kannst mit deinen letzten Kräften entkommen.";
-        s.append(StringTools.addPadding(text, 112, 12));
-        s.appendLine("Und verlierst 20 Einheiten an Kraft. Gib <weiter> ein, um fortzufahren.");
+        s.append(TextTools.addPadding(text, 112, 12));
+        s.appendLine("Und verlierst 20 Einheiten an Stärke. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addStrength(-20);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
-            System.out.println("exception");
+
 
             e.printStackTrace();
         }
-        System.out.println("after");
+
     }
 
 }

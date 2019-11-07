@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot2 extends Spot {
 
@@ -18,24 +18,24 @@ public class Spot2 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ Mitten im Odenwald ≈≈≈", 112));
-        s.append(StringTools.emptyLines(2));
+        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ Mitten im Odenwald ≈≈≈", 112));
+        s.append(TextTools.emptyLines(2));
         String text = "Hey du, ich bin klein Urmel, kannst du mir bitte weiterhelfen? Ich finde einfach nicht mehr nachhause! Es ist schon so spät geworden. Dank deiner Hilfe gelangt der kleine Urmel wieder zu seinem Unterbau.";
-        s.append(StringTools.addPadding(text, 112, 12));
-        s.append(StringTools.emptyLines(1));
+        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.emptyLines(1));
         s.appendLine("Das motiviert dich sehr, wodurch du 10 Einheiten an Lebensenergie gewinnst. Gib <weiter> ein, um fortzufahren.");
 
-        game.printGameScreen(s);
         character.addHealth(10);
+        game.printGameScreen(s);
 
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
-            System.out.println("exception");
+
 
             e.printStackTrace();
         }
-        System.out.println("after");
+
     }
 
 }

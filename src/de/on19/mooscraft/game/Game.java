@@ -6,7 +6,9 @@ import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.actions.ChooseAction;
 import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.interaction.actions.GameAction;
+import de.on19.mooscraft.game.interaction.actions.SkippableContinueAction;
 import de.on19.mooscraft.game.screens.ChooseScreen;
+import de.on19.mooscraft.game.screens.GameOverScreen;
 import de.on19.mooscraft.game.screens.SplashScreen;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.game.worlds.world1.World1;
@@ -15,7 +17,7 @@ import de.on19.mooscraft.game.worlds.world3.World3;
 import de.on19.mooscraft.game.worlds.world4.World4;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.List;
 
@@ -38,7 +40,7 @@ public class Game {
     public void printGameScreen(Screen prior) {
         Screen screen = new Screen();
         screen.append(this.getStatsIndicator(this.character));
-        screen.append(StringTools.emptyLines(1));
+        screen.append(TextTools.emptyLines(1));
         screen.append(prior.getContent());
 
         this.renderer.printScreen(screen, true);
@@ -54,12 +56,12 @@ public class Game {
 
     public String getPlayerIndicator(Character character) {
         String name = "Spieler: " + character.getName() + " (" + this.getCharacterClass(character) + ")";
-        String health = "Lebensenergie (" + character.getHealth() + "/100) " + StringTools.repeat("❤",  (int) Math.ceil((float) character.getHealth() / 10));
+        String health = "Lebensenergie (" + character.getHealth() + "/100) " + TextTools.repeat("❤", (int) Math.ceil((float) character.getHealth() / 10)) + TextTools.repeat("○", (int) Math.floor((float) (100 - character.getHealth()) / 10));
 
         int indicatorLength = name.length() + health.length();
         int remainingSpace = 112 - indicatorLength; // should not be (x < 0)
 
-        return health + StringTools.repeat(" ", remainingSpace) + name;
+        return health + TextTools.repeat(" ", remainingSpace) + name;
     }
 
     public String[] getStatsIndicator(Character character) {
@@ -72,22 +74,22 @@ public class Game {
         int remainingSpace = 112 - statusLength; // should not be (x < 0)
 
         // 4 properties -> 3 gaps between
-        String surroundingSpace = StringTools.repeat(" ", (int) Math.ceil(remainingSpace / 3));
+        String surroundingSpace = TextTools.repeat(" ", (int) Math.ceil(remainingSpace / 3));
 
         String statusLine = strength + surroundingSpace + witchcraft + surroundingSpace + willpower + surroundingSpace + wisdom;
 
-        return new String[] {
-                StringTools.repeat("━", 112),
+        return new String[]{
+                TextTools.repeat("━", 112),
                 this.getPlayerIndicator(character),
-            statusLine,
-            StringTools.repeat("━", 112),
-            this.getProgressIndicator(character),
-                StringTools.repeat("━", 112)
+                statusLine,
+                TextTools.repeat("━", 112),
+                this.getProgressIndicator(character),
+                TextTools.repeat("━", 112)
         };
     }
 
     public String getCharacterClass(Character character) {
-        switch(character.getClass().getSimpleName()) {
+        switch (character.getClass().getSimpleName()) {
             case "MermaidMan":
                 return "Meerjungfraumann";
             case "Rogue":
@@ -116,7 +118,7 @@ public class Game {
             int indicatorSpotLength = (int) indicatorLength / w.getPathLength();
             for (int i = 0; i < w.getPathLength(); i++) {
                 iterationIndex++;
-                indicator += StringTools.repeat(visitedSpots >= iterationIndex ? "█" : "░", indicatorSpotLength);
+                indicator += TextTools.repeat(visitedSpots >= iterationIndex ? "█" : "░", indicatorSpotLength);
             }
 
             indicator = indicator + "|";
@@ -128,7 +130,7 @@ public class Game {
 
         indicator = indicator + " " + Math.round(percentage) + "%";
 
-        return StringTools.centerInRow(indicator, 112);
+        return TextTools.centerInRow(indicator, 112);
     }
 
     //sequential processing of the following lines
@@ -142,162 +144,103 @@ public class Game {
          */
         handler.waitForAction(new ContinueAction());
 
-        ChooseScreen chooseCharacter = new ChooseScreen();
-
         //intro World
-        String introWorld = "Um die Welt zu durchqueren und die Burg " +
-                "                zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. " +
-                "Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
-        chooseCharacter.append(StringTools.addPadding(introWorld, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        //Intro Hexe Magalia
-        String helloHexe = "> \u001b[1;96m Ich bin Hexe Magalia.\u001b[0m";
-        String[] iconWitch = new String[]{
-                "        ^ ",
-                "       / \\ ",
-                "        \\  \\",
-                "        /   \\",
-                "       /    /",
-                "      /     \\",
-                "     /       \\",
-                "    /          \\",
-                " \\_/____________\\_/",
-                "  \\______________/ "};
+        String continueMessage = "Gib <weiter> ein, um fortzufahren.";
+        String skipMessage = continueMessage + " Du kannst mit <überspringen> direkt zur Auswahl springen.";
 
-        chooseCharacter.append(StringTools.addPadding(helloHexe, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconWitch);
-        chooseCharacter.append(StringTools.emptyLines(1));
-        String hexe1 = "Ich helfe dir durch das Spiel mit meinen dunklen, bösen Zaubertränken. Mein Ziel ist es die Macht mit Hilfe der Magie an mich zu reißen. Ich will alles beherrschen und durch meine Dämonenbeschwörungen allem Sterblichem ein Ende setzen.";
-        chooseCharacter.append(StringTools.emptyLines(1));
-        chooseCharacter.append(StringTools.addPadding(hexe1, 112, 12));
-        String hexe2 = "Ego fuo dius imperium Turrismaga!!!";
-        chooseCharacter.append(StringTools.emptyLines(1));
-        chooseCharacter.append(StringTools.addPadding(hexe2, 112, 12));
-        String hexe3 = "Wählst du mich als Spielcharakter, so erhälst du die größte \u001b[1;91mWillenskraft " +
-                "[50]\u001b[0m um ans " +
-                "Ziel zu kommen. Gefahren des Weges Bescheid. Jedoch bin ich dementsprechend alt und habe " +
-                "nicht mehr so viel \u001b[1;91mLebensenergie [25]\u001b[0m und \u001b[1;91mStärke [20]\u001b[0m. Dafür " +
-                "sind meine \u001b[1;91mZauberkraft [40]\u001b[0m und \u001b[1;91mWeisheit [30]\u001b[0m umso stärker.";
-        chooseCharacter.append(StringTools.addPadding(hexe3, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        Screen intro = new Screen();
+        intro.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        intro.append(TextTools.emptyLines(1));
+        intro.appendLine("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.");
+        intro.append(TextTools.emptyLines(1));
+        intro.appendLine(skipMessage);
 
-        //Intro Kriegerin Bellatrix
-        String helloWarrior = "> \u001b[1;96mIch bin Kriegerin Bellatrix.\u001b[0m";
-        String[] iconWarrior = new String[]{
-                "        ^",
-                "       / \\",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "       / \\",
-                "       / \\",
-        };
-        chooseCharacter.append(StringTools.addPadding(helloWarrior, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconWarrior);
-        chooseCharacter.append(StringTools.emptyLines(2));
-        String warrior1 = "Meine Aufgabe ist es im Land meines Vaters, dem Herrscher von Arcis Borbetomagus, die Burg in Worms vor unerwünschten Eindringlingen zu bewahren. Ich komme in Frieden, aber besitze genügend \u001b[1;91mStärke [50]\u001b[0m und \u001b[1;91mWillenskraft [40]\u001b[0m um unser Land zu verteidigen. Als Tochter des Herrschers bin ich jung und voller \u001b[1;91mLebensenergie [80]\u001b[0m. Jedoch mangelt es mit an \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit [10]\u001b[0m.";
-        chooseCharacter.append(StringTools.addPadding(warrior1, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        renderer.printScreen(intro);
 
-        //Intro White Mage Kelii
-        String helloWhiteMage = "> \u001b[1;96mIch bin der Weiße Magier Kelii.\u001b[0m";
-        String[] iconWhiteMage = new String[]{
-                "        ^ ",
-                "       ( ) ",
-                "       \\ / ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "        | ",
-                "       | | ",
-                "       |_| ",
-        };
-        chooseCharacter.append(StringTools.addPadding(helloWhiteMage, 112, 12));
-        chooseCharacter.append(iconWhiteMage);
-        chooseCharacter.append(StringTools.emptyLines(2));
-        String whiteMage1 = "Ich bin der älteste Charakter in Mooscraft; jedoch nur äußerlich. Auf den ersten Blick mag mein sehr langer weißer Bart aussehen als wäre ich gealtert. Jedoch habe ich Mittels meiner \u001b[1;91mWeisheit [50]\u001b[0m einen Zaubertrank entwickelt, welcher mich stets auf dem Stand eines 25 Jahre jungen Burschen hält. Meine \u001b[1;91mLebensenergie [80]\u001b[0m reicht aus um den Weg mit etwas Geschick zu meistern. Als Urgestein der Magie habe ich natürlich auch stets einen Zauberspruch zur Verteidigung auf den Lippen \u001b[1;91mZauberkraft [35]\u001b[0m. Leider hat der Jungtrunk auf Dauer eine kleine Nebenwirkung. Er wirkt sich auf meine \u001b[1;91mWillenskraft [20]\u001b[0m aus worauf hin ich kurzzeitig zum Komiker mutiere \u001b[1;91m(Willenskraft [20])\u001b[0m.";
-        chooseCharacter.append(StringTools.addPadding(whiteMage1, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        SkippableContinueAction skippableAction = new SkippableContinueAction("Bitte gib 'weiter' ein, um die Charakterbeschreibungen anzuzeigen. Du kannst mit 'überspringen' direkt zur Auswahl springen.");
 
-        //Intro Rogue Bandito
-        String hellorogue = "> \u001b[1;96mIch bin der Schurke Bandito.\u001b[0m";
-        String[] iconRogue = new String[]{
-                "           ^ ",
-                "          / \\ ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "          | |  ",
-                "        _______",
-                "        -------",
-                "          | | ",
-                "          |_| ",
-        };
+        handler.waitForAction(skippableAction);
 
-        chooseCharacter.append(StringTools.addPadding(hellorogue, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconRogue);
-        chooseCharacter.append(StringTools.emptyLines(2));
-        String rogue1 = "Meine Hinterhalte sind deine Fallen. Mit schlauen Tricks verzerre ich deine " +
-                "Sinneswahrnehmung und nichts ist mehr so wie es scheint \u001b[1;91m(Willenskraft [30])" +
-                "\u001b[0m. Ich bin klug und fix \u001b[1;91m(Lebensenergie [70])\u001b[0m. Ich kann mich schnell auf Land " +
-                "fortbewegen und kenne die besten Verstecke. Wählst du mich, bist du cleverer als die Anderen und durchblickst jede " +
-                "Situation mit einem kühlen Kopf. Vor Wasser bin ich allerdings scheu und durch meine " +
-                "Cleverness mussten meine Muskeln leiden. Dadurch ist meine \u001b[1;91mStärke [30]\u001b[0m nicht " +
-                "ausreichend für einen Kampf auf Augenhöhe. Außerdem bin ich wenig bewandert in den Feldern der Zauberkraft und des" +
-                " Wissens, wodurch ich nur wenig \u001b[1;91mZauberkraft [10]\u001b[0m und \u001b[1;91mWeisheit " +
-                "[10]\u001b[0m bieten kann.";
-        chooseCharacter.append(StringTools.addPadding(rogue1, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+        if (!skippableAction.isSkipped()) {
+            //Intro Hexe Magalia
+            Screen magalia = new Screen();
+            magalia.append(TextTools.addPadding(Witch.getGreeting(), 112, 12));
+            magalia.append(TextTools.emptyLines(2));
+            magalia.append(Warrior.getIcon());
+            magalia.append(TextTools.emptyLines(2));
+            magalia.append(Witch.getDescriptionArray());
+            magalia.append(TextTools.emptyLines(2));
+            magalia.appendLine("(1/5) " + skipMessage);
 
-        //Intro Mermaidman Marin
-        String[] iconMermaidMan = new String[]{
-                "                                              .                                                                 ",
-                "                                             .oko;.                                                             ",
-                "                                              ,kXWKc                                                            ",
-                "                                               ,0MM0c.      .';llo,                                             ",
-                "                                               .:OWMWXkl:okOXNNWXc                                              ",
-                "                                                 ;0WMMMMMMMMMKc;'                                               ",
-                "                                                  .,oKMMMMOcc'                                                  ",
-                "                                                    .OMMM0,                                                     ",
-                "                                                   ,0MMMMX:                                                     ",
-                "                                                  ,0MMWWx.                                                      ",
-                "                                                  :KMMMWO'                                                      ",
-                "                                                 :XMMMMWWk.                                                     ",
-                "                                                 'OMMMMMMXl                                                     ",
-                "                                                 lNMMMMMMMO'                                                    ",
-                "                                                 :XMMMMMMMNo.                                                   ",
-                "                                                .xWMMMMMMMMW0:                                                  ",
-                "                                                 lNMMMMMMMMMWo                                                  ",
-        };
+            renderer.printScreen(magalia);
+            handler.waitForAction(skippableAction);
+        }
 
-        String hellomermaidman = "> \u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m";
-        chooseCharacter.append(StringTools.addPadding(hellomermaidman, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
-        chooseCharacter.append(iconMermaidMan);
-        chooseCharacter.append(StringTools.emptyLines(1));
+        if (!skippableAction.isSkipped()) {
+            //Intro Kriegerin Bellatrix
+            Screen bellatrix = new Screen();
+            bellatrix.append(TextTools.addPadding(Warrior.getGreeting(), 112, 12));
+            bellatrix.append(TextTools.emptyLines(2));
+            bellatrix.append(Warrior.getIcon());
+            bellatrix.append(TextTools.emptyLines(2));
+            bellatrix.append(TextTools.addPadding(Warrior.getDescription(), 112, 12));
+            bellatrix.append(TextTools.emptyLines(2));
+            bellatrix.appendLine("(2/5) " + skipMessage);
 
-        String mermaidman1 = "Im Wasser bin ich unschlagbar. Dort ist meine Heimat und diese beschütze ich " +
-                "mit den mir gegebenen Fähigkeiten \u001b[1;91m(Willenskraft [40])\u001b[0m. Geboren bin ich im " +
-                "Fluss Mittelklinge, welchen ich kenne wie meine Westentasche, da ich nun schon ein Weilchen auf " +
-                "dieser Welt wandle \u001b[1;91m(Lebensenergie [50])\u001b[0m. Wählst du mich, sind deine Chancen " +
-                "auf Land geringer, dafür im Wasser umso höher. Auch an \u001b[1;91mStärke [40]\u001b[0m habe ich " +
-                "über die Jahre zugelegt und bekämpfe in der Nähe von Wasser jeden Gegner. Mit \u001b[1;" +
-                "91mZauberkraft [10]\u001b[0m oder tiefer  \u001b[1;91mWeisheit [30]\u001b[0m kann ich dagegen nicht " +
-                "auftrumphen.";
-        chooseCharacter.append(StringTools.addPadding(mermaidman1, 112, 12));
-        chooseCharacter.append(StringTools.emptyLines(2));
+            renderer.printScreen(bellatrix);
+            handler.waitForAction(skippableAction);
+        }
 
-        chooseCharacter.append(new String[]{StringTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        if (!skippableAction.isSkipped()) {
+            //Intro White Mage Kelii
+            Screen kelii = new Screen();
+            kelii.append(TextTools.addPadding(WhiteMage.getGreeting(), 112, 12));
+            kelii.append(WhiteMage.getIcon());
+            kelii.append(TextTools.emptyLines(2));
+            kelii.append(TextTools.addPadding(WhiteMage.getDescription(), 112, 12));
+            kelii.append(TextTools.emptyLines(2));
+            kelii.appendLine("(3/5) " + skipMessage);
+
+            renderer.printScreen(kelii);
+            handler.waitForAction(skippableAction);
+        }
+
+        if (!skippableAction.isSkipped()) {
+            //Intro Rogue Bandito
+            Screen bandito = new Screen();
+            bandito.append(TextTools.addPadding(Rogue.getGreeting(), 112, 12));
+            bandito.append(TextTools.emptyLines(2));
+            bandito.append(Rogue.getIcon());
+            bandito.append(TextTools.emptyLines(2));
+            bandito.append(TextTools.addPadding(Rogue.getDescription(), 112, 12));
+            bandito.append(TextTools.emptyLines(2));
+            bandito.appendLine("(4/5) " + skipMessage);
+
+            renderer.printScreen(bandito);
+            handler.waitForAction(skippableAction);
+        }
+
+        if (!skippableAction.isSkipped()) {
+            //Intro Mermaidman Marin
+            Screen marin = new Screen();
+            marin.append(TextTools.addPadding(MermaidMan.getGreeting(), 112, 12));
+            marin.append(TextTools.emptyLines(2));
+            marin.append(MermaidMan.getIcon());
+            marin.append(TextTools.emptyLines(1));
+            marin.append(TextTools.addPadding(MermaidMan.getDescription(), 112, 12));
+            marin.append(TextTools.emptyLines(2));
+            marin.appendLine("(5/5) " + continueMessage);
+
+            renderer.printScreen(marin);
+            // by last character description a skip is not neccessary anymore
+            handler.waitForAction(new ContinueAction());
+        }
+        //intro World
+        ChooseScreen chooseCharacter = new ChooseScreen();
+        chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
+        chooseCharacter.append(TextTools.emptyLines(2));
+        String introWorld = "Du hast verstanden und eine Wahl getroffen? Vergiss nicht: Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
+        chooseCharacter.append(TextTools.addPadding(introWorld, 112, 12));
 
         chooseCharacter.addOptions(new String[]{
                 "Magalia (Hexe)",
@@ -313,10 +256,10 @@ public class Game {
         ChooseAction chooseAction = new ChooseAction(chooseCharacter);
 
         // character needs to be uniquely chosen
-        while(chooseAction.getChosenOption() == null) {
+        while (chooseAction.getChosenOption() == null) {
             handler.waitForAction(chooseAction);
 
-            if(chooseAction.getChosenOption() == null) {
+            if (chooseAction.getChosenOption() == null) {
                 Screen s = new Screen();
                 s.appendLine("Du hast keine eindeutige Option gewählt. Probier's nochmal.");
                 renderer.printScreen(s, false);
@@ -326,20 +269,22 @@ public class Game {
         String chosenOption = chooseAction.getChosenOption();
         String[] formattedOptions = chooseCharacter.getFormattedOptions();
 
-        if(formattedOptions[0].equals(chosenOption)) {
+        if (formattedOptions[0].equals(chosenOption)) {
             character = new Witch();
-        } else if(formattedOptions[1].equals(chosenOption)) {
+        } else if (formattedOptions[1].equals(chosenOption)) {
             character = new Warrior();
-        } else if(formattedOptions[2].equals(chosenOption)) {
+        } else if (formattedOptions[2].equals(chosenOption)) {
             character = new WhiteMage();
-        } else if(formattedOptions[3].equals(chosenOption)) {
+        } else if (formattedOptions[3].equals(chosenOption)) {
             character = new Rogue();
-        } else if(formattedOptions[4].equals(chosenOption)) {
+        } else if (formattedOptions[4].equals(chosenOption)) {
             character = new MermaidMan();
         }
 
+        character.prepareGameOverScreen(new GameOverScreen(this));
+
         Screen chooseName = new Screen();
-        chooseName.append(new String[]{StringTools.centerInRow("≈≈≈ Bitte gebe einen Namen ein ≈≈≈", 112)});
+        chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gebe einen Namen ein ≈≈≈", 112)});
 
         renderer.printScreen(chooseName, true);
 
@@ -352,7 +297,7 @@ public class Game {
         });
 
         Screen printName = new Screen();
-        printName.append(new String[]{StringTools.wrapToLength("Viel Erfolg auf deinem Weg " + character.getName(), 112)});
+        printName.append(new String[]{TextTools.wrapToLength("Viel Erfolg auf deinem Weg " + character.getName(), 112)});
         renderer.printScreen(printName, true);
 
         for (World w : this.worlds) {
@@ -366,38 +311,38 @@ public class Game {
 
         Screen castle = new Screen();
         if (character.getHealth() >= 25) {
-            castle.append(StringTools.addPadding(woncastel, 112, 12));
+            castle.append(TextTools.addPadding(woncastel, 112, 12));
         } else {
-            castle.append(StringTools.addPadding(lostcastle, 112, 12));
+            castle.append(TextTools.addPadding(lostcastle, 112, 12));
         }
         renderer.printScreen(castle);
-        String[] castelIcon = new String[]{
-        "                                                      :0Oc.                                         " ,
-        "                                                      cNWN0Odoc;'..                                             \n" +
-        "                                                      cWMMMMMMMWNX0kdl'                                         \n" +
-        "                                                      cWMMMMMWX0Oxoc;,.                                         \n" +
-        "                                                      cNN0oc:,..                                                \n" +
-        "                                                      cX0;                                                      \n" +
-        "                                        .odl.  :dd;  .OWNx.  :dd;  'ddl.                                        \n" +
-        "                                        ;XMX; .xMMd  :NMMK, .kMMd  cNMK,                                        \n" +
-        "                                        ;XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,                                        \n" +
-        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        \n" +
-        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        \n" +
-        "                                        'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.                                        \n" +
-        "                                         .',kMMMMMMMMMMMMMMMMMMMMMWd'..                                         \n" +
-        "                                           .OMMMMMMMMMWWWMMMMMMMMMMx.                                           \n" +
-        "                                           ;XMMMMMMW0l;,,;oKWMMMMMM0'                                           \n" +
-        "                                           oMMMMMMMO.      ,0MMMMMMWc                                           \n" +
-        "                                          .OMMMMMMMx.      .kMMMMMMMx.                                          \n" +
-        "                                          :NMMMMMMMd       .kMMMMMMMK,                                          \n" +
-        "                                          dMMMMMMMMd       .kMMMMMMMWl                                          \n" +
-        "                                         '0MMMMMMMMKdooooooxXMMMMMMMMk.                                         \n" +
-        "                                         cNMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                         \n" +
-        "                                        .xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                         \n" +
-        "                                        ,KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.                                        \n" +
-        "                                        .oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.  "
-        }
-
+        String[] castleIcon = new String[]{
+                "                                                      :0Oc.                                         ",
+                "                                                      cNWN0Odoc;'..                                             " +
+                        "                                                      cWMMMMMMMWNX0kdl'                                         " +
+                        "                                                      cWMMMMMWX0Oxoc;,.                                         " +
+                        "                                                      cNN0oc:,..                                                " +
+                        "                                                      cX0;                                                      " +
+                        "                                        .odl.  :dd;  .OWNx.  :dd;  'ddl.                                        " +
+                        "                                        ;XMX; .xMMd  :NMMK, .kMMd  cNMK,                                        " +
+                        "                                        ;XMNOdxXMMKxd0WMMNOdkXMMKxd0WM0,                                        " +
+                        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        " +
+                        "                                        ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                        " +
+                        "                                        'ONNWMMMMMMMMMMMMMMMMMMMMMMWNNx.                                        " +
+                        "                                         .',kMMMMMMMMMMMMMMMMMMMMMWd'..                                         " +
+                        "                                           .OMMMMMMMMMWWWMMMMMMMMMMx.                                           " +
+                        "                                           ;XMMMMMMW0l;,,;oKWMMMMMM0'                                           " +
+                        "                                           oMMMMMMMO.      ,0MMMMMMWc                                           " +
+                        "                                          .OMMMMMMMx.      .kMMMMMMMx.                                          " +
+                        "                                          :NMMMMMMMd       .kMMMMMMMK,                                          " +
+                        "                                          dMMMMMMMMd       .kMMMMMMMWl                                          " +
+                        "                                         '0MMMMMMMMKdooooooxXMMMMMMMMk.                                         " +
+                        "                                         cNMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                         " +
+                        "                                        .xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                         " +
+                        "                                        ,KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.                                        " +
+                        "                                        .oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.  "
+        };
+    }
 
     public Renderer getRenderer() {
         return this.renderer;
@@ -405,5 +350,9 @@ public class Game {
 
     public ActionHandler getHandler() {
         return this.handler;
+    }
+
+    public Character getCharacter() {
+        return character;
     }
 }

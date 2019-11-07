@@ -5,15 +5,15 @@ import de.on19.mooscraft.game.interaction.actions.GuideAction;
 import de.on19.mooscraft.game.interaction.actions.HelpAction;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class TerminalActionHandler implements ActionHandler {
 
-    private Scanner scanner;
     private static List<DescriptedAction> systemActions = List.of(new HelpAction(), new GuideAction(), new ExitAction());
+    private Scanner scanner;
     // used to synchronize parallel tasks
     private Object notifier;
     private Action awaitedAction;
@@ -27,7 +27,7 @@ public class TerminalActionHandler implements ActionHandler {
         // create new parallel task that listens for user interaction with the terminal
         new Thread(() -> {
             while (scanner.hasNext()) {
-                String[] args = scanner.next().split(StringTools.MATCH_WHITESPACE);
+                String[] args = scanner.next().split(TextTools.MATCH_WHITESPACE);
 
                 boolean wasInvoked = false;
                 // check if any systemAction should be invoked - they have priority
@@ -81,6 +81,10 @@ public class TerminalActionHandler implements ActionHandler {
         return renderer;
     }
 
+    public void setRenderer(Renderer renderer) {
+        this.renderer = renderer;
+    }
+
     @Override
     public List<DescriptedAction> getSystemActions() {
         return systemActions;
@@ -89,10 +93,6 @@ public class TerminalActionHandler implements ActionHandler {
     @Override
     public Action getAwaitedAction() {
         return this.awaitedAction;
-    }
-
-    public void setRenderer(Renderer renderer) {
-        this.renderer = renderer;
     }
 
 }

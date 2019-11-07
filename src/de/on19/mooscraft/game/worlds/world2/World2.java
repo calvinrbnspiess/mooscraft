@@ -1,15 +1,15 @@
 package de.on19.mooscraft.game.worlds.world2;
 
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class World2 extends World {
 
     public World2() throws UnsupportedOperationException {
-        super(new String[]{       StringTools.wrapToLength("Langsam erreichst du den bekanntesten Fluss in ganz Mooscraft. Die Mittelklinge ist nicht nur Dank ihrem Namen sehr furchteinflößend. Pass gut auf, dass du nicht von einen der Stromstellen mitgerissen wirst. Um im Wasser zu überleben, braucht es höchste Konzentration und eine innere Ruhe. Bereite dich gut auf den nächsten Abschnitt deiner Reise vor und sie auf jede Gefahr gefasst.", 112),
+        super(new String[]{TextTools.wrapToLength("Langsam erreichst du den bekanntesten Fluss in ganz Mooscraft. Die Mittelklinge ist nicht nur Dank ihrem Namen sehr furchteinflößend. Pass gut auf, dass du nicht von einen der Stromstellen mitgerissen wirst. Um im Wasser zu überleben, braucht es höchste Konzentration und eine innere Ruhe. Bereite dich gut auf den nächsten Abschnitt deiner Reise vor und sie auf jede Gefahr gefasst.", 112),
                         "                                                 ...',,,,,'..                                                 ",
-                "                                                   .,cdk0KNNWWWWWNXKOo.                                              ",
-                "                                                 .,lkKWMMMMMMMMMMMMMMNk,                                               ",
+                        "                                                   .,cdk0KNNWWWWWNXKOo.                                              ",
+                        "                                                 .,lkKWMMMMMMMMMMMMMMNk,                                               ",
                         "                                        'lONMMMWN0kdllkWMMMMW0:.                                                ",
                         "                                      ,xXMMMN0d:'.   cKMMMMNd.                                                  ",
                         "                                    ,kNMMW0o,.      lXMMMMK:                                                    ",
@@ -21,7 +21,7 @@ public class World2 extends World {
                         "        .;loc,..      .':d0NWXkc.                  cXMMMWNOxdddxk0KXWMMMWNKko:'.                                ",
                         "           'cdkkkxxxxOKNNX0xc.                      ,xXWMMMMMMMMMMWNKOxl:'.                                     ",
                         "              .';clooolc;..                           .;cloxxxdolc;'.                                           "
-},
+                },
                 "Erneut erwartet dich eine Abzweigung des Weges und du musst dich entschieden. Welchen Weg wählst du?");
 
         super.getSpotsPool().add(new Spot1(this));

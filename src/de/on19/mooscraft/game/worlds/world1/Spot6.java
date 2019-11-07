@@ -6,7 +6,7 @@ import de.on19.mooscraft.game.interaction.actions.ContinueAction;
 import de.on19.mooscraft.game.worlds.Spot;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.renderer.Screen;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class Spot6 extends Spot {
 
@@ -18,23 +18,24 @@ public class Spot6 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(StringTools.centerInRow("\u001b[1;95m≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈", 112));
-        s.append(StringTools.emptyLines(2));
+        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈", 112));
+        s.append(TextTools.emptyLines(2));
         String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst kleine Fee. Da sie gehört hat wie tapfer du bis hier warst. Schenkt sie dir Stärke";
-        s.append(StringTools.addPadding(text, 112, 12));
-        s.append(StringTools.emptyLines(1));
+        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.emptyLines(1));
         s.appendLine("Du bekommst 10 Einheiten Stärke. Gib <weiter> ein, um fortzufahren.");
-        game.printGameScreen(s);
 
         character.addStrength(10);
+        game.printGameScreen(s);
+
         try {
             game.getHandler().waitForAction(new ContinueAction());
         } catch (InterruptedException e) {
-            System.out.println("exception");
+
 
             e.printStackTrace();
         }
-        System.out.println("after");
+
     }
 
 }

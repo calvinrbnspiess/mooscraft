@@ -1,12 +1,12 @@
 package de.on19.mooscraft.game.worlds.world4;
 
 import de.on19.mooscraft.game.worlds.World;
-import de.on19.mooscraft.utils.StringTools;
+import de.on19.mooscraft.utils.TextTools;
 
 public class World4 extends World {
 
     public World4() throws UnsupportedOperationException {
-        super(new String[]{       StringTools.wrapToLength("Nicht mehr lange und du hast es geschafft die begehrte Burg zu erreichen. In der finalen vierten Welt Arcis Borbetomagus wird nun noch einmal deine Kraft im Kampf gefordert. Ob Duell oder Truppen Angriff, du wirst auf allen Ebenen ein letztes Mal gefordert. Wenn du durch Sumpf und Moor gegangen und all dies überlebst hast du das Zeug dazu der neuer Anwärter für die Herrschaft über Mooscraft zu werden.\n", 112),
+        super(new String[]{TextTools.wrapToLength("Nicht mehr lange und du hast es geschafft die begehrte Burg zu erreichen. In der finalen vierten Welt Arcis Borbetomagus wird nun noch einmal deine Kraft im Kampf gefordert. Ob Duell oder Truppen Angriff, du wirst auf allen Ebenen ein letztes Mal gefordert. Wenn du durch Sumpf und Moor gegangen und all dies überlebst hast du das Zeug dazu der neuer Anwärter für die Herrschaft über Mooscraft zu werden.\n", 112),
                         "                                                       ,ll                                                        ",
                         "                                                       :Oko                                                       ",
                         "                                             'oc.    ddOKkdo,   .ol.                                              ",
