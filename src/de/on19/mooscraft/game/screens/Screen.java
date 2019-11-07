@@ -18,9 +18,9 @@ public class Screen {
         this(); //??
         this.setContent(lines);
     }
-    //clears screen --> isn`` that method already implemented in ChooseScreen?
+    //clears screen
     public void clear() {
-        this.lines.clear();
+        this.lines.clear(); //clears initialized arrayList
     }
 
     //prepend does not work; what does it do?
@@ -40,7 +40,7 @@ public class Screen {
 
     public String[] getContent() {
         //creates new empty array, which is faster than allocating an array of the right size directly
-        //what does it make? example?
+        //provides standard content
         return lines.toArray(new String[0]);
     }
 
