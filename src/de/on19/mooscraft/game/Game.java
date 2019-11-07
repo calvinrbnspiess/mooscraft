@@ -161,12 +161,27 @@ public class Game {
 
         handler.waitForAction(skippableAction);
 
+        /**
+         *  Ablauf:
+         *      - Splashscreen, warten auf <weiter>
+         *      - Charakter-Auwahl Into, warten auf <weiter> oder <überspringen>
+         *      - Beschreibung Hexe (1/5), warten auf <weiter> oder <überspringen>
+         *      - Beschreibung Kriegerin (2/5), warten auf <weiter> oder <überspringen>
+         *      - Beschreibung Weißer Magier (3/5), warten auf <weiter> oder <überspringen>
+         *      - Beschreibung Schurke (4/5), warten auf <weiter> oder <überspringen>
+         *      - Beschreibung Meerjungfraumann (5/5), warten nur auf <weiter>
+         *      - Abfrage Charakter-Auswahl, warten auf <weiter>
+         *      - Namens-Auswahl, warten auf <weiter>
+         *      - Nacheinader alle Welten bzw. Spots, dazwischen warten auf <weiter>
+         *      - Burg
+         */
+
         if (!skippableAction.isSkipped()) {
             //Intro Hexe Magalia
             Screen magalia = new Screen();
             magalia.append(TextTools.addPadding(Witch.getGreeting(), 112, 12));
             magalia.append(TextTools.emptyLines(2));
-            magalia.append(Warrior.getIcon());
+            magalia.append(Witch.getIcon());
             magalia.append(TextTools.emptyLines(2));
             magalia.append(Witch.getDescriptionArray());
             magalia.append(TextTools.emptyLines(2));

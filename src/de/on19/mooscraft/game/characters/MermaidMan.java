@@ -11,7 +11,7 @@ public class MermaidMan extends Character {
     }
 
     public static String[] getIcon() {
-        String[] iconMermaidMan = new String[]{
+        String[] icon = new String[]{
                 "                                              .                                                                 ",
                 "                                             .oko;.                                                             ",
                 "                                              ,kXWKc                                                            ",
@@ -31,7 +31,7 @@ public class MermaidMan extends Character {
                 "                                                 lNMMMMMMMMMWo                                                  ",
         };
 
-        return iconMermaidMan;
+        return icon;
     }
 
     public static String getDescription() {

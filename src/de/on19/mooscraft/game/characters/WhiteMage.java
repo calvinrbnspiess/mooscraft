@@ -11,7 +11,7 @@ public class WhiteMage extends Character {
     }
 
     public static String[] getIcon() {
-        String[] iconMermaidMan = new String[]{
+        String[] icon = new String[]{
                 "        ^ ",
                 "       ( ) ",
                 "       \\ / ",
@@ -25,7 +25,7 @@ public class WhiteMage extends Character {
                 "       |_| ",
         };
 
-        return iconMermaidMan;
+        return icon;
     }
 
     public static String getDescription() {

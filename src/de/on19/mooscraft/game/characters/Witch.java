@@ -26,7 +26,7 @@ public class Witch extends Character {
     }
 
     public static String[] getIcon() {
-        String[] iconMermaidMan = new String[]{
+        String[] icon = new String[]{
                 "        ^ ",
                 "       / \\ ",
                 "        \\  \\",
@@ -39,7 +39,7 @@ public class Witch extends Character {
                 "  \\______________/ "
         };
 
-        return iconMermaidMan;
+        return icon;
     }
 
     public static String[] getDescriptionArray() {
