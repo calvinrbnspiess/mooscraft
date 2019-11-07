@@ -6,7 +6,7 @@ import de.on19.mooscraft.utils.TextTools;
 public class World2 extends World {
 
     public World2() throws UnsupportedOperationException {
-        super(new String[]{TextTools.wrapToLength("\u001b[1;92m Langsam erreichst du den bekanntesten Fluss in ganz Mooscraft. Die Mittelklinge ist nicht nur Dank ihres Namens furchteinflößend. Pass gut auf, dass du nicht von einer der Stromschnellen mitgerissen wirst. Um im Wasser zu überleben, braucht es höchste Konzentration und innere Ruhe. Bereite dich gut auf den nächsten Abschnitt deiner Reise vor und sei auf jede Gefahr gefasst.", 112),
+        super(new String[]{TextTools.wrapToLength(">\u001b[1;92m Langsam erreichst du den bekanntesten Fluss in ganz Mooscraft. Die Mittelklinge ist nicht nur Dank ihres Namens furchteinflößend. Pass gut auf, dass du nicht von einer der Stromschnellen mitgerissen wirst. Um im Wasser zu überleben, braucht es höchste Konzentration und innere Ruhe. Bereite dich gut auf den nächsten Abschnitt deiner Reise vor und sei auf jede Gefahr gefasst.", 112),
                         "                                                 ...',,,,,'..                                                 ",
                         "                                                   .,cdk0KNNWWWWWNXKOo.                                              ",
                         "                                                 .,lkKWMMMMMMMMMMMMMMNk,                                               ",
@@ -20,9 +20,9 @@ public class World2 extends World {
                         "      .,:;.               .;dXMWKo.               ;KMMMOo;        ..,:ldOKNWMWN0xo:'.                           ",
                         "        .;loc,..      .':d0NWXkc.                  cXMMMWNOxdddxk0KXWMMMWNKko:'.                                ",
                         "           'cdkkkxxxxOKNNX0xc.                      ,xXWMMMMMMMMMMWNKOxl:'.                                     ",
-                        "              .';clooolc;..                           .;cloxxxdolc;'.                                           "
+                        "              .';clooolc;..                           .;cloxxxdolc;'.                                       \u001b[0m"
                 },
-                "Erneut erwartet dich eine Abzweigung des Weges und du musst dich entscheiden. Welchen Weg wählst du?\u001b[0m");
+                "Erneut erwartet dich eine Abzweigung des Weges und du musst dich entscheiden. Welchen Weg wählst du?");
 
         super.getSpotsPool().add(new Spot1(this));
         super.getSpotsPool().add(new Spot2(this));

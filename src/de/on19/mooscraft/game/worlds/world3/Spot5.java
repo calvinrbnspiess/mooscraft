@@ -23,7 +23,7 @@ public class Spot5 extends Spot {
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Deshalb schenkt sie dir  5 Einheiten Lebensenergie.", 112));
+        s.appendLine(TextTools.wrapToLength("Deshalb schenkt sie dir  \u001b[1;91m5 Einheiten Lebensenergie.\u001b[0m", 112));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
