@@ -18,12 +18,19 @@ public class Spot3 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ In einem Zelt im Odenwald ≈≈≈", 112));
+        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ In einem Zelt im Odenwald ≈≈≈\u001b[0m", 112));
         s.append(TextTools.emptyLines(2));
-        String text = "Die Seherin sagt dir deine Zukunft voraus. Dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet: “Ich sehe Dunkles kommen. Um deinem Untergang zu entkommen brauchst du jenes, welches dir Kraft schenkt.” ";
-        s.append(TextTools.addPadding(text, 112, 12));
+        String text1 = "Die Seherin sagt dir deine Zukunft voraus. Dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet:";
+        s.append(TextTools.addPadding(text1, 112, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(TextTools.wrapToLength("Du verlierst 5 Einheiten an Stärke und gehst verwirrt weiter.", 112));
+        String text2 = "Ich sehe Dunkles kommen.";
+        s.append(TextTools.addPadding(text2, 112, 12));
+        s.append(TextTools.emptyLines(1));
+        String text3 = "Um deinem Untergang zu entkommen musst du der Seherin etwas von deiner Stärke schenken.";
+        s.append(TextTools.addPadding(text3, 112, 12));
+        s.append(TextTools.emptyLines(1));
+        s.appendLine(TextTools.wrapToLength("Du verlierst \u001b[1;95m5 Einheiten an Stärke\u001b[0m und gehst verwirrt weiter.", 112));
+        s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addStrength(-5);

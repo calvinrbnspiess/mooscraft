@@ -17,13 +17,14 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Unertwartete Begegnung ≈≈≈", 112));
+        s.appendLine(TextTools.centerInRow("\u001b[1;91m≈≈≈ Unertwartete Begegnung ≈≈≈\u001b[0m", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Der Riese Preisler ist eigentlich gutmütig jedoch hast du dich vor seiner Größe erschrocken.";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Und verlierst deswegen nun 10 Einheiten deiner Lebensenergie.", 112));
+        s.appendLine(TextTools.wrapToLength("Und verlierst deswegen nun \u001b[1;91m10 Einheiten deiner Lebensenergie.\u001b[0m", 112));
+        s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
         character.addHealth(-10);
