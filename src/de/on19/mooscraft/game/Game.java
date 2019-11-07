@@ -9,6 +9,9 @@ import de.on19.mooscraft.game.screens.GameOverScreen;
 import de.on19.mooscraft.game.screens.Screen;
 import de.on19.mooscraft.game.screens.SplashScreen;
 import de.on19.mooscraft.game.worlds.World;
+import de.on19.mooscraft.game.worlds.world1.World1;
+import de.on19.mooscraft.game.worlds.world2.World2;
+import de.on19.mooscraft.game.worlds.world3.World3;
 import de.on19.mooscraft.game.worlds.world4.World4;
 import de.on19.mooscraft.renderer.Renderer;
 import de.on19.mooscraft.utils.TextTools;
@@ -27,9 +30,7 @@ public class Game {
         this.renderer = renderer;
         this.handler = handler;
         this.character = null;
-        this.worlds = List.of(new World4());
-
-//        this.worlds = List.of(new World1(), new World2(), new World3(), new World4());
+        this.worlds = List.of(new World1(), new World2(), new World3(), new World4());
     }
 
     // print screen and status information
