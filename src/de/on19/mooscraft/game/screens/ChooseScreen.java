@@ -70,10 +70,10 @@ public class ChooseScreen extends Screen {
         return formattedContent;
     }
 
-    @Override //??
+    @Override //method of sophisticated class gets overwritten (hint)
     public String[] getContent() { //what does this method do in general?
         // Arrays.asList() only returns a list with fixed size, so we need to pass it into a new list: why??
-        List<String> content = new ArrayList<String>(Arrays.asList(super.getContent())); //why super??
+        List<String> content = new ArrayList<String>(Arrays.asList(super.getContent())); //standard content of class super is printed + content provided in this method
 
         TextTools.append(content, TextTools.emptyLines(1));
 
