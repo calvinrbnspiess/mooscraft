@@ -26,7 +26,6 @@ public class World1 extends World {
         super.getSpotsPool().add(new Spot1(this));
         super.getSpotsPool().add(new Spot2(this));
         super.getSpotsPool().add(new Spot3(this));
-
         super.getSpotsPool().add(new Spot4(this));
         super.getSpotsPool().add(new Spot5(this));
         super.getSpotsPool().add(new Spot6(this));
