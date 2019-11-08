@@ -28,7 +28,7 @@ public class GuideAction implements DescriptedAction {
     public void onCommand(String[] args, ActionHandler handler) {
         Screen screen = new Screen();
         screen.append(new String[]{
-                TextTools.centerInRow("\u001b[1;91m≈≈≈ Spielanleitung≈≈≈\u001b[0m ", 112),
+                TextTools.centerInRow("≈≈≈ Spielanleitung≈≈≈", 112),
         });
 
         String instructions = "Mooscraft besteht aus 4 Welten welche du alle überleben musst um die Burg am Ende des Spieles erobern zu können. Ziel der Mission ist es am Ende noch so viel wie möglich Lebensenergie zu haben. Ausschlaggebende Faktoren hierfür sind Erstens die Wahl deines Spielchrakteres und Zweitens für welchen Weg du dich entscheidest. Am Startpunkt jeder der vier Welten musst du dich an einer Weggabelung für Option A oder B entscheiden, je nachdem hast du dann einen Weg durch die Welt gefunden der dir mehr oder weniger Kräfte raubt. Wenn du die richtigen Entscheidungen triffst steht deiner Herrschaft über Mooscraft nichts mehr im Wege.";

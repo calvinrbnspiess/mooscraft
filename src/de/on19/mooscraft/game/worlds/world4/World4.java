@@ -32,7 +32,7 @@ public class World4 extends World {
     private static String[] getText() {
         List<String> text = new ArrayList<String>();
 
-        text.add(TextTools.wrapToLength(">\u001b[1;96mNicht mehr lange und du hast es geschafft die begehrte Burg zu erreichen. In der finalen vierten Welt Arcis Borbetomagus wird nun noch einmal deine Kraft im Kampf gefordert. Ob Duell oder Truppenangriff, du wirst auf allen Ebenen ein letztes Mal gefordert. Wenn du durch Sumpf und Moor gegangen und all dies überlebst hast du das Zeug dazu der/die neue/r Anwärter/in für die Herrschaft über Mooscraft zu werden.", 112));
+        text.add(TextTools.wrapToLength("Nicht mehr lange und du hast es geschafft die begehrte Burg zu erreichen. In der finalen vierten Welt Arcis Borbetomagus wird nun noch einmal deine Kraft im Kampf gefordert. Ob Duell oder Truppenangriff, du wirst auf allen Ebenen ein letztes Mal gefordert. Wenn du durch Sumpf und Moor gegangen und all dies überlebst hast du das Zeug dazu der/die neue/r Anwärter/in für die Herrschaft über Mooscraft zu werden.", 112));
 
         TextTools.append(text, TextTools.centerInRow(new String[]{
                 "                    ,ll                    ",
@@ -52,7 +52,7 @@ public class World4 extends World {
                 " lWMMMMMK0NMMMMMMMMMMMMMMMMMMMMMX0NMMMMMK; ",
                 " lWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK; ",
                 " oWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK; ",
-                " ;dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo. \u001b[1;96m"
+                " ;dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo. "
         }, 112));
 
         return text.toArray(new String[0]);

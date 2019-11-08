@@ -320,7 +320,7 @@ public class Game {
 
 
         //new Screen for last action: win the castle
-        String castleHeadline = "\u001b[1;96m≈≈≈ Die Burg Arcis Borbetomagus ≈≈≈";
+        String castleHeadline = "\u001b[1;96m≈≈≈ Die Burg Arcis Borbetomagus ≈≈≈\u001b[1;96m";
         String[] castleIcon = new String[]{
                 "              :0Oc.             ",
                 "              cNWN0Odoc;'..     ",
@@ -345,7 +345,7 @@ public class Game {
                 " cNMMMMMMMMMMMMMMMMMMMMMMMMMMX; ",
                 ".xMMMMMMMMMMMMMMMMMMMMMMMMMMMWo ",
                 ",KMMMMMMMMMMMMMMMMMMMMMMMMMMMMO.",
-                ".oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl.\u001b[1;96m"
+                ".oOOOOOOOOOOOOOOOOOOOOOOOOOOOkl."
         };
         String wonCastle = "Hurraaaaaa! Du warst mächtig genug, um die Monster von Mooscraft zu besiegen. Das Volk ist dir zu ewiger Treue verpflichtet, da du es von den Qualen der Monster Mester und Preisler befreit hast. Damit dein Volk dich gebührend huldigen kann, erklimme mit Hilfe deiner verbliebenen Lebensenergie die Mauern der Burg Arcis Borbetomagus. Nun kannst du ganz Mooscraft überblicken mit seinem grünen Odenwald, der rauschenden Mittelklinge, dem zauberhaften Hexenturm Turismaga. Lass dich als neue/r Herrscher/in von Mooscraft gebührend feiern.";
         String lostCastle = "Oh nein! Die Kämpfe gegen die Monster Mester und Preisler haben dir die letzte Lebensenergie geraubt und du stürtzt beim Erklimmen der Burg Arcis Borbetomagus die Wände hinunter in die Tiefe. Doch eine verlorene Schlacht ist kein verlorener Krieg. Wähle deine Parameter weiser und trau dich erneut durch die Pforten von Mooscraft.";
