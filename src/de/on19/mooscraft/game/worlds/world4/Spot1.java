@@ -17,7 +17,7 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;96m≈≈≈ Eine Waffe ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Eine Waffe ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Du triffst auf einen Waffenhändler er händigt dir zu deiner Verteidigung eine Waffe aus.";
         s.append(TextTools.addPadding(text, 112, 12));

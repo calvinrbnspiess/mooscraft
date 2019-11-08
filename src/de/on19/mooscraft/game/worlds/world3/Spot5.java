@@ -17,7 +17,7 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;91m≈≈≈ Im Hexenturm ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Im Hexenturm ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Die ominöse Frau D. lebt schon seit geraumer Zeit im Hexenturm, sie ist die gute Seele von Mooscraft.";
         s.append(TextTools.addPadding(text, 112, 12));

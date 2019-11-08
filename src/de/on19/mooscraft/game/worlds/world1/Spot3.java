@@ -18,7 +18,7 @@ public class Spot3 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ In einem Zelt im Odenwald ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ In einem Zelt im Odenwald ≈≈≈", 112));
         s.append(TextTools.emptyLines(2));
         String text1 = "Die Seherin sagt dir deine Zukunft voraus. Dafür musst du ihr leider etwas deiner Stärke abgeben. Deine Prophezeiung lautet:";
         s.append(TextTools.addPadding(text1, 112, 12));

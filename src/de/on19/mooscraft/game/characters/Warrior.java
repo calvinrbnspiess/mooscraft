@@ -6,22 +6,22 @@ public class Warrior extends Character {
     }
 
     public static String getGreeting() {
-        return ">>> \u001b[1;96mIch bin Kriegerin Bellatrix.\u001b[0m <<<";
+        return ">>> Ich bin Kriegerin Bellatrix. <<<";
     }
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "> \u001b[1;91m                    ^  ",
-                "              / \\",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "              / \\",
-                "                  / \\\u001b[0m",
+                " ^  ",
+                "/ \\",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                "/ \\",
+                "/ \\",
         };
 
         return icon;

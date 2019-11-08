@@ -20,7 +20,7 @@ public class Spot3 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;92m ≈≈≈ Unerwartetes Hinterniss ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Unerwartetes Hinterniss ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Plötzlich verfängst du dich in einem riesigen, verworrenem Etwas und kannst dich kaum mehr bewegen. Du erkennst eine gigantische Spinne auf dich zulaufen. Jetzt weißt du es, du bist in einem sehr festem Spinnennetz gefangen und die Spinne hat Hunger. Hast du genügend \u001b[1;92m Stärke (>25)\u001b[0m, dann schaffst du es dich gerade rechtzeitig loszureißen, wenn aber nicht knabbert dich die Spinne an.";
         s.append(TextTools.addPadding(text, 112, 12));

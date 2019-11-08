@@ -29,7 +29,7 @@ public class SplashScreen extends Screen {
         super.append(TextTools.emptyLines(2));
 
         //begin journey
-        super.append(new String[]{TextTools.centerInRow("≈≈≈ \u001b[1;36mSo lasset die Reise beginnen\u001b[0m ≈≈≈", 112)});
+        super.append(new String[]{TextTools.centerInRow("≈≈≈ So lasset die Reise beginnen ≈≈≈", 112)});
         super.append(TextTools.emptyLines(2));
 
         //possible commands

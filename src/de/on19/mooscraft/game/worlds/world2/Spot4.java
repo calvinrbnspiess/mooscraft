@@ -17,7 +17,7 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;92m ≈≈≈ Aus der Ferne hörst du ein dumpfes Rauschen ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Aus der Ferne hörst du ein dumpfes Rauschen ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Du kommst auf einen rauschenden Wasserfall zu. Dort holst du dir eine kleine Erfrischung, trinkst einen kleinen Schluck Wasser und holst dir dadurch etwas mehr Lebensenergie.";
         s.append(TextTools.addPadding(text, 112, 12));

@@ -17,7 +17,7 @@ public class Spot2 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;92m ≈≈≈ Ein mysteriöses Wesen ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Ein mysteriöses Wesen ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Du begegnest einem groß gebauten, schlanken Wesen mit langen hellen Haaren. Ein Elf kommt auf dich zu. Aber keine Angst, Elfen sind friedliche Wesen. Er erklärt dir den schnellsten Weg zur Burg, so dass du dich wieder auf den Weg machst. Immer noch voller Hoffnung.";
         s.append(TextTools.addPadding(text, 112, 12));

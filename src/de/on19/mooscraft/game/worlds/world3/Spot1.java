@@ -17,7 +17,7 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;91m≈≈≈ Unertwartete Begegnung ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Unertwartete Begegnung ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Der Riese Preisler ist eigentlich gutmütig jedoch hast du dich vor seiner Größe erschrocken.";
         s.append(TextTools.addPadding(text, 112, 12));

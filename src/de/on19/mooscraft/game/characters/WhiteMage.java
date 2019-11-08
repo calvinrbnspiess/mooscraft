@@ -7,22 +7,22 @@ public class WhiteMage extends Character {
     }
 
     public static String getGreeting() {
-        return ">>> \u001b[1;96mIch bin der Weiße Magier Kelii.\u001b[0m <<<";
+        return ">>> Ich bin der Weiße Magier Kelii. <<<";
     }
 
     public static String[] getIcon() {
         String[] icon = new String[]{
-                "> \u001b[1;91m                     ^  ",
-                "              ( ) ",
-                "              \\ /",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "               |  ",
-                "              | | ",
-                "                  |_| \u001b[0m",
+                " ^  ",
+                "( ) ",
+                "\\ /",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                " |  ",
+                "| | ",
+                "|_| ",
         };
 
         return icon;

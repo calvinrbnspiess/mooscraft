@@ -18,7 +18,7 @@ public class Spot6 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈", 112));
         s.append(TextTools.emptyLines(2));
         String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst eine kleine Fee. Da sie gehört hat wie tapfer du bist, schenkt sie dir Stärke.";
         s.append(TextTools.addPadding(text, 112, 12));

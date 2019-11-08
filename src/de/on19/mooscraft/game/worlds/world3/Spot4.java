@@ -17,7 +17,7 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;91m≈≈≈ Ein Hexenturm ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Ein Hexenturm ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Am Eingang des Hexenturmes wartet ein sprechender Rabe als Komplizin der Hausherrin auf dich. Er verlangt als Wegzoll einer deiner kostbaren Zaubertränke.";
         s.append(TextTools.addPadding(text, 112, 12));

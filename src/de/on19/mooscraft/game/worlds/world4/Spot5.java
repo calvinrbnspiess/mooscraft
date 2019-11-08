@@ -17,7 +17,7 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;96m≈≈≈ Die Dunkelheit als Feind ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Die Dunkelheit als Feind ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Es ist mittlerweile Nacht geworden und du siehst nicht mehr wirklich ob du dich noch auf dem Weg befindest. Unvorhersehbar versinkst versehentlich bis zur Brust im Mooscraft-Moor. Mit Hilfe es eines Zaubertrankes kannst du dich gerade noch so hinaus retten.";
         s.append(TextTools.addPadding(text, 112, 12));

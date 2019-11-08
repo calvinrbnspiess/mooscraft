@@ -17,7 +17,7 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;92m ≈≈≈ Am Fluss Mittelklinge ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Am Fluss Mittelklinge ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
 
         String text = "Nahe am Wasser, da lebts sich gut. Alberts Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus. Manche schenken dir beim Vernaschen extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen ziehen dir einiges davon ab.";

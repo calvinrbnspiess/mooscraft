@@ -146,7 +146,7 @@ public class Game {
         String skipMessage = continueMessage + " Du kannst mit <überspringen> direkt zur Auswahl springen.";
 
         Screen intro = new Screen();
-        intro.append(new String[]{TextTools.centerInRow("≈≈≈ \u001b[1;36mWähle deinen Charakter \u001b[0m ≈≈≈", 112)});
+        intro.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
         intro.append(TextTools.emptyLines(1));
         intro.append(TextTools.addPadding("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.", 112, 12));
         intro.append(TextTools.emptyLines(1));
@@ -237,11 +237,11 @@ public class Game {
             //Intro Mermaidman Marin
             Screen marin = new Screen();
             marin.appendLine(TextTools.centerInRow(MermaidMan.getGreeting(), 112));
-            marin.append(TextTools.emptyLines(2));
+            // marin.append(TextTools.emptyLines(2)); // take too much space by him
             marin.append(TextTools.centerInRow(MermaidMan.getIcon(), 112));
             marin.append(TextTools.emptyLines(1));
             marin.append(TextTools.addPadding(MermaidMan.getDescription(), 112, 12));
-            marin.append(TextTools.emptyLines(2));
+            marin.append(TextTools.emptyLines(1)); // mermaidman has way too much text - so only 1 empty line instead of two like the other characters
             marin.appendLine("(5/5) " + continueMessage);
 
             renderer.printScreen(marin);
@@ -250,7 +250,7 @@ public class Game {
         }
         //intro World
         ChooseScreen chooseCharacter = new ChooseScreen();
-        chooseCharacter.append(new String[]{TextTools.centerInRow("\u001b[1;36m≈≈≈ Wähle deinen Charakter ≈≈≈\u001b[0m", 112)});
+        chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", 112)});
         chooseCharacter.append(TextTools.emptyLines(2));
         String introWorld = "Du hast verstanden und eine Wahl getroffen? Vergiss nicht: Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
         chooseCharacter.append(TextTools.addPadding(introWorld, 112, 12));
@@ -295,7 +295,7 @@ public class Game {
         }
 
         Screen chooseName = new Screen();
-        chooseName.append(new String[]{TextTools.centerInRow("\u001b[1;36m≈≈≈ Bitte gib einen Namen ein ≈≈≈\u001b[1;36m", 112)});
+        chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gib einen Namen ein ≈≈≈", 112)});
         chooseName.append(TextTools.emptyLines(1));
         chooseName.append(TextTools.addPadding("Herzlichen Glückwunsch! Du hast den Charakter '" + getCharacterClass(character) + "' gewählt! Du kannst nun einen Namen für dich wählen:", 112, 12));
         renderer.printScreen(chooseName, true);
@@ -320,7 +320,7 @@ public class Game {
 
 
         //new Screen for last action: win the castle
-        String castleHeadline = "\u001b[1;96m≈≈≈ Die Burg Arcis Borbetomagus ≈≈≈\u001b[1;96m";
+        String castleHeadline = "≈≈≈ Die Burg Arcis Borbetomagus ≈≈≈";
         String[] castleIcon = new String[]{
                 "              :0Oc.             ",
                 "              cNWN0Odoc;'..     ",

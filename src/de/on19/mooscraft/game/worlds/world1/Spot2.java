@@ -18,7 +18,7 @@ public class Spot2 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ Mitten im Odenwald ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Mitten im Odenwald ≈≈≈", 112));
         s.append(TextTools.emptyLines(2));
         String text = "Hey du, ich bin klein Urmel, kannst du mir bitte weiterhelfen? Ich finde einfach nicht mehr nachhause! Es ist schon so spät geworden. Dank deiner Hilfe gelangt der kleine Urmel wieder zu seinem Unterbau.";
         s.append(TextTools.addPadding(text, 112, 12));

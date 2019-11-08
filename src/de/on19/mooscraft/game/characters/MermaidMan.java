@@ -9,7 +9,7 @@ public class MermaidMan extends Character {
     // initialisiert die in der Chrakter Klasse gegebenen Parameter neu (Aufruf durch super)
 
     public static String getGreeting() {
-        return ">>> \u001b[1;96mIch bin Meerjungfraumann Marin.\u001b[0m <<<";
+        return ">>> Ich bin Meerjungfraumann Marin. <<<";
     }
     // Grußwort  Methode oben mit Farbcode
 
@@ -17,7 +17,7 @@ public class MermaidMan extends Character {
         // Methode der Chrakterklasse wird aufgerufen array wird mit als icon deklariert und neuer String initialisiert als Icon
         //(array weil keine unnötigen Zeilenumbrüche)
         String[] icon = new String[]{
-                " >\u001b[1;91m                  ",
+                "                      ",
                 ".oko;.                ",
                 " ,kXWKc               ",
                 "  ,0MM0c.      .';llo,",
@@ -33,7 +33,7 @@ public class MermaidMan extends Character {
                 "    lNMMMMMMMO'       ",
                 "    :XMMMMMMMNo.      ",
                 "   .xWMMMMMMMMW0:     ",
-                "        lNMMMMMMMMMWo    \u001b[0m  ",
+                "    lNMMMMMMMMMWo     ",
         };
 
         return icon;

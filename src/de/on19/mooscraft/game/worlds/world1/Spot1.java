@@ -18,7 +18,7 @@ public class Spot1 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("\u001b[1;95m≈≈≈ Tief im Odenwald ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Tief im Odenwald ≈≈≈", 112));
         s.append(TextTools.emptyLines(2));
         String text = "Mester lebt tief im Odenwald, alleine und mit einem kleinen Drachen “Exernius”. Begegnest du seiner vermoosten Hütte, gib acht! Denn die Nähe eines Eindringlings zu seinem Heim weckt Exernius und löst einen Stromkreis aus, aus welchem du nicht entfliehen kannst bis Exernius dich besiegt hat.";
         s.append(TextTools.addPadding(text, 112, 12));

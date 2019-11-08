@@ -17,7 +17,7 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("\u001b[1;96m≈≈≈ Abgekommen ≈≈≈\u001b[0m", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Abgekommen ≈≈≈", 112));
         s.append(TextTools.emptyLines(1));
         String text = "Die Wege der finalen Welt sind nicht gerade gut zu erkennen, du geräts von der Route und landest Mitten in einem Werwolfsrudel. Sie sehen dich als Bedrohung und greifen dich an. Glücklicherweise findest du zurück auf den befestigten Weg und das Rudel lässt dich ziehn.";
         s.append(TextTools.addPadding(text, 112, 12));
