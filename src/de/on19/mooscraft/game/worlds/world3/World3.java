@@ -6,7 +6,7 @@ import de.on19.mooscraft.utils.TextTools;
 public class World3 extends World {
 
     public World3() throws UnsupportedOperationException {
-        super(new String[]{TextTools.wrapToLength(">\u001b[1;91mDu befindest dich nun am Eingang der dritten Welt von Turismaga. Um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen. Sie werden alles daran setzten dir deine magischen Kräfte, sowie deine letzte Lebensenergie zu rauben. Gib Acht auf dich!.", 112),
+        super(new String[]{TextTools.wrapToLength("Du befindest dich nun am Eingang der dritten Welt von Turismaga. Um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen. Sie werden alles daran setzten dir deine magischen Kräfte, sowie deine letzte Lebensenergie zu rauben. Gib Acht auf dich!.", 112),
                         "                                             .:;. .::.    .:;. ,:.                                              ",
                         "                                             .oo:,:oo:,,,,:oo:;lo'                                              ",
                         "                                             .ldddddddddddddodddo.                                              ",
@@ -21,7 +21,7 @@ public class World3 extends World {
                         "                                              .ldooddddooddddddo'                                               ",
                         "                                              .loodddoooooodddoo,                                               ",
                         "                                              ,ooodddooooooooooo;                                               ",
-                        "                                             .,;;;;;;;;;;;;;;;;;,.                                              \u001b[0m"},
+                        "                                             .,;;;;;;;;;;;;;;;;;,.                                              "},
                 "Du steuerst auf einen Wegscheid zu und musst eine Entscheidung treffen.");
 
         super.getSpotsPool().add(new Spot1(this));

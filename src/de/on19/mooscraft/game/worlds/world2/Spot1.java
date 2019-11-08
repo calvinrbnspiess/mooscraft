@@ -23,7 +23,7 @@ public class Spot1 extends Spot {
         String text = "Nahe am Wasser, da lebts sich gut. Alberts Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus. Manche schenken dir beim Vernaschen extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen ziehen dir einiges davon ab.";
         s.append(TextTools.addPadding(text, 112, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(TextTools.wrapToLength("Du probierst eine blau leuchtende Blume und verlierst 5 Einheiten Willenskraft.", 112));
+        s.appendLine(TextTools.wrapToLength("Du probierst eine blau leuchtende Blume und verlierst \u001b[1;92m5 Einheiten Willenskraft.\u001b[0m", 112));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
