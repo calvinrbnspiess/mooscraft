@@ -2,6 +2,7 @@
 Es war einmal eine Welt vor der unseren, beherrscht von Ungeheuern, Zauberern und Zauberinnen und Wasserwesen. Sie alle kämpften mit den unterschiedlichsten Kräften um die Eroberung der Burg.
 ***
 
+Projekt im Studiengang Onlinemedien (ON19), DHBW Mosbach - Alischa Thomas, Calvin Reibenspieß, Julia Henschel, Larissa Eirich
 
 #### Hier findet ab jetzt die Aufgabenverteilung statt: 
 https://github.com/calvinrbnspiess/mooscraft/projects/1
