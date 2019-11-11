@@ -5,7 +5,7 @@ import org.fusesource.jansi.AnsiConsole;
 
 import static org.fusesource.jansi.Ansi.ansi;
 
-public class TerminalRenderer implements Renderer { //what is class implement?
+public class TerminalRenderer implements Renderer {
 
     public TerminalRenderer() {
         AnsiConsole.systemInstall();
@@ -19,7 +19,7 @@ public class TerminalRenderer implements Renderer { //what is class implement?
             //why do we need this? in Screen and other screens are defined clear methods
             System.out.println(ansi().eraseScreen());
         }
-        for (String line : s.getContent()) { //??
+        for (String line : s.getContent()) {
             System.out.println(line);
         }
         // print a small indicator signalizing that input is expected
@@ -29,5 +29,5 @@ public class TerminalRenderer implements Renderer { //what is class implement?
     @Override
     public void printScreen(Screen s) {
         this.printScreen(s, true);
-    }//??
+    }
 }

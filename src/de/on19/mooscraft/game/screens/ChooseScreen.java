@@ -60,7 +60,7 @@ public class ChooseScreen extends Screen {
 
         String[] formattedContent = new String[options.size()]; //new String array with placeholders for every option
 
-        for (int i = 0; i < options.size(); i++) { //??
+        for (int i = 0; i < options.size(); i++) {
             // display number instead of letter when there are too many options
             //we got an array of options, for every option a automatically generated letter is positioned at the front
             String delimeter = (options.size() >= alphabet.length ? i : Character.toString(alphabet[i]).toUpperCase()) + ". ";
