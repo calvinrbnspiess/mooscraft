@@ -21,16 +21,16 @@ public class Spot6 extends Spot {
         s.append(TextTools.emptyLines(1));
 
         String text = "Du steuerst auf eine Klippe zu und siehst es geht 100 Meter weit in die Tiefe. Hast du genügend Zauberkraft (>20), springst du über die Klippe. Wenn aber nicht, fällst du mitten im Sprung, landest auf dem Boden und verlierst somit weitere wertvolle Lebensenergie.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
         String woncliff = "Du hattest genügend Zauberkraft und konntest die Klippe problemlos überwinden.";
         String lostcliff = "Oh nein, leider hattest du nicht genügend Zauberkraft und verlierst nun 5 Einheiten Lebensenergie.";
 
         if (character.getWitchcraft() >= 20) {
-            s.append(TextTools.addPadding(woncliff, Game.TERMINAL_WIDTH, 12));
+            s.append(TextTools.addPadding(woncliff, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         } else {
-            s.append(TextTools.addPadding(lostcliff, Game.TERMINAL_WIDTH, 12));
+            s.append(TextTools.addPadding(lostcliff, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
             character.addHealth(-5);
         }
 

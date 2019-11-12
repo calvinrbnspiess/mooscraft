@@ -20,7 +20,7 @@ public class Spot3 extends Spot {
         s.appendLine(TextTools.centerInRow("≈≈≈ Ein Gnom ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Du wirst von einem Gnom auf fiese Art und Weise ausgetrickst. Er hat es geschafft dir dein Geld aus der Tasche zu ziehen.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
         s.appendLine(TextTools.wrapToLength("Seine hinterlistige Art kostet dich \u001b[1;96m20 Einheiten Willenskraft.\u001b[0m", Game.TERMINAL_WIDTH));

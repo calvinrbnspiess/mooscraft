@@ -27,6 +27,7 @@ public class Game {
     private List<World> worlds;
 
     public static int TERMINAL_WIDTH = 112;
+    public static int TERMINAL_PADDING = Game.TERMINAL_PADDING;
 
     public Game(Renderer renderer, ActionHandler handler) {
         this.renderer = renderer;
@@ -109,7 +110,7 @@ public class Game {
         int visitedSpots = character.getVisitedSpots();
         int iterationIndex = 0;
 
-        // 128chars terminal width, 4 chars percentage, and two chars for each progressbar on each side
+        // Game.TERMINAL_PADDING8chars terminal width, 4 chars percentage, and two chars for each progressbar on each side
         int indicatorLength = (int) Math.floor((Game.TERMINAL_WIDTH - 4 - indicator.length() - (this.worlds.size() * 2)) / this.worlds.size());
         for (World w : this.worlds) {
             indicator = indicator + "|";
@@ -150,7 +151,7 @@ public class Game {
         Screen intro = new Screen();
         intro.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", Game.TERMINAL_WIDTH)});
         intro.append(TextTools.emptyLines(1));
-        intro.append(TextTools.addPadding("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.", Game.TERMINAL_WIDTH, 12));
+        intro.append(TextTools.addPadding("Um die Welt zu durchqueren und die Burg zu erobern kannst du zwischen verschiedenen Kreaturen von Mooscraft wählen. Im Folgenden stellen wir Sie dir vor.", Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         intro.append(TextTools.emptyLines(1));
         intro.appendLine(skipMessage);
 
@@ -197,7 +198,7 @@ public class Game {
             bellatrix.append(TextTools.emptyLines(2));
             bellatrix.append(TextTools.centerInRow(Warrior.getIcon(), Game.TERMINAL_WIDTH));
             bellatrix.append(TextTools.emptyLines(2));
-            bellatrix.append(TextTools.addPadding(Warrior.getDescription(), Game.TERMINAL_WIDTH, 12));
+            bellatrix.append(TextTools.addPadding(Warrior.getDescription(), Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
             bellatrix.append(TextTools.emptyLines(2));
             bellatrix.appendLine("(2/5) " + skipMessage);
 
@@ -212,7 +213,7 @@ public class Game {
             kelii.append(TextTools.emptyLines(2));
             kelii.append(TextTools.centerInRow(WhiteMage.getIcon(), Game.TERMINAL_WIDTH));
             kelii.append(TextTools.emptyLines(2));
-            kelii.append(TextTools.addPadding(WhiteMage.getDescription(), Game.TERMINAL_WIDTH, 12));
+            kelii.append(TextTools.addPadding(WhiteMage.getDescription(), Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
             kelii.append(TextTools.emptyLines(2));
             kelii.appendLine("(3/5) " + skipMessage);
 
@@ -227,7 +228,7 @@ public class Game {
             bandito.append(TextTools.emptyLines(2));
             bandito.append(TextTools.centerInRow(Rogue.getIcon(), Game.TERMINAL_WIDTH));
             bandito.append(TextTools.emptyLines(2));
-            bandito.append(TextTools.addPadding(Rogue.getDescription(), Game.TERMINAL_WIDTH, 12));
+            bandito.append(TextTools.addPadding(Rogue.getDescription(), Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
             bandito.append(TextTools.emptyLines(2));
             bandito.appendLine("(4/5) " + skipMessage);
 
@@ -242,7 +243,7 @@ public class Game {
             // marin.append(TextTools.emptyLines(2)); // take too much space by him
             marin.append(TextTools.centerInRow(MermaidMan.getIcon(), Game.TERMINAL_WIDTH));
             marin.append(TextTools.emptyLines(1));
-            marin.append(TextTools.addPadding(MermaidMan.getDescription(), Game.TERMINAL_WIDTH, 12));
+            marin.append(TextTools.addPadding(MermaidMan.getDescription(), Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
             marin.append(TextTools.emptyLines(1)); // mermaidman has way too much text - so only 1 empty line instead of two like the other characters
             marin.appendLine("(5/5) " + continueMessage);
 
@@ -255,7 +256,7 @@ public class Game {
         chooseCharacter.append(new String[]{TextTools.centerInRow("≈≈≈ Wähle deinen Charakter ≈≈≈", Game.TERMINAL_WIDTH)});
         chooseCharacter.append(TextTools.emptyLines(2));
         String introWorld = "Du hast verstanden und eine Wahl getroffen? Vergiss nicht: Wähle deine Eigenschaften gut aus, denn der Weg zur Burg kann tückisch sein.";
-        chooseCharacter.append(TextTools.addPadding(introWorld, Game.TERMINAL_WIDTH, 12));
+        chooseCharacter.append(TextTools.addPadding(introWorld, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
 
         chooseCharacter.addOptions(new String[]{
                 "Magalia (Hexe)",
@@ -299,7 +300,7 @@ public class Game {
         Screen chooseName = new Screen();
         chooseName.append(new String[]{TextTools.centerInRow("≈≈≈ Bitte gib einen Namen ein ≈≈≈", Game.TERMINAL_WIDTH)});
         chooseName.append(TextTools.emptyLines(1));
-        chooseName.append(TextTools.addPadding("Herzlichen Glückwunsch! Du hast den Charakter '" + getCharacterClass(character) + "' gewählt! Du kannst nun einen Namen für dich wählen:", Game.TERMINAL_WIDTH, 12));
+        chooseName.append(TextTools.addPadding("Herzlichen Glückwunsch! Du hast den Charakter '" + getCharacterClass(character) + "' gewählt! Du kannst nun einen Namen für dich wählen:", Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         renderer.printScreen(chooseName, true);
 
         handler.waitForAction(new GameAction() {
@@ -360,9 +361,9 @@ public class Game {
         castle.appendLine(TextTools.centerInRow("In ewiger Treue, '" + character.getName() + "'!", Game.TERMINAL_WIDTH));
 
         if (character.getHealth() >= 25) {
-            castle.append(TextTools.addPadding(wonCastle, Game.TERMINAL_WIDTH, 12));
+            castle.append(TextTools.addPadding(wonCastle, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         } else {
-            castle.append(TextTools.addPadding(lostCastle, Game.TERMINAL_WIDTH, 12));
+            castle.append(TextTools.addPadding(lostCastle, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         }
         castle.append(TextTools.emptyLines(2));
         castle.appendLine(TextTools.centerInRow("Punktzahl: " + Math.round((float) (character.getWillpower() * character.getWitchcraft() * character.getStrength() * character.getWisdom()) / 10), Game.TERMINAL_WIDTH));

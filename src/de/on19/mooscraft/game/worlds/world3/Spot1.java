@@ -20,7 +20,7 @@ public class Spot1 extends Spot {
         s.appendLine(TextTools.centerInRow("≈≈≈ Unertwartete Begegnung ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Der Riese Preisler ist eigentlich gutmütig jedoch hast du dich vor seiner Größe erschrocken.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
         s.appendLine(TextTools.wrapToLength("Und verlierst deswegen nun \u001b[1;91m10 Einheiten deiner Lebensenergie.\u001b[0m", Game.TERMINAL_WIDTH));

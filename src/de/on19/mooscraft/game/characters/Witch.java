@@ -54,11 +54,11 @@ public class Witch extends Character {
 
         List<String> lines = new ArrayList<String>();
 
-        lines.addAll(Arrays.asList(TextTools.addPadding(description1, Game.TERMINAL_WIDTH, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description1, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING)));
         lines.add("");
-        lines.addAll(Arrays.asList(TextTools.addPadding(description2, Game.TERMINAL_WIDTH, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description2, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING)));
         lines.add("");
-        lines.addAll(Arrays.asList(TextTools.addPadding(description3, Game.TERMINAL_WIDTH, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description3, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING)));
 
         return lines.toArray(new String[0]);
     }

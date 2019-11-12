@@ -20,7 +20,7 @@ public class Spot4 extends Spot {
         s.appendLine(TextTools.centerInRow("≈≈≈ Ein Hexenturm ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Am Eingang des Hexenturmes wartet ein sprechender Rabe als Komplizin der Hausherrin auf dich. Er verlangt als Wegzoll einer deiner kostbaren Zaubertränke.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
         s.appendLine(TextTools.wrapToLength("Somit verlierst du \u001b[1;91m10 Einheiten an Zauberkraft.\u001b[0m", Game.TERMINAL_WIDTH));

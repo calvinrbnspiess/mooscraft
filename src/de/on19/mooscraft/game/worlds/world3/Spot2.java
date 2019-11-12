@@ -20,7 +20,7 @@ public class Spot2 extends Spot {
         s.appendLine(TextTools.centerInRow("≈≈≈ Ein Zelt ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Auf deinem Weg zum Hexenturm kommst du am Zelt der Heilerin vorbei. Die Wunden deines letztens Kampfes werden verbunden und deine Chakra-Energie geerdet. Du lädst; der Glaube an dich selbst wird wieder größer.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
         s.appendLine(TextTools.wrapToLength("Du hast nun wieder \u001b[1;91m10 Einheiten mehr Willenskraft\u001b[0m.", Game.TERMINAL_WIDTH));

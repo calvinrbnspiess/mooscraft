@@ -21,7 +21,7 @@ public class Spot5 extends Spot {
         s.appendLine(TextTools.centerInRow("≈≈≈ Im Nebel ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         String text = "Langsam verlierst du mehr und mehr die Sicht. Du steckst in einem dichten, undurchdringlichen Nebel und versuchst vorsichtig weiterzugehen um herauszukommen. Nach kurzer Zeit lichtet sich auch schon der Nebel und du siehst etwas auf dich zukommen.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
         s.appendLine(TextTools.wrapToLength("Du gehst immer weiter darauf zu.", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
