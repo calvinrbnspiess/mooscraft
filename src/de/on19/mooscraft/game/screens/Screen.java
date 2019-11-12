@@ -26,12 +26,12 @@ public class Screen {
         this.lines.clear(); //clears initialized arrayList
     }
 
-    //method that visualizes a String declared beforehand
+    //method that visualizes a Strings declared beforehand
     public void append(String[] lines) {
         TextTools.append(this.lines, lines);
     }
 
-    //different append and appendLine?
+    //method that visualizes a String declared beforehand
     public void appendLine(String s) {
         this.lines.add(s);
     }

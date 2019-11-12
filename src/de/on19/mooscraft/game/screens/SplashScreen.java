@@ -8,9 +8,8 @@ import de.on19.mooscraft.utils.TextTools;
 public class SplashScreen extends Screen {
 
 
-    public SplashScreen(ActionHandler handler) { //why does it refer to ActionHandler and handler?
-        super(); //??
-        //difference String(), String[]
+    public SplashScreen(ActionHandler handler) {
+        super();
         String[] content = {
                 "   ▄▄▄▄███▄▄▄▄    ▄██████▄   ▄██████▄     ▄████████  ▄████████    ▄████████    ▄████████    ▄████████     ███ ",
                 " ▄██▀▀▀███▀▀▀██▄ ███    ███ ███    ███   ███    ███ ███    ███   ███    ███   ███    ███   ███    ███ ▀█████████▄",
