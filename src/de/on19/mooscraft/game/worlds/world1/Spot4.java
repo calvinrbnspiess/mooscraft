@@ -18,12 +18,12 @@ public class Spot4 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("≈≈≈ Plötzlich auf dem Weg ≈≈≈", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Plötzlich auf dem Weg ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         String text = "Auf einmal hörst du ein Zischen, ganz aus der Nähe. Eine schwarz glänzende Schlange bewegt sich auf dich zu. Du bist nicht schnell genug und der giftige Biss trifft dich.";
-        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(TextTools.wrapToLength("Du verlierst \u001b[1;95m5 Einheiten an Lebensenergie\u001b[0m, erschöpft gehst du weiter.", 112));
+        s.appendLine(TextTools.wrapToLength("Du verlierst \u001b[1;95m5 Einheiten an Lebensenergie\u001b[0m, erschöpft gehst du weiter.", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

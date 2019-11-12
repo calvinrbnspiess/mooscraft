@@ -17,13 +17,13 @@ public class Spot6 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Die Untiefen des Mooscraft-Moores ≈≈≈", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Die Untiefen des Mooscraft-Moores ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Die Nymphe lauert in den tiefen des Moores, du bemerkst sie leider zu spät, sie versucht sogar dich in das Moor zu deinem bevorstehenden Ende zu locken; allerdings vergebens.";
-        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Sie raubt dir mit ihrer schrillen Stimme \u001b[1;96m10 Einheiten deiner Lebensenergie.\u001b[0m", 112));
+        s.appendLine(TextTools.wrapToLength("Sie raubt dir mit ihrer schrillen Stimme \u001b[1;96m10 Einheiten deiner Lebensenergie.\u001b[0m", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

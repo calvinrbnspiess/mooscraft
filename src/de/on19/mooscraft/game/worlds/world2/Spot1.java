@@ -17,13 +17,13 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Am Fluss Mittelklinge ≈≈≈", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Am Fluss Mittelklinge ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
 
         String text = "Nahe am Wasser, da lebts sich gut. Alberts Anpflanzungen wachsen und gedeihen in dem fruchtbaren Boden. Schmackhaft und lecker sehen diese aus. Manche schenken dir beim Vernaschen extra Stärke, Willenskraft oder Lebensenergie. Doch andere hingegen ziehen dir einiges davon ab.";
-        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(TextTools.wrapToLength("Du probierst eine blau leuchtende Blume und verlierst \u001b[1;92m5 Einheiten Willenskraft.\u001b[0m", 112));
+        s.appendLine(TextTools.wrapToLength("Du probierst eine blau leuchtende Blume und verlierst \u001b[1;92m5 Einheiten Willenskraft.\u001b[0m", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

@@ -1,5 +1,6 @@
 package de.on19.mooscraft.game.interaction.actions;
 
+import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.DescriptedAction;
 import de.on19.mooscraft.game.screens.Screen;
@@ -11,7 +12,7 @@ import java.util.List;
 public class GuideAction implements DescriptedAction {
 
     public static String getActionDescription(DescriptedAction a) {
-        return "<" + a.getAction() + "> - " + TextTools.wrapToLength(a.getDescription(), 112);
+        return "<" + a.getAction() + "> - " + TextTools.wrapToLength(a.getDescription(), Game.TERMINAL_WIDTH);
     }
 
     public static List<String> getSystemActionDescriptions(ActionHandler handler) {
@@ -28,12 +29,12 @@ public class GuideAction implements DescriptedAction {
     public void onCommand(String[] args, ActionHandler handler) {
         Screen screen = new Screen();
         screen.append(new String[]{
-                TextTools.centerInRow("≈≈≈ Spielanleitung≈≈≈", 112),
+                TextTools.centerInRow("≈≈≈ Spielanleitung≈≈≈", Game.TERMINAL_WIDTH),
         });
 
         String instructions = "Mooscraft besteht aus 4 Welten welche du alle überleben musst um die Burg am Ende des Spieles erobern zu können. Ziel der Mission ist es am Ende noch so viel wie möglich Lebensenergie zu haben. Ausschlaggebende Faktoren hierfür sind Erstens die Wahl deines Spielchrakteres und Zweitens für welchen Weg du dich entscheidest. Am Startpunkt jeder der vier Welten musst du dich an einer Weggabelung für Option A oder B entscheiden, je nachdem hast du dann einen Weg durch die Welt gefunden der dir mehr oder weniger Kräfte raubt. Wenn du die richtigen Entscheidungen triffst steht deiner Herrschaft über Mooscraft nichts mehr im Wege.";
 
-        screen.append(TextTools.addPadding(instructions, 112, 12));
+        screen.append(TextTools.addPadding(instructions, Game.TERMINAL_WIDTH, 12));
         screen.append(TextTools.emptyLines(2));
         screen.append(getIcon());
 

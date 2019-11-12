@@ -1,5 +1,6 @@
 package de.on19.mooscraft.game.characters;
 
+import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.utils.TextTools;
 
 import java.util.ArrayList;
@@ -53,11 +54,11 @@ public class Witch extends Character {
 
         List<String> lines = new ArrayList<String>();
 
-        lines.addAll(Arrays.asList(TextTools.addPadding(description1, 112, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description1, Game.TERMINAL_WIDTH, 12)));
         lines.add("");
-        lines.addAll(Arrays.asList(TextTools.addPadding(description2, 112, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description2, Game.TERMINAL_WIDTH, 12)));
         lines.add("");
-        lines.addAll(Arrays.asList(TextTools.addPadding(description3, 112, 12)));
+        lines.addAll(Arrays.asList(TextTools.addPadding(description3, Game.TERMINAL_WIDTH, 12)));
 
         return lines.toArray(new String[0]);
     }

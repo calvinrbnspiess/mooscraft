@@ -17,13 +17,13 @@ public class Spot1 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Eine Waffe ≈≈≈", 112));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Eine Waffe ≈≈≈", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Du triffst auf einen Waffenhändler er händigt dir zu deiner Verteidigung eine Waffe aus.";
-        s.append(TextTools.addPadding(text, 112, 12));
+        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, 12));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Du bekommst \u001b[1;96m10 Einheiten an Stärke.\u001b[0m", 112));
+        s.appendLine(TextTools.wrapToLength("Du bekommst \u001b[1;96m10 Einheiten an Stärke.\u001b[0m", Game.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 
