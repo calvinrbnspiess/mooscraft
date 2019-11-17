@@ -8,6 +8,10 @@ import de.on19.mooscraft.renderer.TerminalRenderer;
 
 public class Main {
 
+    //
+    //  important comment
+    //
+
     public static void main(String[] args) {
         Renderer renderer = new TerminalRenderer();
         ActionHandler handler = new TerminalActionHandler(renderer);
