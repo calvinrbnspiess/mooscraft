@@ -1,6 +1,7 @@
 package de.on19.mooscraft.renderer;
 
 import de.on19.mooscraft.game.screens.Screen;
+
 //overall creation of a Screen
 public interface Renderer {
     /**

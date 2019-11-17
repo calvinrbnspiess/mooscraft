@@ -20,8 +20,9 @@ public class Character {
     public Character() {
         this(0, 0, 0, 0, 0);
 
-        /*constructor gives actual values to the parameters given to the variables before via Character constructor
-         *this.  refers to class attributes
+        /*
+         * constructor gives actual values to the parameters given to the variables before via Character constructor
+         * 'this.' refers to class attributes
          */
     }
 
@@ -29,9 +30,9 @@ public class Character {
         this(0, 0, 0, 0, 0);
         this.setName(name);
     }
-        /*
-         * Methode verlangt Name als String Eingabe
-         */
+    /*
+     * Methode verlangt Name als String Eingabe
+     */
 
     public Character(int health, int strength, int witchcraft, int willpower, int wisdom) {
         this.name = "Unbekannter Spieler";
@@ -79,7 +80,7 @@ public class Character {
             this.gameOverScreen.print();
         }
         /*es wird überprüft ob der gesetzte Wert kleiner oder ungleich Null ist
-        * und sollte dies der Fall sein dann wird in Folge dessen der Gameoverscreen ausgegeben
+         * und sollte dies der Fall sein dann wird in Folge dessen der Gameoverscreen ausgegeben
          */
     }
 
@@ -95,7 +96,7 @@ public class Character {
     public int getStrength() {
         return strength;
     }
-     // Methode gibt den aktuellen Strenght Wert zurück (zum abfragen)
+    // Methode gibt den aktuellen Strenght Wert zurück (zum abfragen)
 
     public void setStrength(int strength) {
         this.strength = strength;

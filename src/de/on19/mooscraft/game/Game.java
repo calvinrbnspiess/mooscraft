@@ -46,7 +46,7 @@ public class Game {
     public int getSpotsAmount() {
         int i = 0;
         for (World w : this.worlds) {
-            i += w.getPathLength();
+            i += World.getPathLength();
         }
         return i;
     }
@@ -112,8 +112,8 @@ public class Game {
         for (World w : this.worlds) {
             indicator = indicator + "|";
 
-            int indicatorSpotLength = (int) indicatorLength / w.getPathLength();
-            for (int i = 0; i < w.getPathLength(); i++) {
+            int indicatorSpotLength = indicatorLength / World.getPathLength();
+            for (int i = 0; i < World.getPathLength(); i++) {
                 iterationIndex++;
                 indicator += TextTools.repeat(visitedSpots >= iterationIndex ? "█" : "░", indicatorSpotLength);
             }

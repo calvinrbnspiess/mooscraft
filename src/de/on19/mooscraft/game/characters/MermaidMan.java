@@ -53,6 +53,6 @@ public class MermaidMan extends Character {
 
         return description;
     }
-        // description Variable wird als String deklariert mit der Beschreibung initialisiert und am ende mit return zurück bzw. ausgegeben
+    // description Variable wird als String deklariert mit der Beschreibung initialisiert und am ende mit return zurück bzw. ausgegeben
 
 }
