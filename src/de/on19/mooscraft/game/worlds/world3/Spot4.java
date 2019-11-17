@@ -17,13 +17,13 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Ein Hexenturm ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Ein Hexenturm ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Am Eingang des Hexenturmes wartet ein sprechender Rabe als Komplizin der Hausherrin auf dich. Er verlangt als Wegzoll einer deiner kostbaren Zaubertränke.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Somit verlierst du \u001b[1;91m10 Einheiten an Zauberkraft.\u001b[0m", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Somit verlierst du \u001b[1;91m10 Einheiten an Zauberkraft.\u001b[0m", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

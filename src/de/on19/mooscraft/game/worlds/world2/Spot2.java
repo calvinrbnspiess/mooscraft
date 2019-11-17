@@ -17,12 +17,12 @@ public class Spot2 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Ein mysteriöses Wesen ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Ein mysteriöses Wesen ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Du begegnest einem groß gebauten, schlanken Wesen mit langen hellen Haaren. Ein Elf kommt auf dich zu. Aber keine Angst, Elfen sind friedliche Wesen. Er erklärt dir den schnellsten Weg zur Burg, so dass du dich wieder auf den Weg machst. Immer noch voller Hoffnung.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(TextTools.wrapToLength("Du begibst dich wieder auf den Weg.", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Du begibst dich wieder auf den Weg.", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

@@ -17,13 +17,13 @@ public class Spot5 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Ein ungewöhnlicher Fund ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Ein ungewöhnlicher Fund ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Im Gebüsch fällt dir eine merkwürdig leuchtende Flasche auf. Du hebst sie auf und aus der Flasche weicht Nebel aus bis dieser sich zu einem großen Geist formt. “Ich habe dich erwartet.”, sagt Romanus der Flaschengeist. “Wünsche erfülle ich zwar keine, dafür trage ich dich ein Stück den Berg hinauf, so dass du deine Kräfte einsparen kannst.” ";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Genau das macht er dann auch und kurz darauf siehst du schon ein neues Abenteuer, das auf dich wartet.", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Genau das macht er dann auch und kurz darauf siehst du schon ein neues Abenteuer, das auf dich wartet.", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

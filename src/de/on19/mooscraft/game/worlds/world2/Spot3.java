@@ -20,10 +20,10 @@ public class Spot3 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Unerwartetes Hinterniss ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Unerwartetes Hinterniss ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Plötzlich verfängst du dich in einem riesigen, verworrenem Etwas und kannst dich kaum mehr bewegen. Du erkennst eine gigantische Spinne auf dich zulaufen. Jetzt weißt du es, du bist in einem sehr festem Spinnennetz gefangen und die Spinne hat Hunger. Hast du genügend \u001b[1;92m Stärke (>25)\u001b[0m, dann schaffst du es dich gerade rechtzeitig loszureißen, wenn aber nicht knabbert dich die Spinne an.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
         String wonspider = "Du hattest genügend Stärke und konntest dich aus dem Spinnennetz ohne Weiteres befreien.";
@@ -32,9 +32,9 @@ public class Spot3 extends Spot {
         // ausgabe in abhängigkeit von dem besagten Parameter
 
         if (character.getStrength() >= 25) {
-            s.append(TextTools.addPadding(wonspider, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+            s.append(TextTools.addPadding(wonspider, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         } else {
-            s.append(TextTools.addPadding(lostspider, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+            s.append(TextTools.addPadding(lostspider, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
             character.addHealth(-5);
         }
         s.append(TextTools.emptyLines(2));

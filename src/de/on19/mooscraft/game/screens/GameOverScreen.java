@@ -25,9 +25,9 @@ public class GameOverScreen extends Screen {
 
         super.setContent(gameOverOutput); //use method from super class, does not overwrite it: setContent: replaces content completely, append: adds content
         super.append(TextTools.emptyLines(1));
-        super.appendLine(TextTools.centerInRow("Du wurdest getötet.", Game.TERMINAL_WIDTH));
+        super.appendLine(TextTools.centerInRow("Du wurdest getötet.", TextTools.TERMINAL_WIDTH));
         super.append(TextTools.emptyLines(1));
-        super.appendLine(TextTools.centerInRow("Das war wohl nichts '" + game.getCharacter().getName() + "'! Viel Erfolg bei deinem nächsten Versuch.", Game.TERMINAL_WIDTH));
+        super.appendLine(TextTools.centerInRow("Das war wohl nichts '" + game.getCharacter().getName() + "'! Viel Erfolg bei deinem nächsten Versuch.", TextTools.TERMINAL_WIDTH));
         super.append(TextTools.emptyLines(2));
         super.appendLine("Du kannst das Spiel nun mit <exit> verlassen.");
     }

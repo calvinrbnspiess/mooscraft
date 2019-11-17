@@ -1,13 +1,12 @@
 package de.on19.mooscraft.game.worlds.world3;
 
-import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.worlds.World;
 import de.on19.mooscraft.utils.TextTools;
 
 public class World3 extends World {
 
     public World3() throws UnsupportedOperationException {
-        super(new String[]{TextTools.wrapToLength("Du befindest dich nun am Eingang der dritten Welt von Turismaga. Um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen. Sie werden alles daran setzten dir deine magischen Kräfte, sowie deine letzte Lebensenergie zu rauben. Gib Acht auf dich!.", Game.TERMINAL_WIDTH),
+        super(new String[]{TextTools.wrapToLength("Du befindest dich nun am Eingang der dritten Welt von Turismaga. Um durch den Hexenturm hindurch zur finalen Welt zu gelangen musst du dich nun gegenüber verzauberter Wesen beweisen. Sie werden alles daran setzten dir deine magischen Kräfte, sowie deine letzte Lebensenergie zu rauben. Gib Acht auf dich!.", TextTools.TERMINAL_WIDTH),
                         "                                             .:;. .::.    .:;. ,:.                                              ",
                         "                                             .oo:,:oo:,,,,:oo:;lo'                                              ",
                         "                                             .ldddddddddddddodddo.                                              ",

@@ -17,13 +17,13 @@ public class Spot6 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Angriff aus dem Nichts ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Angriff aus dem Nichts ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Ein fieser unvorhersehbarer Angriff eines Schützen aus der Ferne sorgt dafür, dass du nun den Weg mit einem Pfeil in deinem Körper weiter gehen musst.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Durch diesen Angriff verlierst du \u001b[1;91m20 Einheiten Lebensenergie.\u001b[0m", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Durch diesen Angriff verlierst du \u001b[1;91m20 Einheiten Lebensenergie.\u001b[0m", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

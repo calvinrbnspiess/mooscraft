@@ -18,12 +18,12 @@ public class Spot6 extends Spot {
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
 
-        s.appendLine(TextTools.centerInRow("≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Du bekommst Besuch auf deinem Weg ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         String text = "Ein zartes Wesen schwebt auf dich zu. Du erkennst eine kleine Fee. Da sie gehört hat wie tapfer du bist, schenkt sie dir Stärke.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
-        s.appendLine(TextTools.wrapToLength("Du bekommst \u001b[1;95m10 Einheiten Stärke\u001b[0m.", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Du bekommst \u001b[1;95m10 Einheiten Stärke\u001b[0m.", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

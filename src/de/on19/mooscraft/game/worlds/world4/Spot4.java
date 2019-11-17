@@ -17,13 +17,13 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Abgekommen ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Abgekommen ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Die Wege der finalen Welt sind nicht gerade gut zu erkennen, du geräts von der Route und landest Mitten in einem Werwolfsrudel. Sie sehen dich als Bedrohung und greifen dich an. Glücklicherweise findest du zurück auf den befestigten Weg und das Rudel lässt dich ziehn.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Ganz ohne Schramme bist du nicht weg gekommen weswegen du \u001b[1;96mLebensenergie 20\u001b[0m verlierst.", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Ganz ohne Schramme bist du nicht weg gekommen weswegen du \u001b[1;96mLebensenergie 20\u001b[0m verlierst.", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

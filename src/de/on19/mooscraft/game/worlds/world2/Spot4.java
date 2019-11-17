@@ -17,13 +17,13 @@ public class Spot4 extends Spot {
     @Override
     public void onEnter(Game game, Character character) {
         Screen s = new Screen();
-        s.appendLine(TextTools.centerInRow("≈≈≈ Aus der Ferne hörst du ein dumpfes Rauschen ≈≈≈", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.centerInRow("≈≈≈ Aus der Ferne hörst du ein dumpfes Rauschen ≈≈≈", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(1));
         String text = "Du kommst auf einen rauschenden Wasserfall zu. Dort holst du dir eine kleine Erfrischung, trinkst einen kleinen Schluck Wasser und holst dir dadurch etwas mehr Lebensenergie.";
-        s.append(TextTools.addPadding(text, Game.TERMINAL_WIDTH, Game.TERMINAL_PADDING));
+        s.append(TextTools.addPadding(text, TextTools.TERMINAL_WIDTH, TextTools.TERMINAL_PADDING));
         s.append(TextTools.emptyLines(1));
 
-        s.appendLine(TextTools.wrapToLength("Deinen Durst hast du nun gelöscht und  wieder \u001b[1;92m 5 Einheiten mehr an Lebensenergie.\u001b[0m", Game.TERMINAL_WIDTH));
+        s.appendLine(TextTools.wrapToLength("Deinen Durst hast du nun gelöscht und  wieder \u001b[1;92m 5 Einheiten mehr an Lebensenergie.\u001b[0m", TextTools.TERMINAL_WIDTH));
         s.append(TextTools.emptyLines(2));
         s.appendLine("Gib <weiter> ein, um fortzufahren.");
 

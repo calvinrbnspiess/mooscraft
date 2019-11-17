@@ -6,8 +6,12 @@ import java.util.List;
 
 public class TextTools {
 
+
+
     public static final String MATCH_NON_WORDS = "[^\\p{L}+]";
     public static final String MATCH_WHITESPACE = "\\s";
+    public static int TERMINAL_WIDTH = 112;
+    public static int TERMINAL_PADDING = 12;
 
     public static String repeat(String string, int length) {
         String output = "";

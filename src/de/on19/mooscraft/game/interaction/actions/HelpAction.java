@@ -1,6 +1,5 @@
 package de.on19.mooscraft.game.interaction.actions;
 
-import de.on19.mooscraft.game.Game;
 import de.on19.mooscraft.game.interaction.Action;
 import de.on19.mooscraft.game.interaction.ActionHandler;
 import de.on19.mooscraft.game.interaction.DescriptedAction;
@@ -13,7 +12,7 @@ import java.util.List;
 public class HelpAction implements DescriptedAction {
 
     public static String getActionDescription(DescriptedAction a) {
-        return "<" + a.getAction() + "> - " + TextTools.wrapToLength(a.getDescription(), Game.TERMINAL_WIDTH);
+        return "<" + a.getAction() + "> - " + TextTools.wrapToLength(a.getDescription(), TextTools.TERMINAL_WIDTH);
     }
 
     public static List<String> getSystemActionDescriptions(ActionHandler handler) {
@@ -30,7 +29,7 @@ public class HelpAction implements DescriptedAction {
     public void onCommand(String[] args, ActionHandler handler) {
         Screen screen = new Screen();
         screen.append(new String[]{
-                TextTools.centerInRow("≈≈≈ Befehlsübersicht ≈≈≈", Game.TERMINAL_WIDTH),
+                TextTools.centerInRow("≈≈≈ Befehlsübersicht ≈≈≈", TextTools.TERMINAL_WIDTH),
                 "Folgende Befehle sind definiert. Du kannst diese jederzeit aufrufen:",
         });
 
